@@ -2,202 +2,392 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>WREAL X WORLD | Official Website</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=yes">
+    <title>WREAL X WRLD</title>
+    <!-- Wizard of Oz Style Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Cinema+Decorative:wght@400;700;900&family=Playfair+Display:wght@400;700;900&display=swap" rel="stylesheet">
     <style>
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
         }
+
         body {
-            font-family: Arial, sans-serif;
-            background: #000;
-            color: #fff;
+            font-family: 'Playfair Display', 'Cinema Decorative', 'Arial', sans-serif;
+            background-color: #000000;
+            color: #ffffff;
+            line-height: 1.5;
+            overflow-x: hidden;
         }
+
+        /* Header with Hamburger Menu */
         .header {
             background: #000;
-            padding: 1rem 2rem;
+            padding: 1rem;
             position: sticky;
             top: 0;
-            border-bottom: 1px solid #333;
-        }
-        .nav {
+            z-index: 1000;
             display: flex;
             justify-content: space-between;
             align-items: center;
-            flex-wrap: wrap;
-            max-width: 1200px;
-            margin: 0 auto;
+            border-bottom: 2px solid #ffcc00;
         }
+
         .logo {
             font-size: 1.5rem;
-            font-weight: bold;
-            letter-spacing: 2px;
+            font-weight: 900;
+            letter-spacing: 3px;
+            font-family: 'Cinema Decorative', cursive;
+            color: #ffcc00;
+            text-shadow: 2px 2px 5px rgba(0,0,0,0.5);
         }
-        .nav-links {
-            display: flex;
-            gap: 2rem;
-            list-style: none;
+
+        /* Hamburger Menu Button (Three Lines) */
+        .menu-btn {
+            background: none;
+            border: none;
+            cursor: pointer;
+            padding: 10px;
+            z-index: 1001;
         }
-        .nav-links a {
-            color: #fff;
-            text-decoration: none;
+
+        .menu-btn span {
+            display: block;
+            width: 28px;
+            height: 3px;
+            background: #ffcc00;
+            margin: 6px 0;
+            transition: 0.3s;
+            border-radius: 3px;
         }
-        .buy-tickets {
-            background: #ff3333;
-            padding: 0.5rem 1rem;
-            border-radius: 5px;
-            text-decoration: none;
-            color: #fff;
+
+        /* Side Navigation Menu - Slides from Left */
+        .side-nav {
+            position: fixed;
+            top: 0;
+            left: -300px;
+            width: 280px;
+            height: 100%;
+            background: #111;
+            z-index: 1002;
+            transition: left 0.3s ease;
+            padding-top: 80px;
+            box-shadow: 2px 0 20px rgba(0,0,0,0.8);
+            border-right: 2px solid #ffcc00;
         }
-        .hero {
-            height: 90vh;
-            background: url('https://iili.io/C9A7R6b.png') center/cover no-repeat;
+
+        .side-nav.open {
+            left: 0;
+        }
+
+        .side-nav a {
             display: flex;
             align-items: center;
-            justify-content: center;
-        }
-        .play-btn {
-            background: #ff3333;
-            color: #fff;
-            padding: 1rem 2rem;
-            font-size: 1.2rem;
-            border-radius: 50px;
+            gap: 15px;
+            padding: 1rem 1.5rem;
+            color: #ffcc00;
             text-decoration: none;
+            font-size: 1.2rem;
+            font-weight: bold;
+            border-bottom: 1px solid #333;
+            transition: background 0.3s;
+            font-family: 'Playfair Display', serif;
         }
-        /* Social Icons - Colored exactly like real logos */
+
+        .side-nav a:hover {
+            background: #ffcc00;
+            color: #000;
+        }
+
+        .side-nav img {
+            width: 24px;
+            height: 24px;
+            filter: brightness(0) invert(1);
+        }
+
+        .side-nav a:hover img {
+            filter: brightness(0);
+        }
+
+        /* Overlay when menu is open */
+        .overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0,0,0,0.8);
+            z-index: 1001;
+            display: none;
+        }
+
+        .overlay.active {
+            display: block;
+        }
+
+        /* Hero Image - YouTube Ratio (16:9) */
+        .hero {
+            width: 100%;
+            background: url('https://iili.io/C9A7R6b.png') center/cover no-repeat;
+            aspect-ratio: 16 / 9;
+        }
+
+        /* Social Icons Row */
         .social-icons {
             display: flex;
             justify-content: center;
-            gap: 2rem;
-            padding: 2rem;
+            gap: 1.5rem;
+            padding: 1rem;
             flex-wrap: wrap;
+            background: #000;
         }
+
         .social-icons a {
             display: inline-block;
-            transition: transform 0.3s;
+            transition: transform 0.2s;
         }
+
         .social-icons a:hover {
-            transform: scale(1.1);
+            transform: scale(1.15);
         }
+
         .social-icons img {
-            width: 40px;
-            height: 40px;
+            width: 38px;
+            height: 38px;
         }
+
+        /* Play Now Button */
+        .play-now-container {
+            text-align: center;
+            padding: 1rem;
+            background: #000;
+        }
+
+        .play-now-btn {
+            background: #ff3333;
+            color: white;
+            padding: 0.8rem 2rem;
+            font-size: 1.1rem;
+            font-weight: bold;
+            border-radius: 50px;
+            text-decoration: none;
+            display: inline-block;
+            font-family: 'Playfair Display', serif;
+            transition: transform 0.2s;
+        }
+
+        .play-now-btn:hover {
+            transform: scale(1.05);
+        }
+
+        /* Section Titles */
         .section-title {
             text-align: center;
-            font-size: 2rem;
-            margin: 2rem 0;
+            font-size: 1.8rem;
+            margin: 1.5rem 0 1rem;
+            font-family: 'Cinema Decorative', cursive;
+            color: #ffcc00;
+            letter-spacing: 2px;
         }
-        /* Smaller merch and event cards */
+
+        /* Grid - 4 Columns on Desktop, 2 on Mobile */
         .grid-4 {
             display: grid;
             grid-template-columns: repeat(4, 1fr);
             gap: 1rem;
-            max-width: 1000px;
+            max-width: 100%;
             margin: 0 auto;
-            padding: 0 1rem;
+            padding: 0 0.8rem;
         }
-        @media (max-width: 900px) {
+
+        @media (max-width: 768px) {
             .grid-4 {
                 grid-template-columns: repeat(2, 1fr);
+                gap: 0.8rem;
             }
         }
-        @media (max-width: 500px) {
+
+        @media (max-width: 480px) {
             .grid-4 {
-                grid-template-columns: 1fr;
+                grid-template-columns: repeat(2, 1fr);
+                gap: 0.6rem;
+                padding: 0 0.5rem;
             }
         }
+
         .card {
             background: #111;
-            border-radius: 8px;
+            border-radius: 10px;
             text-align: center;
             padding-bottom: 0.8rem;
+            border: 1px solid #333;
+            transition: transform 0.2s;
         }
+
+        .card:hover {
+            transform: translateY(-3px);
+            border-color: #ffcc00;
+        }
+
         .card img {
             width: 100%;
-            height: 160px;
+            height: 150px;
             object-fit: cover;
-            border-radius: 8px 8px 0 0;
+            border-radius: 10px 10px 0 0;
         }
+
         .card h3 {
-            font-size: 0.9rem;
+            font-size: 0.8rem;
             margin: 0.5rem 0;
+            font-family: 'Playfair Display', serif;
         }
+
         .price {
-            color: #ff3333;
+            color: #ffcc00;
             font-size: 0.9rem;
             margin: 0.3rem 0;
+            font-weight: bold;
         }
-        .buy-btn {
-            background: #fff;
+
+        /* Yellow Buttons for Merch */
+        .buy-btn-yellow {
+            background: #ffcc00;
             color: #000;
             border: none;
             padding: 0.4rem 0.8rem;
-            margin: 0.5rem 0;
+            margin: 0.4rem 0;
             cursor: pointer;
             border-radius: 5px;
-            font-size: 0.8rem;
+            font-size: 0.7rem;
+            font-weight: bold;
+            font-family: 'Playfair Display', serif;
+            transition: background 0.2s;
         }
-        .listen-section {
+
+        .buy-btn-yellow:hover {
+            background: #ffaa00;
+        }
+
+        /* Red Buttons for Events */
+        .buy-btn-red {
+            background: #ff3333;
+            color: #fff;
+            border: none;
+            padding: 0.4rem 0.8rem;
+            margin: 0.4rem 0;
+            cursor: pointer;
+            border-radius: 5px;
+            font-size: 0.7rem;
+            font-weight: bold;
+            font-family: 'Playfair Display', serif;
+            transition: background 0.2s;
+        }
+
+        .buy-btn-red:hover {
+            background: #cc0000;
+        }
+
+        /* Service Buttons (OR / WATCH NOW / CHOOSE SERVICE) */
+        .service-buttons {
             text-align: center;
-            margin: 2rem;
+            margin: 1rem 0;
         }
+
         .service-btn {
             background: #222;
-            color: #fff;
-            padding: 0.7rem 2rem;
-            margin: 0.5rem;
-            border: none;
-            border-radius: 5px;
+            color: white;
+            padding: 0.6rem 1.5rem;
+            margin: 0.3rem;
+            border: 1px solid #ffcc00;
+            border-radius: 30px;
             cursor: pointer;
+            font-family: 'Playfair Display', serif;
+            font-size: 0.9rem;
         }
+
+        .choose-service {
+            text-align: center;
+            margin: 0.5rem 0 1.5rem;
+        }
+
+        .choose-service button {
+            background: #ff3333;
+            color: white;
+            padding: 0.6rem 2rem;
+            border: none;
+            border-radius: 30px;
+            cursor: pointer;
+            font-family: 'Playfair Display', serif;
+            font-weight: bold;
+        }
+
+        /* Mailing List */
         .mailing {
             background: #111;
             text-align: center;
-            padding: 2rem;
-            margin: 2rem 0;
+            padding: 1.5rem;
+            margin: 1.5rem 0;
+            border-top: 1px solid #ffcc00;
+            border-bottom: 1px solid #ffcc00;
         }
+
+        .mailing h2 {
+            font-size: 1.2rem;
+            margin-bottom: 1rem;
+            font-family: 'Cinema Decorative', cursive;
+        }
+
         .mailing input {
-            padding: 0.8rem;
-            width: 280px;
+            padding: 0.6rem;
+            width: 260px;
             margin: 0.5rem;
             border: none;
             border-radius: 5px;
+            font-family: 'Playfair Display', serif;
         }
+
         .mailing button {
-            background: #ff3333;
-            color: #fff;
-            padding: 0.8rem 1.5rem;
+            background: #ffcc00;
+            color: #000;
+            padding: 0.6rem 1.5rem;
             border: none;
             border-radius: 5px;
             cursor: pointer;
+            font-weight: bold;
+            font-family: 'Playfair Display', serif;
         }
+
+        /* Contact & About */
         .contact-about {
             display: grid;
             grid-template-columns: repeat(2, 1fr);
-            gap: 2rem;
-            max-width: 1000px;
-            margin: 2rem auto;
-            padding: 2rem;
+            gap: 1rem;
+            max-width: 100%;
+            margin: 1rem auto;
+            padding: 1rem;
             background: #111;
             text-align: center;
-            border-radius: 10px;
         }
-        .contact-btn {
-            background: #ff3333;
-            color: #fff;
+
+        .about-btn {
+            background: #ffcc00;
+            color: #000;
             padding: 0.5rem 1rem;
             text-decoration: none;
             display: inline-block;
             margin-top: 0.5rem;
             border-radius: 5px;
+            font-weight: bold;
+            font-family: 'Playfair Display', serif;
         }
+
         .footer {
             text-align: center;
-            padding: 1.5rem;
+            padding: 1rem;
             border-top: 1px solid #333;
+            font-size: 0.7rem;
+            font-family: 'Playfair Display', serif;
         }
     </style>
     <!-- Tawk.to Script -->
@@ -214,414 +404,167 @@
     </script>
 </head>
 <body>
+
+    <!-- Header with Hamburger Menu Button -->
     <div class="header">
-        <div class="nav">
-            <div class="logo">WREAL X WORLD</div>
-            <ul class="nav-links">
-                <li><a href="#">HOME</a></li>
-                <li><a href="#">MERCH</a></li>
-                <li><a href="#">TOUR</a></li>
-                <li><a href="#">ABOUT</a></li>
-            </ul>
-            <a href="#" class="buy-tickets">BUY TICKETS</a>
-        </div>
+        <div class="logo">WREAL X WRLD</div>
+        <button class="menu-btn" id="menuBtn">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
     </div>
 
-    <div class="hero">
-        <a href="https://audiomack.com/wrealx/song/hurry-up" target="_blank" class="play-btn">▶ PLAY NOW - HURRY UP</a>
+    <!-- Side Navigation Menu (Slides from Left) -->
+    <div class="side-nav" id="sideNav">
+        <a href="#" id="merchLink">
+            <img src="https://cdn-icons-png.flaticon.com/512/2838/2838895.png" alt="cart"> SHOP NOW
+        </a>
+        <a href="#" id="eventsLink">
+            <img src="https://cdn-icons-png.flaticon.com/512/1046/1046784.png" alt="events"> EVENTS
+        </a>
+        <a href="#" id="contactLink">
+            <img src="https://cdn-icons-png.flaticon.com/512/724/724664.png" alt="contact"> CONTACT US
+        </a>
+        <a href="#" id="aboutLink">
+            <img src="https://cdn-icons-png.flaticon.com/512/1077/1077063.png" alt="about"> ABOUT US
+        </a>
     </div>
 
-    <!-- Social Icons - Colored versions -->
+    <!-- Overlay -->
+    <div class="overlay" id="overlay"></div>
+
+    <!-- Hero Image - YouTube Ratio (16:9) -->
+    <div class="hero"></div>
+
+    <!-- Social Icons - Fully Colored -->
     <div class="social-icons">
         <a href="https://www.facebook.com/profile.php?id=61566474707822" target="_blank">
-            <img src="https://upload.wikimedia.org/wikipedia/commons/5/51/Facebook_f_logo_%282019%29.svg" alt="Facebook">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/5/51/Facebook_f_logo_%282019%29.svg" alt="FB">
         </a>
         <a href="https://www.instagram.com/wreal.x" target="_blank">
-            <img src="https://upload.wikimedia.org/wikipedia/commons/e/e7/Instagram_logo_2016.svg" alt="Instagram">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/e/e7/Instagram_logo_2016.svg" alt="IG">
         </a>
         <a href="https://x.com/Wreal_X" target="_blank">
             <img src="https://upload.wikimedia.org/wikipedia/commons/5/57/X_logo_2023.svg" alt="X">
         </a>
         <a href="https://youtube.com/@wrealx" target="_blank">
-            <img src="https://upload.wikimedia.org/wikipedia/commons/4/42/YouTube_icon_%282013-2017%29.png" alt="YouTube">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/4/42/YouTube_icon_%282013-2017%29.png" alt="YT">
         </a>
         <a href="https://bsky.app/profile/wrealx.bsky.social" target="_blank">
             <img src="https://upload.wikimedia.org/wikipedia/commons/7/7a/Bluesky_Logo.svg" alt="Bluesky">
         </a>
         <a href="https://www.tiktok.com/@wreal_x" target="_blank">
-            <img src="https://upload.wikimedia.org/wikipedia/commons/a/a9/TikTok_logo_%28svg%29.svg" alt="TikTok">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/a/a9/TikTok_logo_%28svg%29.svg" alt="TT">
         </a>
         <a href="https://wa.me/211920146370" target="_blank">
-            <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WA">
         </a>
     </div>
 
-    <div class="listen-section">
-        <h2>LISTEN TO MY MUSIC</h2>
+    <!-- Play Now Button -->
+    <div class="play-now-container">
+        <a href="https://audiomack.com/wrealx/song/hurry-up" target="_blank" class="play-now-btn">▶ PLAY NOW - HURRY UP</a>
+    </div>
+
+    <!-- OR / WATCH NOW Section -->
+    <div class="service-buttons">
         <button class="service-btn">OR</button>
         <button class="service-btn">WATCH NOW!</button>
-        <div><button class="service-btn" style="background:#ff3333;">CHOOSE SERVICE</button></div>
     </div>
 
+    <!-- Choose Service -->
+    <div class="choose-service">
+        <button>CHOOSE SERVICE</button>
+    </div>
+
+    <!-- MERCH Section - Yellow Buttons, 4 Columns -->
     <h2 class="section-title">MERCH</h2>
     <div class="grid-4">
-        <div class="card"><img src="https://iili.io/C9A01C7.jpg"><h3>X-CELL DRESS</h3><div class="price">220,000 SSP</div><button class="buy-btn" onclick="location.href='https://wa.me/211920146370?text=I want to buy X-CELL DRESS'">BUY NOW</button></div>
-        <div class="card"><img src="https://iili.io/C9A07p4.jpg"><h3>X-MAN GLOVES</h3><div class="price">35,000 SSP</div><button class="buy-btn" onclick="location.href='https://wa.me/211920146370?text=I want to buy X-MAN GLOVES'">BUY NOW</button></div>
-        <div class="card"><img src="https://iili.io/C9A7R6b.png"><h3>GANGO SOCKS</h3><div class="price">25,000 SSP</div><button class="buy-btn" onclick="location.href='https://wa.me/211920146370?text=I want to buy GANGO SOCKS'">BUY NOW</button></div>
-        <div class="card"><img src="https://iili.io/C9A1uoB.png"><h3>X-MAN HOODIES</h3><div class="price">240,000 SSP</div><button class="buy-btn" onclick="location.href='https://wa.me/211920146370?text=I want to buy X-MAN HOODIES'">BUY NOW</button></div>
-        <div class="card"><img src="https://iili.io/C9A1RP1.png"><h3>GANGO SCARVES</h3><div class="price">45,000 SSP</div><button class="buy-btn" onclick="location.href='https://wa.me/211920146370?text=I want to buy GANGO SCARVES'">BUY NOW</button></div>
-        <div class="card"><img src="https://iili.io/C9A1ItV.png"><h3>GANG GIRL DRESS</h3><div class="price">230,000 SSP</div><button class="buy-btn" onclick="location.href='https://wa.me/211920146370?text=I want to buy GANG GIRL DRESS'">BUY NOW</button></div>
-        <div class="card"><img src="https://iili.io/C9A1AMP.png"><h3>GANG GIRL X</h3><div class="price">250,000 SSP</div><button class="buy-btn" onclick="location.href='https://wa.me/211920146370?text=I want to buy GANG GIRL X'">BUY NOW</button></div>
-        <div class="card"><img src="https://iili.io/C9A1WPt.png"><h3>X BOY SHIRTS</h3><div class="price">200,000 SSP</div><button class="buy-btn" onclick="location.href='https://wa.me/211920146370?text=I want to buy X BOY SHIRTS'">BUY NOW</button></div>
+        <div class="card"><img src="https://iili.io/C9A01C7.jpg"><h3>X-CELL DRESS</h3><div class="price">220,000 SSP</div><button class="buy-btn-yellow" onclick="location.href='https://wa.me/211920146370?text=I want X-CELL DRESS'">BUY NOW</button></div>
+        <div class="card"><img src="https://iili.io/C9A07p4.jpg"><h3>X-MAN GLOVES</h3><div class="price">35,000 SSP</div><button class="buy-btn-yellow" onclick="location.href='https://wa.me/211920146370?text=I want X-MAN GLOVES'">BUY NOW</button></div>
+        <div class="card"><img src="https://iili.io/C9A7R6b.png"><h3>GANGO SOCKS</h3><div class="price">25,000 SSP</div><button class="buy-btn-yellow" onclick="location.href='https://wa.me/211920146370?text=I want GANGO SOCKS'">BUY NOW</button></div>
+        <div class="card"><img src="https://iili.io/C9A1uoB.png"><h3>X-MAN HOODIES</h3><div class="price">240,000 SSP</div><button class="buy-btn-yellow" onclick="location.href='https://wa.me/211920146370?text=I want X-MAN HOODIES'">BUY NOW</button></div>
+        <div class="card"><img src="https://iili.io/C9A1RP1.png"><h3>GANGO SCARVES</h3><div class="price">45,000 SSP</div><button class="buy-btn-yellow" onclick="location.href='https://wa.me/211920146370?text=I want GANGO SCARVES'">BUY NOW</button></div>
+        <div class="card"><img src="https://iili.io/C9A1ItV.png"><h3>GANG GIRL DRESS</h3><div class="price">230,000 SSP</div><button class="buy-btn-yellow" onclick="location.href='https://wa.me/211920146370?text=I want GANG GIRL DRESS'">BUY NOW</button></div>
+        <div class="card"><img src="https://iili.io/C9A1AMP.png"><h3>GANG GIRL X</h3><div class="price">250,000 SSP</div><button class="buy-btn-yellow" onclick="location.href='https://wa.me/211920146370?text=I want GANG GIRL X'">BUY NOW</button></div>
+        <div class="card"><img src="https://iili.io/C9A1WPt.png"><h3>X BOY SHIRTS</h3><div class="price">200,000 SSP</div><button class="buy-btn-yellow" onclick="location.href='https://wa.me/211920146370?text=I want X BOY SHIRTS'">BUY NOW</button></div>
     </div>
 
+    <!-- EVENT LINEUP Section - Red Buttons, 4 Columns -->
     <h2 class="section-title">EVENT LINEUP</h2>
     <div class="grid-4">
-        <div class="card"><img src="https://iili.io/C9AxUba.png"><h3>Yei Town Concert</h3><button class="buy-btn" onclick="location.href='https://wa.me/211920146370?text=I want to book Yei Town Concert'">BOOK</button></div>
-        <div class="card"><img src="https://iili.io/C9AFwI2.png"><h3>Aweil Concert</h3><button class="buy-btn" onclick="location.href='https://wa.me/211920146370?text=I want to book Aweil Concert'">BOOK</button></div>
-        <div class="card"><img src="https://iili.io/C9AIHTg.png"><h3>Rumbek Concert</h3><button class="buy-btn" onclick="location.href='https://wa.me/211920146370?text=I want to book Rumbek Concert'">BOOK</button></div>
-        <div class="card"><img src="https://iili.io/C9AIJja.png"><h3>Malakal Concert</h3><button class="buy-btn" onclick="location.href='https://wa.me/211920146370?text=I want to book Malakal Concert'">BOOK</button></div>
-        <div class="card"><img src="https://iili.io/C9AI3Cv.png"><h3>Warap Concert</h3><button class="buy-btn" onclick="location.href='https://wa.me/211920146370?text=I want to book Warap Concert'">BOOK</button></div>
-        <div class="card"><img src="https://iili.io/C9AIIZG.png"><h3>Meridi Concert</h3><button class="buy-btn" onclick="location.href='https://wa.me/211920146370?text=I want to book Meridi Concert'">BOOK</button></div>
-        <div class="card"><img src="https://iili.io/C9AIPSI.png"><h3>Juba Town Concert</h3><button class="buy-btn" onclick="location.href='https://wa.me/211920146370?text=I want to book Juba Town Concert'">BOOK</button></div>
-        <div class="card"><img src="https://iili.io/C9AILAX.png"><h3>Kajo-Keji Concert</h3><button class="buy-btn" onclick="location.href='https://wa.me/211920146370?text=I want to book Kajo-Keji Concert'">BOOK</button></div>
+        <div class="card"><img src="https://iili.io/C9AxUba.png"><h3>Yei Town</h3><button class="buy-btn-red" onclick="location.href='https://wa.me/211920146370?text=I want to book Yei Town'">BOOK</button></div>
+        <div class="card"><img src="https://iili.io/C9AFwI2.png"><h3>Aweil</h3><button class="buy-btn-red" onclick="location.href='https://wa.me/211920146370?text=I want to book Aweil'">BOOK</button></div>
+        <div class="card"><img src="https://iili.io/C9AIHTg.png"><h3>Rumbek</h3><button class="buy-btn-red" onclick="location.href='https://wa.me/211920146370?text=I want to book Rumbek'">BOOK</button></div>
+        <div class="card"><img src="https://iili.io/C9AIJja.png"><h3>Malakal</h3><button class="buy-btn-red" onclick="location.href='https://wa.me/211920146370?text=I want to book Malakal'">BOOK</button></div>
+        <div class="card"><img src="https://iili.io/C9AI3Cv.png"><h3>Warap</h3><button class="buy-btn-red" onclick="location.href='https://wa.me/211920146370?text=I want to book Warap'">BOOK</button></div>
+        <div class="card"><img src="https://iili.io/C9AIIZG.png"><h3>Meridi</h3><button class="buy-btn-red" onclick="location.href='https://wa.me/211920146370?text=I want to book Meridi'">BOOK</button></div>
+        <div class="card"><img src="https://iili.io/C9AIPSI.png"><h3>Juba</h3><button class="buy-btn-red" onclick="location.href='https://wa.me/211920146370?text=I want to book Juba'">BOOK</button></div>
+        <div class="card"><img src="https://iili.io/C9AILAX.png"><h3>Kajo-Keji</h3><button class="buy-btn-red" onclick="location.href='https://wa.me/211920146370?text=I want to book Kajo-Keji'">BOOK</button></div>
     </div>
 
+    <!-- Mailing List -->
     <div class="mailing">
-        <h2>SIGN UP FOR UPDATES FROM THE MAILING LIST</h2>
+        <h2>SIGN UP FOR UPDATES</h2>
         <form action="https://wreal-x.kit.com/5b513f6527" method="post" target="_blank">
             <input type="email" name="email" placeholder="EMAIL" required>
             <button type="submit">SIGN UP</button>
         </form>
     </div>
 
+    <!-- Contact & About -->
     <div class="contact-about">
         <div>
             <h3>CONTACT</h3>
-            <p>Email: wreal@proton.me</p>
-            <a href="mailto:wreal@proton.me" class="contact-btn">Contact Us</a>
+            <p>wreal@proton.me</p>
+            <a href="mailto:wreal@proton.me" class="about-btn">Contact Us</a>
         </div>
         <div>
             <h3>ABOUT US</h3>
-            <p>Wreal X World - The African Duce WRLD. Bringing you the best music, merch, and concerts across South Sudan and beyond.</p>
+            <p>WREAL X WRLD - The African Duce</p>
+            <a href="#" id="aboutUsBtn" class="about-btn">About Us</a>
         </div>
     </div>
 
     <div class="footer">
-        <p>© 2026 WREAL X WORLD. All rights reserved. | The African Duce WRLD</p>
+        <p>© 2026 WREAL X WRLD | All Rights Reserved</p>
     </div>
-</body>
-    </html><!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>WREAL X WORLD | Official Website</title>
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
+
+    <!-- JavaScript for Hamburger Menu -->
+    <script>
+        const menuBtn = document.getElementById('menuBtn');
+        const sideNav = document.getElementById('sideNav');
+        const overlay = document.getElementById('overlay');
+
+        function closeMenu() {
+            sideNav.classList.remove('open');
+            overlay.classList.remove('active');
         }
-        body {
-            font-family: Arial, sans-serif;
-            background: #000;
-            color: #fff;
+
+        function openMenu() {
+            sideNav.classList.add('open');
+            overlay.classList.add('active');
         }
-        .header {
-            background: #000;
-            padding: 1rem 2rem;
-            position: sticky;
-            top: 0;
-            border-bottom: 1px solid #333;
-        }
-        .nav {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            flex-wrap: wrap;
-            max-width: 1200px;
-            margin: 0 auto;
-        }
-        .logo {
-            font-size: 1.5rem;
-            font-weight: bold;
-            letter-spacing: 2px;
-        }
-        .nav-links {
-            display: flex;
-            gap: 2rem;
-            list-style: none;
-        }
-        .nav-links a {
-            color: #fff;
-            text-decoration: none;
-        }
-        .buy-tickets {
-            background: #ff3333;
-            padding: 0.5rem 1rem;
-            border-radius: 5px;
-            text-decoration: none;
-            color: #fff;
-        }
-        .hero {
-            height: 90vh;
-            background: url('https://iili.io/C9A7R6b.png') center/cover no-repeat;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-        .play-btn {
-            background: #ff3333;
-            color: #fff;
-            padding: 1rem 2rem;
-            font-size: 1.2rem;
-            border-radius: 50px;
-            text-decoration: none;
-        }
-        /* Social Icons - Colored exactly like real logos */
-        .social-icons {
-            display: flex;
-            justify-content: center;
-            gap: 2rem;
-            padding: 2rem;
-            flex-wrap: wrap;
-        }
-        .social-icons a {
-            display: inline-block;
-            transition: transform 0.3s;
-        }
-        .social-icons a:hover {
-            transform: scale(1.1);
-        }
-        .social-icons img {
-            width: 40px;
-            height: 40px;
-        }
-        .section-title {
-            text-align: center;
-            font-size: 2rem;
-            margin: 2rem 0;
-        }
-        /* Smaller merch and event cards */
-        .grid-4 {
-            display: grid;
-            grid-template-columns: repeat(4, 1fr);
-            gap: 1rem;
-            max-width: 1000px;
-            margin: 0 auto;
-            padding: 0 1rem;
-        }
-        @media (max-width: 900px) {
-            .grid-4 {
-                grid-template-columns: repeat(2, 1fr);
+
+        menuBtn.addEventListener('click', () => {
+            if (sideNav.classList.contains('open')) {
+                closeMenu();
+            } else {
+                openMenu();
             }
-        }
-        @media (max-width: 500px) {
-            .grid-4 {
-                grid-template-columns: 1fr;
-            }
-        }
-        .card {
-            background: #111;
-            border-radius: 8px;
-            text-align: center;
-            padding-bottom: 0.8rem;
-        }
-        .card img {
-            width: 100%;
-            height: 160px;
-            object-fit: cover;
-            border-radius: 8px 8px 0 0;
-        }
-        .card h3 {
-            font-size: 0.9rem;
-            margin: 0.5rem 0;
-        }
-        .price {
-            color: #ff3333;
-            font-size: 0.9rem;
-            margin: 0.3rem 0;
-        }
-        .buy-btn {
-            background: #fff;
-            color: #000;
-            border: none;
-            padding: 0.4rem 0.8rem;
-            margin: 0.5rem 0;
-            cursor: pointer;
-            border-radius: 5px;
-            font-size: 0.8rem;
-        }
-        .listen-section {
-            text-align: center;
-            margin: 2rem;
-        }
-        .service-btn {
-            background: #222;
-            color: #fff;
-            padding: 0.7rem 2rem;
-            margin: 0.5rem;
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
-        }
-        .mailing {
-            background: #111;
-            text-align: center;
-            padding: 2rem;
-            margin: 2rem 0;
-        }
-        .mailing input {
-            padding: 0.8rem;
-            width: 280px;
-            margin: 0.5rem;
-            border: none;
-            border-radius: 5px;
-        }
-        .mailing button {
-            background: #ff3333;
-            color: #fff;
-            padding: 0.8rem 1.5rem;
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
-        }
-        .contact-about {
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 2rem;
-            max-width: 1000px;
-            margin: 2rem auto;
-            padding: 2rem;
-            background: #111;
-            text-align: center;
-            border-radius: 10px;
-        }
-        .contact-btn {
-            background: #ff3333;
-            color: #fff;
-            padding: 0.5rem 1rem;
-            text-decoration: none;
-            display: inline-block;
-            margin-top: 0.5rem;
-            border-radius: 5px;
-        }
-        .footer {
-            text-align: center;
-            padding: 1.5rem;
-            border-top: 1px solid #333;
-        }
-    </style>
-    <!-- Tawk.to Script -->
-    <script type="text/javascript">
-        var Tawk_API = Tawk_API || {}, Tawk_LoadStart = new Date();
-        (function() {
-            var s1 = document.createElement("script"), s0 = document.getElementsByTagName("script")[0];
-            s1.async = true;
-            s1.src = 'https://embed.tawk.to/6a0df26e2789931c36ceec10/default';
-            s1.charset = 'UTF-8';
-            s1.setAttribute('crossorigin', '*');
-            s0.parentNode.insertBefore(s1, s0);
-        })();
-    </script>
-</head>
-<body>
-    <div class="header">
-        <div class="nav">
-            <div class="logo">WREAL X WORLD</div>
-            <ul class="nav-links">
-                <li><a href="#">HOME</a></li>
-                <li><a href="#">MERCH</a></li>
-                <li><a href="#">TOUR</a></li>
-                <li><a href="#">ABOUT</a></li>
-            </ul>
-            <a href="#" class="buy-tickets">BUY TICKETS</a>
-        </div>
-    </div>
+        });
 
-    <div class="hero">
-        <a href="https://audiomack.com/wrealx/song/hurry-up" target="_blank" class="play-btn">▶ PLAY NOW - HURRY UP</a>
-    </div>
+        overlay.addEventListener('click', closeMenu);
 
-    <!-- Social Icons - Colored versions -->
-    <div class="social-icons">
-        <a href="https://www.facebook.com/profile.php?id=61566474707822" target="_blank">
-            <img src="https://upload.wikimedia.org/wikipedia/commons/5/51/Facebook_f_logo_%282019%29.svg" alt="Facebook">
-        </a>
-        <a href="https://www.instagram.com/wreal.x" target="_blank">
-            <img src="https://upload.wikimedia.org/wikipedia/commons/e/e7/Instagram_logo_2016.svg" alt="Instagram">
-        </a>
-        <a href="https://x.com/Wreal_X" target="_blank">
-            <img src="https://upload.wikimedia.org/wikipedia/commons/5/57/X_logo_2023.svg" alt="X">
-        </a>
-        <a href="https://youtube.com/@wrealx" target="_blank">
-            <img src="https://upload.wikimedia.org/wikipedia/commons/4/42/YouTube_icon_%282013-2017%29.png" alt="YouTube">
-        </a>
-        <a href="https://bsky.app/profile/wrealx.bsky.social" target="_blank">
-            <img src="https://upload.wikimedia.org/wikipedia/commons/7/7a/Bluesky_Logo.svg" alt="Bluesky">
-        </a>
-        <a href="https://www.tiktok.com/@wreal_x" target="_blank">
-            <img src="https://upload.wikimedia.org/wikipedia/commons/a/a9/TikTok_logo_%28svg%29.svg" alt="TikTok">
-        </a>
-        <a href="https://wa.me/211920146370" target="_blank">
-            <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp">
-        </a>
-    </div>
-
-    <div class="listen-section">
-        <h2>LISTEN TO MY MUSIC</h2>
-        <button class="service-btn">OR</button>
-        <button class="service-btn">WATCH NOW!</button>
-        <div><button class="service-btn" style="background:#ff3333;">CHOOSE SERVICE</button></div>
-    </div>
-
-    <h2 class="section-title">MERCH</h2>
-    <div class="grid-4">
-        <div class="card"><img src="https://iili.io/C9A01C7.jpg"><h3>X-CELL DRESS</h3><div class="price">220,000 SSP</div><button class="buy-btn" onclick="location.href='https://wa.me/211920146370?text=I want to buy X-CELL DRESS'">BUY NOW</button></div>
-        <div class="card"><img src="https://iili.io/C9A07p4.jpg"><h3>X-MAN GLOVES</h3><div class="price">35,000 SSP</div><button class="buy-btn" onclick="location.href='https://wa.me/211920146370?text=I want to buy X-MAN GLOVES'">BUY NOW</button></div>
-        <div class="card"><img src="https://iili.io/C9A7R6b.png"><h3>GANGO SOCKS</h3><div class="price">25,000 SSP</div><button class="buy-btn" onclick="location.href='https://wa.me/211920146370?text=I want to buy GANGO SOCKS'">BUY NOW</button></div>
-        <div class="card"><img src="https://iili.io/C9A1uoB.png"><h3>X-MAN HOODIES</h3><div class="price">240,000 SSP</div><button class="buy-btn" onclick="location.href='https://wa.me/211920146370?text=I want to buy X-MAN HOODIES'">BUY NOW</button></div>
-        <div class="card"><img src="https://iili.io/C9A1RP1.png"><h3>GANGO SCARVES</h3><div class="price">45,000 SSP</div><button class="buy-btn" onclick="location.href='https://wa.me/211920146370?text=I want to buy GANGO SCARVES'">BUY NOW</button></div>
-        <div class="card"><img src="https://iili.io/C9A1ItV.png"><h3>GANG GIRL DRESS</h3><div class="price">230,000 SSP</div><button class="buy-btn" onclick="location.href='https://wa.me/211920146370?text=I want to buy GANG GIRL DRESS'">BUY NOW</button></div>
-        <div class="card"><img src="https://iili.io/C9A1AMP.png"><h3>GANG GIRL X</h3><div class="price">250,000 SSP</div><button class="buy-btn" onclick="location.href='https://wa.me/211920146370?text=I want to buy GANG GIRL X'">BUY NOW</button></div>
-        <div class="card"><img src="https://iili.io/C9A1WPt.png"><h3>X BOY SHIRTS</h3><div class="price">200,000 SSP</div><button class="buy-btn" onclick="location.href='https://wa.me/211920146370?text=I want to buy X BOY SHIRTS'">BUY NOW</button></div>
-    </div>
-
-    <h2 class="section-title">EVENT LINEUP</h2>
-    <div class="grid-4">
-        <div class="card"><img src="https://iili.io/C9AxUba.png"><h3>Yei Town Concert</h3><button class="buy-btn" onclick="location.href='https://wa.me/211920146370?text=I want to book Yei Town Concert'">BOOK</button></div>
-        <div class="card"><img src="https://iili.io/C9AFwI2.png"><h3>Aweil Concert</h3><button class="buy-btn" onclick="location.href='https://wa.me/211920146370?text=I want to book Aweil Concert'">BOOK</button></div>
-        <div class="card"><img src="https://iili.io/C9AIHTg.png"><h3>Rumbek Concert</h3><button class="buy-btn" onclick="location.href='https://wa.me/211920146370?text=I want to book Rumbek Concert'">BOOK</button></div>
-        <div class="card"><img src="https://iili.io/C9AIJja.png"><h3>Malakal Concert</h3><button class="buy-btn" onclick="location.href='https://wa.me/211920146370?text=I want to book Malakal Concert'">BOOK</button></div>
-        <div class="card"><img src="https://iili.io/C9AI3Cv.png"><h3>Warap Concert</h3><button class="buy-btn" onclick="location.href='https://wa.me/211920146370?text=I want to book Warap Concert'">BOOK</button></div>
-        <div class="card"><img src="https://iili.io/C9AIIZG.png"><h3>Meridi Concert</h3><button class="buy-btn" onclick="location.href='https://wa.me/211920146370?text=I want to book Meridi Concert'">BOOK</button></div>
-        <div class="card"><img src="https://iili.io/C9AIPSI.png"><h3>Juba Town Concert</h3><button class="buy-btn" onclick="location.href='https://wa.me/211920146370?text=I want to book Juba Town Concert'">BOOK</button></div>
-        <div class="card"><img src="https://iili.io/C9AILAX.png"><h3>Kajo-Keji Concert</h3><button class="buy-btn" onclick="location.href='https://wa.me/211920146370?text=I want to book Kajo-Keji Concert'">BOOK</button></div>
-    </div>
-
-    <div class="mailing">
-        <h2>SIGN UP FOR UPDATES FROM THE MAILING LIST</h2>
-        <form action="https://wreal-x.kit.com/5b513f6527" method="post" target="_blank">
-            <input type="email" name="email" placeholder="EMAIL" required>
-            <button type="submit">SIGN UP</button>
-        </form>
-    </div>
-
-    <div class="contact-about">
-        <div>
-            <h3>CONTACT</h3>
-            <p>Email: wreal@proton.me</p>
-            <a href="mailto:wreal@proton.me" class="contact-btn">Contact Us</a>
-        </div>
-        <div>
-            <h3>ABOUT US</h3>
-            <p>Wreal X World - The African Duce WRLD. Bringing you the best music, merch, and concerts across South Sudan and beyond.</p>
-        </div>
-    </div>
-
-    <div class="footer">
-        <p>© 2026 WREAL X WORLD. All rights reserved. | The African Duce WRLD</p>
-    </div>
-</body>
-            </html>
+        // Close menu when a link is clicked (auto-slide back)
+        document.querySelectorAll('.side-nav a').forEach(link => {
+            link.addEventListener('click', (e) => {
+                e.preventDefault();
+                const linkText = link.innerText.trim();
+                if(linkText === 'SHOP NOW') {
+                    window.location.href = '#merch';
+                } else if(linkText === 'EVENTS') {
+                    window.location.href = '#events';
+                } else if(linkText === 'CONTACT US') {
+                    window.locatio
