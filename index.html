@@ -4,7 +4,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=yes">
     <title>WREAL X WRLD</title>
-    <!-- Green Paper PK + Scary Wizzle Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Creepster&family=UnifrakturMaguntia&family=Playfair+Display:wght@400;700;900&display=swap" rel="stylesheet">
     <style>
         * {
@@ -108,43 +107,50 @@
         .overlay.active {
             display: block;
         }
+        
+        /* HERO SECTION WITH SOCIAL ICONS OVERLAY */
+        .hero-section {
+            position: relative;
+            width: 100%;
+        }
         .hero {
             width: 100%;
             background: url('https://iili.io/C9aXwuI.jpg') center/cover no-repeat;
             aspect-ratio: 16 / 9;
         }
-        /* NEW STYLISH SOCIAL BUTTONS */
-        .social-icons {
+        
+        /* SOCIAL ICONS OVERLAY ON HERO IMAGE - BOTTOM CENTER */
+        .social-overlay {
+            position: absolute;
+            bottom: 15px;
+            left: 0;
+            right: 0;
             display: flex;
             justify-content: center;
-            gap: 0.8rem;
-            padding: 1.5rem;
+            gap: 12px;
             flex-wrap: wrap;
-            background: #000;
+            padding: 10px 15px;
+            background: rgba(0,0,0,0.6);
+            border-radius: 50px;
+            width: fit-content;
+            margin: 0 auto;
+            backdrop-filter: blur(5px);
         }
-        .social-btn {
+        
+        .social-icon-link {
             display: inline-block;
-            padding: 8px 16px;
-            font-size: 0.85rem;
-            font-weight: bold;
-            text-decoration: none;
-            border-radius: 30px;
-            transition: transform 0.2s, opacity 0.2s;
-            font-family: 'Courier New', monospace;
-            letter-spacing: 0.5px;
+            transition: transform 0.2s;
         }
-        .social-btn:hover {
-            transform: scale(1.05);
-            opacity: 0.9;
+        .social-icon-link:hover {
+            transform: scale(1.15);
         }
-        .fb { background: #1877f2; color: white; }
-        .ig { background: linear-gradient(45deg, #f09433, #d62976, #962fbf); color: white; }
-        .x { background: #000000; color: white; border: 1px solid #333; }
-        .yt { background: #ff0000; color: white; }
-        .bs { background: #0285ff; color: white; }
-        .tt { background: #000000; color: white; border: 1px solid #ff004f; }
-        .wa { background: #25d366; color: white; }
-        /* END SOCIAL BUTTONS */
+        .social-icon-link img {
+            width: 28px;
+            height: 28px;
+            filter: drop-shadow(0 2px 4px rgba(0,0,0,0.5));
+        }
+        /* END SOCIAL OVERLAY */
+        
         .play-now-container {
             text-align: center;
             padding: 1rem;
@@ -347,6 +353,18 @@
             font-size: 0.7rem;
             font-family: 'Courier New', monospace;
         }
+        
+        @media (max-width: 768px) {
+            .social-overlay {
+                bottom: 8px;
+                gap: 8px;
+                padding: 6px 12px;
+            }
+            .social-icon-link img {
+                width: 22px;
+                height: 22px;
+            }
+        }
     </style>
     <script type="text/javascript">
         var Tawk_API = Tawk_API || {}, Tawk_LoadStart = new Date();
@@ -377,17 +395,33 @@
         <a href="socials.html"><img src="https://cdn-icons-png.flaticon.com/512/809/809655.png" alt="socials"> SOCIALS</a>
     </div>
     <div class="overlay" id="overlay"></div>
-    <div class="hero"></div>
 
-    <!-- NEW STYLISH SOCIAL BUTTONS -->
-    <div class="social-icons">
-        <a href="https://www.facebook.com/profile.php?id=61566474707822" target="_blank" class="social-btn fb">📘 Facebook</a>
-        <a href="https://www.instagram.com/wreal.x" target="_blank" class="social-btn ig">📷 Instagram</a>
-        <a href="https://x.com/Wreal_X" target="_blank" class="social-btn x">𝕏 Twitter</a>
-        <a href="https://youtube.com/@wrealx" target="_blank" class="social-btn yt">▶ YouTube</a>
-        <a href="https://bsky.app/profile/wrealx.bsky.social" target="_blank" class="social-btn bs">🦋 Bluesky</a>
-        <a href="https://www.tiktok.com/@wreal_x" target="_blank" class="social-btn tt">🎵 TikTok</a>
-        <a href="https://wa.me/211920146370" target="_blank" class="social-btn wa">💬 WhatsApp</a>
+    <!-- HERO WITH SOCIAL ICONS OVERLAY -->
+    <div class="hero-section">
+        <div class="hero"></div>
+        <div class="social-overlay">
+            <a href="https://www.facebook.com/profile.php?id=61566474707822" target="_blank" class="social-icon-link">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/5/51/Facebook_f_logo_%282019%29.svg" alt="Facebook">
+            </a>
+            <a href="https://www.instagram.com/wreal.x" target="_blank" class="social-icon-link">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/e/e7/Instagram_logo_2016.svg" alt="Instagram">
+            </a>
+            <a href="https://x.com/Wreal_X" target="_blank" class="social-icon-link">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/5/57/X_logo_2023.svg" alt="X">
+            </a>
+            <a href="https://youtube.com/@wrealx" target="_blank" class="social-icon-link">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/4/42/YouTube_icon_%282013-2017%29.png" alt="YouTube">
+            </a>
+            <a href="https://bsky.app/profile/wrealx.bsky.social" target="_blank" class="social-icon-link">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/7/7a/Bluesky_Logo.svg" alt="Bluesky">
+            </a>
+            <a href="https://www.tiktok.com/@wreal_x" target="_blank" class="social-icon-link">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/a/a9/TikTok_logo_%28svg%29.svg" alt="TikTok">
+            </a>
+            <a href="https://wa.me/211920146370" target="_blank" class="social-icon-link">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp">
+            </a>
+        </div>
     </div>
 
     <div class="play-now-container">
