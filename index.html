@@ -4,7 +4,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=yes">
     <title>WREAL X WRLD</title>
-    <!-- Wizard of Oz Style Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Cinema+Decorative:wght@400;700;900&family=Playfair+Display:wght@400;700;900&display=swap" rel="stylesheet">
     <style>
         * {
@@ -21,7 +20,6 @@
             overflow-x: hidden;
         }
 
-        /* Header with Hamburger Menu */
         .header {
             background: #000;
             padding: 1rem;
@@ -43,7 +41,6 @@
             text-shadow: 2px 2px 5px rgba(0,0,0,0.5);
         }
 
-        /* Hamburger Menu Button (Three Lines) */
         .menu-btn {
             background: none;
             border: none;
@@ -62,7 +59,6 @@
             border-radius: 3px;
         }
 
-        /* Side Navigation Menu - Slides from Left */
         .side-nav {
             position: fixed;
             top: 0;
@@ -110,7 +106,6 @@
             filter: brightness(0);
         }
 
-        /* Overlay when menu is open */
         .overlay {
             position: fixed;
             top: 0;
@@ -126,14 +121,12 @@
             display: block;
         }
 
-        /* Hero Image - YouTube Ratio (16:9) */
         .hero {
             width: 100%;
-            background: url('https://iili.io/C9A7R6b.png') center/cover no-repeat;
+            background: url('https://iili.io/C9aXwuI.jpg') center/cover no-repeat;
             aspect-ratio: 16 / 9;
         }
 
-        /* Social Icons Row */
         .social-icons {
             display: flex;
             justify-content: center;
@@ -157,7 +150,6 @@
             height: 38px;
         }
 
-        /* Play Now Button */
         .play-now-container {
             text-align: center;
             padding: 1rem;
@@ -181,7 +173,6 @@
             transform: scale(1.05);
         }
 
-        /* Section Titles */
         .section-title {
             text-align: center;
             font-size: 1.8rem;
@@ -191,7 +182,6 @@
             letter-spacing: 2px;
         }
 
-        /* Grid - 4 Columns on Desktop, 2 on Mobile */
         .grid-4 {
             display: grid;
             grid-template-columns: repeat(4, 1fr);
@@ -250,7 +240,6 @@
             font-weight: bold;
         }
 
-        /* Yellow Buttons for Merch */
         .buy-btn-yellow {
             background: #ffcc00;
             color: #000;
@@ -269,7 +258,6 @@
             background: #ffaa00;
         }
 
-        /* Red Buttons for Events */
         .buy-btn-red {
             background: #ff3333;
             color: #fff;
@@ -288,7 +276,6 @@
             background: #cc0000;
         }
 
-        /* Service Buttons (OR / WATCH NOW / CHOOSE SERVICE) */
         .service-buttons {
             text-align: center;
             margin: 1rem 0;
@@ -322,64 +309,103 @@
             font-weight: bold;
         }
 
-        /* Mailing List */
+        /* Bigger Mailing Section - Full Width */
         .mailing {
             background: #111;
             text-align: center;
-            padding: 1.5rem;
-            margin: 1.5rem 0;
-            border-top: 1px solid #ffcc00;
-            border-bottom: 1px solid #ffcc00;
+            padding: 2rem;
+            margin: 2rem 1rem;
+            border-top: 2px solid #ffcc00;
+            border-bottom: 2px solid #ffcc00;
+            border-radius: 10px;
         }
 
         .mailing h2 {
-            font-size: 1.2rem;
-            margin-bottom: 1rem;
+            font-size: 1.5rem;
+            margin-bottom: 1.5rem;
             font-family: 'Cinema Decorative', cursive;
+            color: #ffcc00;
+        }
+
+        .mailing form {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 0.8rem;
+            max-width: 400px;
+            margin: 0 auto;
         }
 
         .mailing input {
-            padding: 0.6rem;
-            width: 260px;
-            margin: 0.5rem;
-            border: none;
-            border-radius: 5px;
+            padding: 0.8rem;
+            width: 100%;
+            border: 2px solid #ffcc00;
+            border-radius: 8px;
+            background: #000;
+            color: white;
             font-family: 'Playfair Display', serif;
+            font-size: 1rem;
         }
 
         .mailing button {
             background: #ffcc00;
             color: #000;
-            padding: 0.6rem 1.5rem;
+            padding: 0.8rem;
+            width: 100%;
             border: none;
-            border-radius: 5px;
+            border-radius: 8px;
             cursor: pointer;
             font-weight: bold;
             font-family: 'Playfair Display', serif;
+            font-size: 1rem;
+            transition: background 0.2s;
         }
 
-        /* Contact & About */
+        .mailing button:hover {
+            background: #ffaa00;
+        }
+
+        /* Contact & About - Clean Buttons Only */
         .contact-about {
             display: grid;
             grid-template-columns: repeat(2, 1fr);
-            gap: 1rem;
+            gap: 1.5rem;
             max-width: 100%;
-            margin: 1rem auto;
+            margin: 1.5rem auto;
             padding: 1rem;
-            background: #111;
             text-align: center;
         }
 
-        .about-btn {
+        .contact-card, .about-card {
+            background: #111;
+            padding: 1.5rem;
+            border-radius: 10px;
+            border: 1px solid #333;
+        }
+
+        .contact-card h3, .about-card h3 {
+            color: #ffcc00;
+            margin-bottom: 1rem;
+            font-size: 1.3rem;
+        }
+
+        .contact-btn, .about-btn {
             background: #ffcc00;
             color: #000;
-            padding: 0.5rem 1rem;
+            padding: 0.6rem 1.5rem;
             text-decoration: none;
             display: inline-block;
-            margin-top: 0.5rem;
-            border-radius: 5px;
+            border-radius: 8px;
             font-weight: bold;
             font-family: 'Playfair Display', serif;
+            transition: background 0.2s;
+            border: none;
+            cursor: pointer;
+            font-size: 1rem;
+        }
+
+        .contact-btn:hover, .about-btn:hover {
+            background: #ffaa00;
         }
 
         .footer {
@@ -390,7 +416,6 @@
             font-family: 'Playfair Display', serif;
         }
     </style>
-    <!-- Tawk.to Script -->
     <script type="text/javascript">
         var Tawk_API = Tawk_API || {}, Tawk_LoadStart = new Date();
         (function() {
@@ -405,7 +430,6 @@
 </head>
 <body>
 
-    <!-- Header with Hamburger Menu Button -->
     <div class="header">
         <div class="logo">WREAL X WRLD</div>
         <button class="menu-btn" id="menuBtn">
@@ -415,7 +439,6 @@
         </button>
     </div>
 
-    <!-- Side Navigation Menu (Slides from Left) -->
     <div class="side-nav" id="sideNav">
         <a href="#" id="merchLink">
             <img src="https://cdn-icons-png.flaticon.com/512/2838/2838895.png" alt="cart"> SHOP NOW
@@ -431,13 +454,10 @@
         </a>
     </div>
 
-    <!-- Overlay -->
     <div class="overlay" id="overlay"></div>
 
-    <!-- Hero Image - YouTube Ratio (16:9) -->
     <div class="hero"></div>
 
-    <!-- Social Icons - Fully Colored -->
     <div class="social-icons">
         <a href="https://www.facebook.com/profile.php?id=61566474707822" target="_blank">
             <img src="https://upload.wikimedia.org/wikipedia/commons/5/51/Facebook_f_logo_%282019%29.svg" alt="FB">
@@ -462,28 +482,24 @@
         </a>
     </div>
 
-    <!-- Play Now Button -->
     <div class="play-now-container">
         <a href="https://audiomack.com/wrealx/song/hurry-up" target="_blank" class="play-now-btn">▶ PLAY NOW - HURRY UP</a>
     </div>
 
-    <!-- OR / WATCH NOW Section -->
     <div class="service-buttons">
         <button class="service-btn">OR</button>
         <button class="service-btn">WATCH NOW!</button>
     </div>
 
-    <!-- Choose Service -->
     <div class="choose-service">
         <button>CHOOSE SERVICE</button>
     </div>
 
-    <!-- MERCH Section - Yellow Buttons, 4 Columns -->
     <h2 class="section-title">MERCH</h2>
     <div class="grid-4">
         <div class="card"><img src="https://iili.io/C9A01C7.jpg"><h3>X-CELL DRESS</h3><div class="price">220,000 SSP</div><button class="buy-btn-yellow" onclick="location.href='https://wa.me/211920146370?text=I want X-CELL DRESS'">BUY NOW</button></div>
         <div class="card"><img src="https://iili.io/C9A07p4.jpg"><h3>X-MAN GLOVES</h3><div class="price">35,000 SSP</div><button class="buy-btn-yellow" onclick="location.href='https://wa.me/211920146370?text=I want X-MAN GLOVES'">BUY NOW</button></div>
-        <div class="card"><img src="https://iili.io/C9A7R6b.png"><h3>GANGO SOCKS</h3><div class="price">25,000 SSP</div><button class="buy-btn-yellow" onclick="location.href='https://wa.me/211920146370?text=I want GANGO SOCKS'">BUY NOW</button></div>
+        <div class="card"><img src="https://iili.io/C9ah3oF.png"><h3>GANGO SOCKS</h3><div class="price">25,000 SSP</div><button class="buy-btn-yellow" onclick="location.href='https://wa.me/211920146370?text=I want GANGO SOCKS'">BUY NOW</button></div>
         <div class="card"><img src="https://iili.io/C9A1uoB.png"><h3>X-MAN HOODIES</h3><div class="price">240,000 SSP</div><button class="buy-btn-yellow" onclick="location.href='https://wa.me/211920146370?text=I want X-MAN HOODIES'">BUY NOW</button></div>
         <div class="card"><img src="https://iili.io/C9A1RP1.png"><h3>GANGO SCARVES</h3><div class="price">45,000 SSP</div><button class="buy-btn-yellow" onclick="location.href='https://wa.me/211920146370?text=I want GANGO SCARVES'">BUY NOW</button></div>
         <div class="card"><img src="https://iili.io/C9A1ItV.png"><h3>GANG GIRL DRESS</h3><div class="price">230,000 SSP</div><button class="buy-btn-yellow" onclick="location.href='https://wa.me/211920146370?text=I want GANG GIRL DRESS'">BUY NOW</button></div>
@@ -491,7 +507,6 @@
         <div class="card"><img src="https://iili.io/C9A1WPt.png"><h3>X BOY SHIRTS</h3><div class="price">200,000 SSP</div><button class="buy-btn-yellow" onclick="location.href='https://wa.me/211920146370?text=I want X BOY SHIRTS'">BUY NOW</button></div>
     </div>
 
-    <!-- EVENT LINEUP Section - Red Buttons, 4 Columns -->
     <h2 class="section-title">EVENT LINEUP</h2>
     <div class="grid-4">
         <div class="card"><img src="https://iili.io/C9AxUba.png"><h3>Yei Town</h3><button class="buy-btn-red" onclick="location.href='https://wa.me/211920146370?text=I want to book Yei Town'">BOOK</button></div>
@@ -504,7 +519,7 @@
         <div class="card"><img src="https://iili.io/C9AILAX.png"><h3>Kajo-Keji</h3><button class="buy-btn-red" onclick="location.href='https://wa.me/211920146370?text=I want to book Kajo-Keji'">BOOK</button></div>
     </div>
 
-    <!-- Mailing List -->
+    <!-- Bigger Mailing Section - Full width input & button -->
     <div class="mailing">
         <h2>SIGN UP FOR UPDATES</h2>
         <form action="https://wreal-x.kit.com/5b513f6527" method="post" target="_blank">
@@ -513,17 +528,15 @@
         </form>
     </div>
 
-    <!-- Contact & About -->
+    <!-- Contact & About - No email visible, no African Duce text -->
     <div class="contact-about">
-        <div>
+        <div class="contact-card">
             <h3>CONTACT</h3>
-            <p>wreal@proton.me</p>
-            <a href="mailto:wreal@proton.me" class="about-btn">Contact Us</a>
+            <a href="mailto:wreal@proton.me" class="contact-btn">Contact Us</a>
         </div>
-        <div>
+        <div class="about-card">
             <h3>ABOUT US</h3>
-            <p>WREAL X WRLD - The African Duce</p>
-            <a href="#" id="aboutUsBtn" class="about-btn">About Us</a>
+            <button id="aboutUsBtn" class="about-btn">About Us</button>
         </div>
     </div>
 
@@ -531,7 +544,6 @@
         <p>© 2026 WREAL X WRLD | All Rights Reserved</p>
     </div>
 
-    <!-- JavaScript for Hamburger Menu -->
     <script>
         const menuBtn = document.getElementById('menuBtn');
         const sideNav = document.getElementById('sideNav');
@@ -547,24 +559,25 @@
             overlay.classList.add('active');
         }
 
-        menuBtn.addEventListener('click', () => {
-            if (sideNav.classList.contains('open')) {
-                closeMenu();
-            } else {
-                openMenu();
-            }
-        });
+        if (menuBtn) {
+            menuBtn.addEventListener('click', () => {
+                if (sideNav.classList.contains('open')) {
+                    closeMenu();
+                } else {
+                    openMenu();
+                }
+            });
+        }
 
-        overlay.addEventListener('click', closeMenu);
+        if (overlay) {
+            overlay.addEventListener('click', closeMenu);
+        }
 
-        // Close menu when a link is clicked (auto-slide back)
         document.querySelectorAll('.side-nav a').forEach(link => {
             link.addEventListener('click', (e) => {
                 e.preventDefault();
                 const linkText = link.innerText.trim();
                 if(linkText === 'SHOP NOW') {
-                    window.location.href = '#merch';
+                    document.getElementById('merchLink').scrollIntoView({ behavior: 'smooth' });
                 } else if(linkText === 'EVENTS') {
-                    window.location.href = '#events';
-                } else if(linkText === 'CONTACT US') {
-                    window.locatio
+                    doc
