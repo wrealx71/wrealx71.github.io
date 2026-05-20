@@ -311,4 +311,317 @@
         <p>© 2026 WREAL X WORLD. All rights reserved. | The African Duce WRLD</p>
     </div>
 </body>
-    </html>
+    </html><!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WREAL X WORLD | Official Website</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: Arial, sans-serif;
+            background: #000;
+            color: #fff;
+        }
+        .header {
+            background: #000;
+            padding: 1rem 2rem;
+            position: sticky;
+            top: 0;
+            border-bottom: 1px solid #333;
+        }
+        .nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        .logo {
+            font-size: 1.5rem;
+            font-weight: bold;
+            letter-spacing: 2px;
+        }
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+            list-style: none;
+        }
+        .nav-links a {
+            color: #fff;
+            text-decoration: none;
+        }
+        .buy-tickets {
+            background: #ff3333;
+            padding: 0.5rem 1rem;
+            border-radius: 5px;
+            text-decoration: none;
+            color: #fff;
+        }
+        .hero {
+            height: 90vh;
+            background: url('https://iili.io/C9A7R6b.png') center/cover no-repeat;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .play-btn {
+            background: #ff3333;
+            color: #fff;
+            padding: 1rem 2rem;
+            font-size: 1.2rem;
+            border-radius: 50px;
+            text-decoration: none;
+        }
+        /* Social Icons - Colored exactly like real logos */
+        .social-icons {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            padding: 2rem;
+            flex-wrap: wrap;
+        }
+        .social-icons a {
+            display: inline-block;
+            transition: transform 0.3s;
+        }
+        .social-icons a:hover {
+            transform: scale(1.1);
+        }
+        .social-icons img {
+            width: 40px;
+            height: 40px;
+        }
+        .section-title {
+            text-align: center;
+            font-size: 2rem;
+            margin: 2rem 0;
+        }
+        /* Smaller merch and event cards */
+        .grid-4 {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 1rem;
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 0 1rem;
+        }
+        @media (max-width: 900px) {
+            .grid-4 {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+        @media (max-width: 500px) {
+            .grid-4 {
+                grid-template-columns: 1fr;
+            }
+        }
+        .card {
+            background: #111;
+            border-radius: 8px;
+            text-align: center;
+            padding-bottom: 0.8rem;
+        }
+        .card img {
+            width: 100%;
+            height: 160px;
+            object-fit: cover;
+            border-radius: 8px 8px 0 0;
+        }
+        .card h3 {
+            font-size: 0.9rem;
+            margin: 0.5rem 0;
+        }
+        .price {
+            color: #ff3333;
+            font-size: 0.9rem;
+            margin: 0.3rem 0;
+        }
+        .buy-btn {
+            background: #fff;
+            color: #000;
+            border: none;
+            padding: 0.4rem 0.8rem;
+            margin: 0.5rem 0;
+            cursor: pointer;
+            border-radius: 5px;
+            font-size: 0.8rem;
+        }
+        .listen-section {
+            text-align: center;
+            margin: 2rem;
+        }
+        .service-btn {
+            background: #222;
+            color: #fff;
+            padding: 0.7rem 2rem;
+            margin: 0.5rem;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        .mailing {
+            background: #111;
+            text-align: center;
+            padding: 2rem;
+            margin: 2rem 0;
+        }
+        .mailing input {
+            padding: 0.8rem;
+            width: 280px;
+            margin: 0.5rem;
+            border: none;
+            border-radius: 5px;
+        }
+        .mailing button {
+            background: #ff3333;
+            color: #fff;
+            padding: 0.8rem 1.5rem;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        .contact-about {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 2rem;
+            max-width: 1000px;
+            margin: 2rem auto;
+            padding: 2rem;
+            background: #111;
+            text-align: center;
+            border-radius: 10px;
+        }
+        .contact-btn {
+            background: #ff3333;
+            color: #fff;
+            padding: 0.5rem 1rem;
+            text-decoration: none;
+            display: inline-block;
+            margin-top: 0.5rem;
+            border-radius: 5px;
+        }
+        .footer {
+            text-align: center;
+            padding: 1.5rem;
+            border-top: 1px solid #333;
+        }
+    </style>
+    <!-- Tawk.to Script -->
+    <script type="text/javascript">
+        var Tawk_API = Tawk_API || {}, Tawk_LoadStart = new Date();
+        (function() {
+            var s1 = document.createElement("script"), s0 = document.getElementsByTagName("script")[0];
+            s1.async = true;
+            s1.src = 'https://embed.tawk.to/6a0df26e2789931c36ceec10/default';
+            s1.charset = 'UTF-8';
+            s1.setAttribute('crossorigin', '*');
+            s0.parentNode.insertBefore(s1, s0);
+        })();
+    </script>
+</head>
+<body>
+    <div class="header">
+        <div class="nav">
+            <div class="logo">WREAL X WORLD</div>
+            <ul class="nav-links">
+                <li><a href="#">HOME</a></li>
+                <li><a href="#">MERCH</a></li>
+                <li><a href="#">TOUR</a></li>
+                <li><a href="#">ABOUT</a></li>
+            </ul>
+            <a href="#" class="buy-tickets">BUY TICKETS</a>
+        </div>
+    </div>
+
+    <div class="hero">
+        <a href="https://audiomack.com/wrealx/song/hurry-up" target="_blank" class="play-btn">▶ PLAY NOW - HURRY UP</a>
+    </div>
+
+    <!-- Social Icons - Colored versions -->
+    <div class="social-icons">
+        <a href="https://www.facebook.com/profile.php?id=61566474707822" target="_blank">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/5/51/Facebook_f_logo_%282019%29.svg" alt="Facebook">
+        </a>
+        <a href="https://www.instagram.com/wreal.x" target="_blank">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/e/e7/Instagram_logo_2016.svg" alt="Instagram">
+        </a>
+        <a href="https://x.com/Wreal_X" target="_blank">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/5/57/X_logo_2023.svg" alt="X">
+        </a>
+        <a href="https://youtube.com/@wrealx" target="_blank">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/4/42/YouTube_icon_%282013-2017%29.png" alt="YouTube">
+        </a>
+        <a href="https://bsky.app/profile/wrealx.bsky.social" target="_blank">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/7/7a/Bluesky_Logo.svg" alt="Bluesky">
+        </a>
+        <a href="https://www.tiktok.com/@wreal_x" target="_blank">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/a/a9/TikTok_logo_%28svg%29.svg" alt="TikTok">
+        </a>
+        <a href="https://wa.me/211920146370" target="_blank">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp">
+        </a>
+    </div>
+
+    <div class="listen-section">
+        <h2>LISTEN TO MY MUSIC</h2>
+        <button class="service-btn">OR</button>
+        <button class="service-btn">WATCH NOW!</button>
+        <div><button class="service-btn" style="background:#ff3333;">CHOOSE SERVICE</button></div>
+    </div>
+
+    <h2 class="section-title">MERCH</h2>
+    <div class="grid-4">
+        <div class="card"><img src="https://iili.io/C9A01C7.jpg"><h3>X-CELL DRESS</h3><div class="price">220,000 SSP</div><button class="buy-btn" onclick="location.href='https://wa.me/211920146370?text=I want to buy X-CELL DRESS'">BUY NOW</button></div>
+        <div class="card"><img src="https://iili.io/C9A07p4.jpg"><h3>X-MAN GLOVES</h3><div class="price">35,000 SSP</div><button class="buy-btn" onclick="location.href='https://wa.me/211920146370?text=I want to buy X-MAN GLOVES'">BUY NOW</button></div>
+        <div class="card"><img src="https://iili.io/C9A7R6b.png"><h3>GANGO SOCKS</h3><div class="price">25,000 SSP</div><button class="buy-btn" onclick="location.href='https://wa.me/211920146370?text=I want to buy GANGO SOCKS'">BUY NOW</button></div>
+        <div class="card"><img src="https://iili.io/C9A1uoB.png"><h3>X-MAN HOODIES</h3><div class="price">240,000 SSP</div><button class="buy-btn" onclick="location.href='https://wa.me/211920146370?text=I want to buy X-MAN HOODIES'">BUY NOW</button></div>
+        <div class="card"><img src="https://iili.io/C9A1RP1.png"><h3>GANGO SCARVES</h3><div class="price">45,000 SSP</div><button class="buy-btn" onclick="location.href='https://wa.me/211920146370?text=I want to buy GANGO SCARVES'">BUY NOW</button></div>
+        <div class="card"><img src="https://iili.io/C9A1ItV.png"><h3>GANG GIRL DRESS</h3><div class="price">230,000 SSP</div><button class="buy-btn" onclick="location.href='https://wa.me/211920146370?text=I want to buy GANG GIRL DRESS'">BUY NOW</button></div>
+        <div class="card"><img src="https://iili.io/C9A1AMP.png"><h3>GANG GIRL X</h3><div class="price">250,000 SSP</div><button class="buy-btn" onclick="location.href='https://wa.me/211920146370?text=I want to buy GANG GIRL X'">BUY NOW</button></div>
+        <div class="card"><img src="https://iili.io/C9A1WPt.png"><h3>X BOY SHIRTS</h3><div class="price">200,000 SSP</div><button class="buy-btn" onclick="location.href='https://wa.me/211920146370?text=I want to buy X BOY SHIRTS'">BUY NOW</button></div>
+    </div>
+
+    <h2 class="section-title">EVENT LINEUP</h2>
+    <div class="grid-4">
+        <div class="card"><img src="https://iili.io/C9AxUba.png"><h3>Yei Town Concert</h3><button class="buy-btn" onclick="location.href='https://wa.me/211920146370?text=I want to book Yei Town Concert'">BOOK</button></div>
+        <div class="card"><img src="https://iili.io/C9AFwI2.png"><h3>Aweil Concert</h3><button class="buy-btn" onclick="location.href='https://wa.me/211920146370?text=I want to book Aweil Concert'">BOOK</button></div>
+        <div class="card"><img src="https://iili.io/C9AIHTg.png"><h3>Rumbek Concert</h3><button class="buy-btn" onclick="location.href='https://wa.me/211920146370?text=I want to book Rumbek Concert'">BOOK</button></div>
+        <div class="card"><img src="https://iili.io/C9AIJja.png"><h3>Malakal Concert</h3><button class="buy-btn" onclick="location.href='https://wa.me/211920146370?text=I want to book Malakal Concert'">BOOK</button></div>
+        <div class="card"><img src="https://iili.io/C9AI3Cv.png"><h3>Warap Concert</h3><button class="buy-btn" onclick="location.href='https://wa.me/211920146370?text=I want to book Warap Concert'">BOOK</button></div>
+        <div class="card"><img src="https://iili.io/C9AIIZG.png"><h3>Meridi Concert</h3><button class="buy-btn" onclick="location.href='https://wa.me/211920146370?text=I want to book Meridi Concert'">BOOK</button></div>
+        <div class="card"><img src="https://iili.io/C9AIPSI.png"><h3>Juba Town Concert</h3><button class="buy-btn" onclick="location.href='https://wa.me/211920146370?text=I want to book Juba Town Concert'">BOOK</button></div>
+        <div class="card"><img src="https://iili.io/C9AILAX.png"><h3>Kajo-Keji Concert</h3><button class="buy-btn" onclick="location.href='https://wa.me/211920146370?text=I want to book Kajo-Keji Concert'">BOOK</button></div>
+    </div>
+
+    <div class="mailing">
+        <h2>SIGN UP FOR UPDATES FROM THE MAILING LIST</h2>
+        <form action="https://wreal-x.kit.com/5b513f6527" method="post" target="_blank">
+            <input type="email" name="email" placeholder="EMAIL" required>
+            <button type="submit">SIGN UP</button>
+        </form>
+    </div>
+
+    <div class="contact-about">
+        <div>
+            <h3>CONTACT</h3>
+            <p>Email: wreal@proton.me</p>
+            <a href="mailto:wreal@proton.me" class="contact-btn">Contact Us</a>
+        </div>
+        <div>
+            <h3>ABOUT US</h3>
+            <p>Wreal X World - The African Duce WRLD. Bringing you the best music, merch, and concerts across South Sudan and beyond.</p>
+        </div>
+    </div>
+
+    <div class="footer">
+        <p>© 2026 WREAL X WORLD. All rights reserved. | The African Duce WRLD</p>
+    </div>
+</body>
+            </html>
