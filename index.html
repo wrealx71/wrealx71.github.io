@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=yes">
     <title>WREAL X WRLD</title>
-    <!-- Scary Wizzle Style Fonts -->
+    <!-- Green Paper PK + Scary Wizzle Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Creepster&family=UnifrakturMaguntia&family=Playfair+Display:wght@400;700;900&display=swap" rel="stylesheet">
     <style>
         * {
@@ -13,7 +13,7 @@
             box-sizing: border-box;
         }
         body {
-            font-family: 'Playfair Display', 'Creepster', cursive;
+            font-family: 'Courier New', 'Playfair Display', monospace;
             background-color: #000000;
             color: #ffffff;
             line-height: 1.5;
@@ -34,7 +34,7 @@
             font-size: 1.5rem;
             font-weight: 900;
             letter-spacing: 3px;
-            font-family: 'Creepster', cursive;
+            font-family: 'Creepster', 'Courier New', cursive;
             color: #ffcc00;
             text-shadow: 2px 2px 5px rgba(0,0,0,0.5);
         }
@@ -81,7 +81,7 @@
             font-weight: bold;
             border-bottom: 1px solid #333;
             transition: background 0.3s;
-            font-family: 'Creepster', cursive;
+            font-family: 'Creepster', 'Courier New', cursive;
         }
         .side-nav a:hover {
             background: #ffcc00;
@@ -113,25 +113,38 @@
             background: url('https://iili.io/C9aXwuI.jpg') center/cover no-repeat;
             aspect-ratio: 16 / 9;
         }
+        /* NEW STYLISH SOCIAL BUTTONS */
         .social-icons {
             display: flex;
             justify-content: center;
-            gap: 1.5rem;
-            padding: 1rem;
+            gap: 0.8rem;
+            padding: 1.5rem;
             flex-wrap: wrap;
             background: #000;
         }
-        .social-icons a {
+        .social-btn {
             display: inline-block;
-            transition: transform 0.2s;
+            padding: 8px 16px;
+            font-size: 0.85rem;
+            font-weight: bold;
+            text-decoration: none;
+            border-radius: 30px;
+            transition: transform 0.2s, opacity 0.2s;
+            font-family: 'Courier New', monospace;
+            letter-spacing: 0.5px;
         }
-        .social-icons a:hover {
-            transform: scale(1.15);
+        .social-btn:hover {
+            transform: scale(1.05);
+            opacity: 0.9;
         }
-        .social-icons img {
-            width: 38px;
-            height: 38px;
-        }
+        .fb { background: #1877f2; color: white; }
+        .ig { background: linear-gradient(45deg, #f09433, #d62976, #962fbf); color: white; }
+        .x { background: #000000; color: white; border: 1px solid #333; }
+        .yt { background: #ff0000; color: white; }
+        .bs { background: #0285ff; color: white; }
+        .tt { background: #000000; color: white; border: 1px solid #ff004f; }
+        .wa { background: #25d366; color: white; }
+        /* END SOCIAL BUTTONS */
         .play-now-container {
             text-align: center;
             padding: 1rem;
@@ -146,7 +159,7 @@
             border-radius: 50px;
             text-decoration: none;
             display: inline-block;
-            font-family: 'Creepster', cursive;
+            font-family: 'Courier New', monospace;
             transition: transform 0.2s;
         }
         .play-now-btn:hover {
@@ -156,11 +169,10 @@
             text-align: center;
             font-size: 1.8rem;
             margin: 1.5rem 0 1rem;
-            font-family: 'Creepster', cursive;
+            font-family: 'Creepster', 'Courier New', cursive;
             color: #ffcc00;
             letter-spacing: 2px;
         }
-        /* 4 COLUMNS IN A ROW - REDUCED SIZE */
         .grid-4 {
             display: grid;
             grid-template-columns: repeat(4, 1fr);
@@ -196,7 +208,6 @@
         .card h3 {
             font-size: 0.7rem;
             margin: 0.4rem 0;
-            font-family: 'Playfair Display', serif;
         }
         .price {
             color: #ffcc00;
@@ -214,7 +225,6 @@
             border-radius: 4px;
             font-size: 0.65rem;
             font-weight: bold;
-            font-family: 'Playfair Display', serif;
         }
         .buy-btn-red {
             background: #ff3333;
@@ -226,7 +236,6 @@
             border-radius: 4px;
             font-size: 0.65rem;
             font-weight: bold;
-            font-family: 'Playfair Display', serif;
         }
         .service-buttons {
             text-align: center;
@@ -240,7 +249,8 @@
             border: 1px solid #ffcc00;
             border-radius: 30px;
             cursor: pointer;
-            font-family: 'Creepster', cursive;
+            font-family: 'Courier New', monospace;
+            font-weight: bold;
         }
         .choose-service {
             text-align: center;
@@ -253,7 +263,7 @@
             border: none;
             border-radius: 30px;
             cursor: pointer;
-            font-family: 'Creepster', cursive;
+            font-family: 'Courier New', monospace;
             font-weight: bold;
         }
         .mailing {
@@ -268,7 +278,7 @@
         .mailing h2 {
             font-size: 1.3rem;
             margin-bottom: 1rem;
-            font-family: 'Creepster', cursive;
+            font-family: 'Creepster', 'Courier New', cursive;
             color: #ffcc00;
         }
         .mailing form {
@@ -286,7 +296,6 @@
             border-radius: 8px;
             background: #000;
             color: white;
-            font-family: 'Playfair Display', serif;
         }
         .mailing button {
             background: #ffcc00;
@@ -297,7 +306,7 @@
             border-radius: 8px;
             cursor: pointer;
             font-weight: bold;
-            font-family: 'Creepster', cursive;
+            font-family: 'Courier New', monospace;
         }
         .contact-about {
             display: grid;
@@ -317,7 +326,7 @@
         .contact-card h3, .about-card h3 {
             color: #ffcc00;
             margin-bottom: 0.8rem;
-            font-family: 'Creepster', cursive;
+            font-family: 'Creepster', 'Courier New', cursive;
         }
         .contact-btn, .about-btn {
             background: #ffcc00;
@@ -327,7 +336,7 @@
             display: inline-block;
             border-radius: 8px;
             font-weight: bold;
-            font-family: 'Creepster', cursive;
+            font-family: 'Courier New', monospace;
             cursor: pointer;
             border: none;
         }
@@ -336,7 +345,7 @@
             padding: 1rem;
             border-top: 1px solid #333;
             font-size: 0.7rem;
-            font-family: 'Creepster', cursive;
+            font-family: 'Courier New', monospace;
         }
     </style>
     <script type="text/javascript">
@@ -369,15 +378,18 @@
     </div>
     <div class="overlay" id="overlay"></div>
     <div class="hero"></div>
+
+    <!-- NEW STYLISH SOCIAL BUTTONS -->
     <div class="social-icons">
-        <a href="https://www.facebook.com/profile.php?id=61566474707822" target="_blank"><img src="https://upload.wikimedia.org/wikipedia/commons/5/51/Facebook_f_logo_%282019%29.svg" alt="FB"></a>
-        <a href="https://www.instagram.com/wreal.x" target="_blank"><img src="https://upload.wikimedia.org/wikipedia/commons/e/e7/Instagram_logo_2016.svg" alt="IG"></a>
-        <a href="https://x.com/Wreal_X" target="_blank"><img src="https://upload.wikimedia.org/wikipedia/commons/5/57/X_logo_2023.svg" alt="X"></a>
-        <a href="https://youtube.com/@wrealx" target="_blank"><img src="https://upload.wikimedia.org/wikipedia/commons/4/42/YouTube_icon_%282013-2017%29.png" alt="YT"></a>
-        <a href="https://bsky.app/profile/wrealx.bsky.social" target="_blank"><img src="https://upload.wikimedia.org/wikipedia/commons/7/7a/Bluesky_Logo.svg" alt="Bluesky"></a>
-        <a href="https://www.tiktok.com/@wreal_x" target="_blank"><img src="https://upload.wikimedia.org/wikipedia/commons/a/a9/TikTok_logo_%28svg%29.svg" alt="TT"></a>
-        <a href="https://wa.me/211920146370" target="_blank"><img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WA"></a>
+        <a href="https://www.facebook.com/profile.php?id=61566474707822" target="_blank" class="social-btn fb">📘 Facebook</a>
+        <a href="https://www.instagram.com/wreal.x" target="_blank" class="social-btn ig">📷 Instagram</a>
+        <a href="https://x.com/Wreal_X" target="_blank" class="social-btn x">𝕏 Twitter</a>
+        <a href="https://youtube.com/@wrealx" target="_blank" class="social-btn yt">▶ YouTube</a>
+        <a href="https://bsky.app/profile/wrealx.bsky.social" target="_blank" class="social-btn bs">🦋 Bluesky</a>
+        <a href="https://www.tiktok.com/@wreal_x" target="_blank" class="social-btn tt">🎵 TikTok</a>
+        <a href="https://wa.me/211920146370" target="_blank" class="social-btn wa">💬 WhatsApp</a>
     </div>
+
     <div class="play-now-container">
         <a href="https://audiomack.com/wrealx/song/hurry-up" target="_blank" class="play-now-btn">▶ PLAY NOW - HURRY UP</a>
     </div>
