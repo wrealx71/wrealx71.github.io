@@ -4,7 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=yes">
     <title>WREAL X WRLD</title>
-    <link href="https://fonts.googleapis.com/css2?family=Cinema+Decorative:wght@400;700;900&family=Playfair+Display:wght@400;700;900&display=swap" rel="stylesheet">
+    <!-- Scary Wizzle Style Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Creepster&family=UnifrakturMaguntia&family=Playfair+Display:wght@400;700;900&display=swap" rel="stylesheet">
     <style>
         * {
             margin: 0;
@@ -12,7 +13,7 @@
             box-sizing: border-box;
         }
         body {
-            font-family: 'Playfair Display', 'Cinema Decorative', 'Arial', sans-serif;
+            font-family: 'Playfair Display', 'Creepster', cursive;
             background-color: #000000;
             color: #ffffff;
             line-height: 1.5;
@@ -33,7 +34,7 @@
             font-size: 1.5rem;
             font-weight: 900;
             letter-spacing: 3px;
-            font-family: 'Cinema Decorative', cursive;
+            font-family: 'Creepster', cursive;
             color: #ffcc00;
             text-shadow: 2px 2px 5px rgba(0,0,0,0.5);
         }
@@ -80,7 +81,7 @@
             font-weight: bold;
             border-bottom: 1px solid #333;
             transition: background 0.3s;
-            font-family: 'Playfair Display', serif;
+            font-family: 'Creepster', cursive;
         }
         .side-nav a:hover {
             background: #ffcc00;
@@ -145,7 +146,7 @@
             border-radius: 50px;
             text-decoration: none;
             display: inline-block;
-            font-family: 'Playfair Display', serif;
+            font-family: 'Creepster', cursive;
             transition: transform 0.2s;
         }
         .play-now-btn:hover {
@@ -155,10 +156,11 @@
             text-align: center;
             font-size: 1.8rem;
             margin: 1.5rem 0 1rem;
-            font-family: 'Cinema Decorative', cursive;
+            font-family: 'Creepster', cursive;
             color: #ffcc00;
             letter-spacing: 2px;
         }
+        /* 4 COLUMNS IN A ROW - REDUCED SIZE */
         .grid-4 {
             display: grid;
             grid-template-columns: repeat(4, 1fr);
@@ -175,9 +177,9 @@
         }
         .card {
             background: #111;
-            border-radius: 10px;
+            border-radius: 8px;
             text-align: center;
-            padding-bottom: 0.8rem;
+            padding-bottom: 0.6rem;
             border: 1px solid #333;
             transition: transform 0.2s;
         }
@@ -187,30 +189,30 @@
         }
         .card img {
             width: 100%;
-            height: 150px;
+            height: 130px;
             object-fit: cover;
-            border-radius: 10px 10px 0 0;
+            border-radius: 8px 8px 0 0;
         }
         .card h3 {
-            font-size: 0.8rem;
-            margin: 0.5rem 0;
+            font-size: 0.7rem;
+            margin: 0.4rem 0;
             font-family: 'Playfair Display', serif;
         }
         .price {
             color: #ffcc00;
-            font-size: 0.9rem;
-            margin: 0.3rem 0;
+            font-size: 0.8rem;
+            margin: 0.2rem 0;
             font-weight: bold;
         }
         .buy-btn-yellow {
             background: #ffcc00;
             color: #000;
             border: none;
-            padding: 0.4rem 0.8rem;
-            margin: 0.4rem 0;
+            padding: 0.3rem 0.6rem;
+            margin: 0.3rem 0;
             cursor: pointer;
-            border-radius: 5px;
-            font-size: 0.7rem;
+            border-radius: 4px;
+            font-size: 0.65rem;
             font-weight: bold;
             font-family: 'Playfair Display', serif;
         }
@@ -218,11 +220,11 @@
             background: #ff3333;
             color: #fff;
             border: none;
-            padding: 0.4rem 0.8rem;
-            margin: 0.4rem 0;
+            padding: 0.3rem 0.6rem;
+            margin: 0.3rem 0;
             cursor: pointer;
-            border-radius: 5px;
-            font-size: 0.7rem;
+            border-radius: 4px;
+            font-size: 0.65rem;
             font-weight: bold;
             font-family: 'Playfair Display', serif;
         }
@@ -238,7 +240,7 @@
             border: 1px solid #ffcc00;
             border-radius: 30px;
             cursor: pointer;
-            font-family: 'Playfair Display', serif;
+            font-family: 'Creepster', cursive;
         }
         .choose-service {
             text-align: center;
@@ -251,7 +253,7 @@
             border: none;
             border-radius: 30px;
             cursor: pointer;
-            font-family: 'Playfair Display', serif;
+            font-family: 'Creepster', cursive;
             font-weight: bold;
         }
         .mailing {
@@ -264,9 +266,9 @@
             border-radius: 10px;
         }
         .mailing h2 {
-            font-size: 1.5rem;
-            margin-bottom: 1.5rem;
-            font-family: 'Cinema Decorative', cursive;
+            font-size: 1.3rem;
+            margin-bottom: 1rem;
+            font-family: 'Creepster', cursive;
             color: #ffcc00;
         }
         .mailing form {
@@ -278,7 +280,7 @@
             margin: 0 auto;
         }
         .mailing input {
-            padding: 0.8rem;
+            padding: 0.7rem;
             width: 100%;
             border: 2px solid #ffcc00;
             border-radius: 8px;
@@ -289,42 +291,43 @@
         .mailing button {
             background: #ffcc00;
             color: #000;
-            padding: 0.8rem;
+            padding: 0.7rem;
             width: 100%;
             border: none;
             border-radius: 8px;
             cursor: pointer;
             font-weight: bold;
-            font-family: 'Playfair Display', serif;
+            font-family: 'Creepster', cursive;
         }
         .contact-about {
             display: grid;
             grid-template-columns: repeat(2, 1fr);
-            gap: 1.5rem;
+            gap: 1rem;
             max-width: 100%;
-            margin: 1.5rem auto;
+            margin: 1rem auto;
             padding: 1rem;
             text-align: center;
         }
         .contact-card, .about-card {
             background: #111;
-            padding: 1.5rem;
+            padding: 1rem;
             border-radius: 10px;
             border: 1px solid #333;
         }
         .contact-card h3, .about-card h3 {
             color: #ffcc00;
-            margin-bottom: 1rem;
+            margin-bottom: 0.8rem;
+            font-family: 'Creepster', cursive;
         }
         .contact-btn, .about-btn {
             background: #ffcc00;
             color: #000;
-            padding: 0.6rem 1.5rem;
+            padding: 0.5rem 1rem;
             text-decoration: none;
             display: inline-block;
             border-radius: 8px;
             font-weight: bold;
-            font-family: 'Playfair Display', serif;
+            font-family: 'Creepster', cursive;
             cursor: pointer;
             border: none;
         }
@@ -333,6 +336,7 @@
             padding: 1rem;
             border-top: 1px solid #333;
             font-size: 0.7rem;
+            font-family: 'Creepster', cursive;
         }
     </style>
     <script type="text/javascript">
@@ -414,7 +418,7 @@
         </form>
     </div>
     <div class="contact-about">
-        <div class="contact-card"><h3>CONTACT</h3><a href="mailto:wreal@proton.me" class="contact-btn">Contact Us</a></div>
+        <div class="contact-card"><h3>CONTACT</h3><a href="contact.html" class="contact-btn">Contact Us</a></div>
         <div class="about-card"><h3>ABOUT US</h3><a href="about.html" class="about-btn">About Us</a></div>
     </div>
     <div class="footer"><p>© 2026 WREAL X WRLD | All Rights Reserved</p></div>
@@ -429,4 +433,4 @@
         document.querySelectorAll('.side-nav a').forEach(link => { link.addEventListener('click', closeMenu); });
     </script>
 </body>
-        </html>
+    </html>
