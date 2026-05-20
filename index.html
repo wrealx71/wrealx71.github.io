@@ -107,53 +107,48 @@
         .overlay.active {
             display: block;
         }
-        
-        /* HERO SECTION WITH SOCIAL ICONS OVERLAY */
-        .hero-section {
-            position: relative;
-            width: 100%;
-        }
         .hero {
             width: 100%;
             background: url('https://iili.io/C9aXwuI.jpg') center/cover no-repeat;
             aspect-ratio: 16 / 9;
         }
         
-        /* SOCIAL ICONS OVERLAY ON HERO IMAGE - BOTTOM CENTER */
-        .social-overlay {
-            position: absolute;
-            bottom: 15px;
-            left: 0;
-            right: 0;
+        /* SOCIAL ICONS - CIRCULAR, JUST BELOW HERO, ONE LINE */
+        .social-section {
             display: flex;
             justify-content: center;
-            gap: 12px;
+            gap: 20px;
+            padding: 20px 15px;
             flex-wrap: wrap;
-            padding: 10px 15px;
-            background: rgba(0,0,0,0.6);
-            border-radius: 50px;
-            width: fit-content;
-            margin: 0 auto;
-            backdrop-filter: blur(5px);
+            background: #000;
         }
-        
-        .social-icon-link {
-            display: inline-block;
-            transition: transform 0.2s;
+        .social-circle {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 48px;
+            height: 48px;
+            background: #1a1a1a;
+            border-radius: 50%;
+            transition: transform 0.2s, background 0.2s;
+            text-decoration: none;
         }
-        .social-icon-link:hover {
-            transform: scale(1.15);
+        .social-circle:hover {
+            transform: scale(1.1);
+            background: #ffcc00;
         }
-        .social-icon-link img {
-            width: 28px;
-            height: 28px;
-            filter: drop-shadow(0 2px 4px rgba(0,0,0,0.5));
+        .social-circle img {
+            width: 26px;
+            height: 26px;
         }
-        /* END SOCIAL OVERLAY */
+        .social-circle:hover img {
+            filter: brightness(0);
+        }
+        /* END SOCIAL SECTION */
         
         .play-now-container {
             text-align: center;
-            padding: 1rem;
+            padding: 0.5rem 1rem 1rem;
             background: #000;
         }
         .play-now-btn {
@@ -189,9 +184,13 @@
         }
         @media (max-width: 768px) {
             .grid-4 { grid-template-columns: repeat(2, 1fr); gap: 0.8rem; }
+            .social-circle { width: 42px; height: 42px; }
+            .social-circle img { width: 22px; height: 22px; }
         }
         @media (max-width: 480px) {
             .grid-4 { grid-template-columns: repeat(2, 1fr); gap: 0.6rem; padding: 0 0.5rem; }
+            .social-circle { width: 38px; height: 38px; }
+            .social-circle img { width: 20px; height: 20px; }
         }
         .card {
             background: #111;
@@ -353,18 +352,6 @@
             font-size: 0.7rem;
             font-family: 'Courier New', monospace;
         }
-        
-        @media (max-width: 768px) {
-            .social-overlay {
-                bottom: 8px;
-                gap: 8px;
-                padding: 6px 12px;
-            }
-            .social-icon-link img {
-                width: 22px;
-                height: 22px;
-            }
-        }
     </style>
     <script type="text/javascript">
         var Tawk_API = Tawk_API || {}, Tawk_LoadStart = new Date();
@@ -396,32 +383,32 @@
     </div>
     <div class="overlay" id="overlay"></div>
 
-    <!-- HERO WITH SOCIAL ICONS OVERLAY -->
-    <div class="hero-section">
-        <div class="hero"></div>
-        <div class="social-overlay">
-            <a href="https://www.facebook.com/profile.php?id=61566474707822" target="_blank" class="social-icon-link">
-                <img src="https://upload.wikimedia.org/wikipedia/commons/5/51/Facebook_f_logo_%282019%29.svg" alt="Facebook">
-            </a>
-            <a href="https://www.instagram.com/wreal.x" target="_blank" class="social-icon-link">
-                <img src="https://upload.wikimedia.org/wikipedia/commons/e/e7/Instagram_logo_2016.svg" alt="Instagram">
-            </a>
-            <a href="https://x.com/Wreal_X" target="_blank" class="social-icon-link">
-                <img src="https://upload.wikimedia.org/wikipedia/commons/5/57/X_logo_2023.svg" alt="X">
-            </a>
-            <a href="https://youtube.com/@wrealx" target="_blank" class="social-icon-link">
-                <img src="https://upload.wikimedia.org/wikipedia/commons/4/42/YouTube_icon_%282013-2017%29.png" alt="YouTube">
-            </a>
-            <a href="https://bsky.app/profile/wrealx.bsky.social" target="_blank" class="social-icon-link">
-                <img src="https://upload.wikimedia.org/wikipedia/commons/7/7a/Bluesky_Logo.svg" alt="Bluesky">
-            </a>
-            <a href="https://www.tiktok.com/@wreal_x" target="_blank" class="social-icon-link">
-                <img src="https://upload.wikimedia.org/wikipedia/commons/a/a9/TikTok_logo_%28svg%29.svg" alt="TikTok">
-            </a>
-            <a href="https://wa.me/211920146370" target="_blank" class="social-icon-link">
-                <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp">
-            </a>
-        </div>
+    <!-- HERO IMAGE -->
+    <div class="hero"></div>
+
+    <!-- SOCIAL ICONS - CIRCULAR, ONE LINE, JUST BELOW HERO -->
+    <div class="social-section">
+        <a href="https://www.facebook.com/profile.php?id=61566474707822" target="_blank" class="social-circle">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/5/51/Facebook_f_logo_%282019%29.svg" alt="FB">
+        </a>
+        <a href="https://www.instagram.com/wreal.x" target="_blank" class="social-circle">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/e/e7/Instagram_logo_2016.svg" alt="IG">
+        </a>
+        <a href="https://x.com/Wreal_X" target="_blank" class="social-circle">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/5/57/X_logo_2023.svg" alt="X">
+        </a>
+        <a href="https://youtube.com/@wrealx" target="_blank" class="social-circle">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/4/42/YouTube_icon_%282013-2017%29.png" alt="YT">
+        </a>
+        <a href="https://bsky.app/profile/wrealx.bsky.social" target="_blank" class="social-circle">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/7/7a/Bluesky_Logo.svg" alt="BS">
+        </a>
+        <a href="https://www.tiktok.com/@wreal_x" target="_blank" class="social-circle">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/a/a9/TikTok_logo_%28svg%29.svg" alt="TT">
+        </a>
+        <a href="https://wa.me/211920146370" target="_blank" class="social-circle">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WA">
+        </a>
     </div>
 
     <div class="play-now-container">
