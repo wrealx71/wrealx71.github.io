@@ -11,7 +11,6 @@
             padding: 0;
             box-sizing: border-box;
         }
-
         body {
             font-family: 'Playfair Display', 'Cinema Decorative', 'Arial', sans-serif;
             background-color: #000000;
@@ -19,7 +18,6 @@
             line-height: 1.5;
             overflow-x: hidden;
         }
-
         .header {
             background: #000;
             padding: 1rem;
@@ -31,7 +29,6 @@
             align-items: center;
             border-bottom: 2px solid #ffcc00;
         }
-
         .logo {
             font-size: 1.5rem;
             font-weight: 900;
@@ -40,7 +37,6 @@
             color: #ffcc00;
             text-shadow: 2px 2px 5px rgba(0,0,0,0.5);
         }
-
         .menu-btn {
             background: none;
             border: none;
@@ -48,7 +44,6 @@
             padding: 10px;
             z-index: 1001;
         }
-
         .menu-btn span {
             display: block;
             width: 28px;
@@ -58,7 +53,6 @@
             transition: 0.3s;
             border-radius: 3px;
         }
-
         .side-nav {
             position: fixed;
             top: 0;
@@ -72,11 +66,9 @@
             box-shadow: 2px 0 20px rgba(0,0,0,0.8);
             border-right: 2px solid #ffcc00;
         }
-
         .side-nav.open {
             left: 0;
         }
-
         .side-nav a {
             display: flex;
             align-items: center;
@@ -90,22 +82,18 @@
             transition: background 0.3s;
             font-family: 'Playfair Display', serif;
         }
-
         .side-nav a:hover {
             background: #ffcc00;
             color: #000;
         }
-
         .side-nav img {
             width: 24px;
             height: 24px;
             filter: brightness(0) invert(1);
         }
-
         .side-nav a:hover img {
             filter: brightness(0);
         }
-
         .overlay {
             position: fixed;
             top: 0;
@@ -116,17 +104,14 @@
             z-index: 1001;
             display: none;
         }
-
         .overlay.active {
             display: block;
         }
-
         .hero {
             width: 100%;
             background: url('https://iili.io/C9aXwuI.jpg') center/cover no-repeat;
             aspect-ratio: 16 / 9;
         }
-
         .social-icons {
             display: flex;
             justify-content: center;
@@ -135,27 +120,22 @@
             flex-wrap: wrap;
             background: #000;
         }
-
         .social-icons a {
             display: inline-block;
             transition: transform 0.2s;
         }
-
         .social-icons a:hover {
             transform: scale(1.15);
         }
-
         .social-icons img {
             width: 38px;
             height: 38px;
         }
-
         .play-now-container {
             text-align: center;
             padding: 1rem;
             background: #000;
         }
-
         .play-now-btn {
             background: #ff3333;
             color: white;
@@ -168,11 +148,9 @@
             font-family: 'Playfair Display', serif;
             transition: transform 0.2s;
         }
-
         .play-now-btn:hover {
             transform: scale(1.05);
         }
-
         .section-title {
             text-align: center;
             font-size: 1.8rem;
@@ -181,7 +159,6 @@
             color: #ffcc00;
             letter-spacing: 2px;
         }
-
         .grid-4 {
             display: grid;
             grid-template-columns: repeat(4, 1fr);
@@ -190,22 +167,12 @@
             margin: 0 auto;
             padding: 0 0.8rem;
         }
-
         @media (max-width: 768px) {
-            .grid-4 {
-                grid-template-columns: repeat(2, 1fr);
-                gap: 0.8rem;
-            }
+            .grid-4 { grid-template-columns: repeat(2, 1fr); gap: 0.8rem; }
         }
-
         @media (max-width: 480px) {
-            .grid-4 {
-                grid-template-columns: repeat(2, 1fr);
-                gap: 0.6rem;
-                padding: 0 0.5rem;
-            }
+            .grid-4 { grid-template-columns: repeat(2, 1fr); gap: 0.6rem; padding: 0 0.5rem; }
         }
-
         .card {
             background: #111;
             border-radius: 10px;
@@ -214,32 +181,27 @@
             border: 1px solid #333;
             transition: transform 0.2s;
         }
-
         .card:hover {
             transform: translateY(-3px);
             border-color: #ffcc00;
         }
-
         .card img {
             width: 100%;
             height: 150px;
             object-fit: cover;
             border-radius: 10px 10px 0 0;
         }
-
         .card h3 {
             font-size: 0.8rem;
             margin: 0.5rem 0;
             font-family: 'Playfair Display', serif;
         }
-
         .price {
             color: #ffcc00;
             font-size: 0.9rem;
             margin: 0.3rem 0;
             font-weight: bold;
         }
-
         .buy-btn-yellow {
             background: #ffcc00;
             color: #000;
@@ -251,13 +213,7 @@
             font-size: 0.7rem;
             font-weight: bold;
             font-family: 'Playfair Display', serif;
-            transition: background 0.2s;
         }
-
-        .buy-btn-yellow:hover {
-            background: #ffaa00;
-        }
-
         .buy-btn-red {
             background: #ff3333;
             color: #fff;
@@ -269,18 +225,11 @@
             font-size: 0.7rem;
             font-weight: bold;
             font-family: 'Playfair Display', serif;
-            transition: background 0.2s;
         }
-
-        .buy-btn-red:hover {
-            background: #cc0000;
-        }
-
         .service-buttons {
             text-align: center;
             margin: 1rem 0;
         }
-
         .service-btn {
             background: #222;
             color: white;
@@ -290,14 +239,11 @@
             border-radius: 30px;
             cursor: pointer;
             font-family: 'Playfair Display', serif;
-            font-size: 0.9rem;
         }
-
         .choose-service {
             text-align: center;
             margin: 0.5rem 0 1.5rem;
         }
-
         .choose-service button {
             background: #ff3333;
             color: white;
@@ -308,8 +254,6 @@
             font-family: 'Playfair Display', serif;
             font-weight: bold;
         }
-
-        /* Bigger Mailing Section - Full Width */
         .mailing {
             background: #111;
             text-align: center;
@@ -319,14 +263,12 @@
             border-bottom: 2px solid #ffcc00;
             border-radius: 10px;
         }
-
         .mailing h2 {
             font-size: 1.5rem;
             margin-bottom: 1.5rem;
             font-family: 'Cinema Decorative', cursive;
             color: #ffcc00;
         }
-
         .mailing form {
             display: flex;
             flex-direction: column;
@@ -335,7 +277,6 @@
             max-width: 400px;
             margin: 0 auto;
         }
-
         .mailing input {
             padding: 0.8rem;
             width: 100%;
@@ -344,9 +285,7 @@
             background: #000;
             color: white;
             font-family: 'Playfair Display', serif;
-            font-size: 1rem;
         }
-
         .mailing button {
             background: #ffcc00;
             color: #000;
@@ -357,15 +296,7 @@
             cursor: pointer;
             font-weight: bold;
             font-family: 'Playfair Display', serif;
-            font-size: 1rem;
-            transition: background 0.2s;
         }
-
-        .mailing button:hover {
-            background: #ffaa00;
-        }
-
-        /* Contact & About - Clean Buttons Only */
         .contact-about {
             display: grid;
             grid-template-columns: repeat(2, 1fr);
@@ -375,20 +306,16 @@
             padding: 1rem;
             text-align: center;
         }
-
         .contact-card, .about-card {
             background: #111;
             padding: 1.5rem;
             border-radius: 10px;
             border: 1px solid #333;
         }
-
         .contact-card h3, .about-card h3 {
             color: #ffcc00;
             margin-bottom: 1rem;
-            font-size: 1.3rem;
         }
-
         .contact-btn, .about-btn {
             background: #ffcc00;
             color: #000;
@@ -398,22 +325,14 @@
             border-radius: 8px;
             font-weight: bold;
             font-family: 'Playfair Display', serif;
-            transition: background 0.2s;
-            border: none;
             cursor: pointer;
-            font-size: 1rem;
+            border: none;
         }
-
-        .contact-btn:hover, .about-btn:hover {
-            background: #ffaa00;
-        }
-
         .footer {
             text-align: center;
             padding: 1rem;
             border-top: 1px solid #333;
             font-size: 0.7rem;
-            font-family: 'Playfair Display', serif;
         }
     </style>
     <script type="text/javascript">
@@ -429,7 +348,6 @@
     </script>
 </head>
 <body>
-
     <div class="header">
         <div class="logo">WREAL X WRLD</div>
         <button class="menu-btn" id="menuBtn">
@@ -438,63 +356,34 @@
             <span></span>
         </button>
     </div>
-
     <div class="side-nav" id="sideNav">
-        <a href="#" id="merchLink">
-            <img src="https://cdn-icons-png.flaticon.com/512/2838/2838895.png" alt="cart"> SHOP NOW
-        </a>
-        <a href="#" id="eventsLink">
-            <img src="https://cdn-icons-png.flaticon.com/512/1046/1046784.png" alt="events"> EVENTS
-        </a>
-        <a href="#" id="contactLink">
-            <img src="https://cdn-icons-png.flaticon.com/512/724/724664.png" alt="contact"> CONTACT US
-        </a>
-        <a href="#" id="aboutLink">
-            <img src="https://cdn-icons-png.flaticon.com/512/1077/1077063.png" alt="about"> ABOUT US
-        </a>
+        <a href="merch.html"><img src="https://cdn-icons-png.flaticon.com/512/2838/2838895.png" alt="cart"> SHOP NOW</a>
+        <a href="events.html"><img src="https://cdn-icons-png.flaticon.com/512/1046/1046784.png" alt="events"> EVENTS</a>
+        <a href="contact.html"><img src="https://cdn-icons-png.flaticon.com/512/724/724664.png" alt="contact"> CONTACT US</a>
+        <a href="about.html"><img src="https://cdn-icons-png.flaticon.com/512/1077/1077063.png" alt="about"> ABOUT US</a>
+        <a href="socials.html"><img src="https://cdn-icons-png.flaticon.com/512/809/809655.png" alt="socials"> SOCIALS</a>
     </div>
-
     <div class="overlay" id="overlay"></div>
-
     <div class="hero"></div>
-
     <div class="social-icons">
-        <a href="https://www.facebook.com/profile.php?id=61566474707822" target="_blank">
-            <img src="https://upload.wikimedia.org/wikipedia/commons/5/51/Facebook_f_logo_%282019%29.svg" alt="FB">
-        </a>
-        <a href="https://www.instagram.com/wreal.x" target="_blank">
-            <img src="https://upload.wikimedia.org/wikipedia/commons/e/e7/Instagram_logo_2016.svg" alt="IG">
-        </a>
-        <a href="https://x.com/Wreal_X" target="_blank">
-            <img src="https://upload.wikimedia.org/wikipedia/commons/5/57/X_logo_2023.svg" alt="X">
-        </a>
-        <a href="https://youtube.com/@wrealx" target="_blank">
-            <img src="https://upload.wikimedia.org/wikipedia/commons/4/42/YouTube_icon_%282013-2017%29.png" alt="YT">
-        </a>
-        <a href="https://bsky.app/profile/wrealx.bsky.social" target="_blank">
-            <img src="https://upload.wikimedia.org/wikipedia/commons/7/7a/Bluesky_Logo.svg" alt="Bluesky">
-        </a>
-        <a href="https://www.tiktok.com/@wreal_x" target="_blank">
-            <img src="https://upload.wikimedia.org/wikipedia/commons/a/a9/TikTok_logo_%28svg%29.svg" alt="TT">
-        </a>
-        <a href="https://wa.me/211920146370" target="_blank">
-            <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WA">
-        </a>
+        <a href="https://www.facebook.com/profile.php?id=61566474707822" target="_blank"><img src="https://upload.wikimedia.org/wikipedia/commons/5/51/Facebook_f_logo_%282019%29.svg" alt="FB"></a>
+        <a href="https://www.instagram.com/wreal.x" target="_blank"><img src="https://upload.wikimedia.org/wikipedia/commons/e/e7/Instagram_logo_2016.svg" alt="IG"></a>
+        <a href="https://x.com/Wreal_X" target="_blank"><img src="https://upload.wikimedia.org/wikipedia/commons/5/57/X_logo_2023.svg" alt="X"></a>
+        <a href="https://youtube.com/@wrealx" target="_blank"><img src="https://upload.wikimedia.org/wikipedia/commons/4/42/YouTube_icon_%282013-2017%29.png" alt="YT"></a>
+        <a href="https://bsky.app/profile/wrealx.bsky.social" target="_blank"><img src="https://upload.wikimedia.org/wikipedia/commons/7/7a/Bluesky_Logo.svg" alt="Bluesky"></a>
+        <a href="https://www.tiktok.com/@wreal_x" target="_blank"><img src="https://upload.wikimedia.org/wikipedia/commons/a/a9/TikTok_logo_%28svg%29.svg" alt="TT"></a>
+        <a href="https://wa.me/211920146370" target="_blank"><img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WA"></a>
     </div>
-
     <div class="play-now-container">
         <a href="https://audiomack.com/wrealx/song/hurry-up" target="_blank" class="play-now-btn">▶ PLAY NOW - HURRY UP</a>
     </div>
-
     <div class="service-buttons">
         <button class="service-btn">OR</button>
         <button class="service-btn">WATCH NOW!</button>
     </div>
-
     <div class="choose-service">
         <button>CHOOSE SERVICE</button>
     </div>
-
     <h2 class="section-title">MERCH</h2>
     <div class="grid-4">
         <div class="card"><img src="https://iili.io/C9A01C7.jpg"><h3>X-CELL DRESS</h3><div class="price">220,000 SSP</div><button class="buy-btn-yellow" onclick="location.href='https://wa.me/211920146370?text=I want X-CELL DRESS'">BUY NOW</button></div>
@@ -506,7 +395,6 @@
         <div class="card"><img src="https://iili.io/C9A1AMP.png"><h3>GANG GIRL X</h3><div class="price">250,000 SSP</div><button class="buy-btn-yellow" onclick="location.href='https://wa.me/211920146370?text=I want GANG GIRL X'">BUY NOW</button></div>
         <div class="card"><img src="https://iili.io/C9A1WPt.png"><h3>X BOY SHIRTS</h3><div class="price">200,000 SSP</div><button class="buy-btn-yellow" onclick="location.href='https://wa.me/211920146370?text=I want X BOY SHIRTS'">BUY NOW</button></div>
     </div>
-
     <h2 class="section-title">EVENT LINEUP</h2>
     <div class="grid-4">
         <div class="card"><img src="https://iili.io/C9AxUba.png"><h3>Yei Town</h3><button class="buy-btn-red" onclick="location.href='https://wa.me/211920146370?text=I want to book Yei Town'">BOOK</button></div>
@@ -518,8 +406,6 @@
         <div class="card"><img src="https://iili.io/C9AIPSI.png"><h3>Juba</h3><button class="buy-btn-red" onclick="location.href='https://wa.me/211920146370?text=I want to book Juba'">BOOK</button></div>
         <div class="card"><img src="https://iili.io/C9AILAX.png"><h3>Kajo-Keji</h3><button class="buy-btn-red" onclick="location.href='https://wa.me/211920146370?text=I want to book Kajo-Keji'">BOOK</button></div>
     </div>
-
-    <!-- Bigger Mailing Section - Full width input & button -->
     <div class="mailing">
         <h2>SIGN UP FOR UPDATES</h2>
         <form action="https://wreal-x.kit.com/5b513f6527" method="post" target="_blank">
@@ -527,57 +413,20 @@
             <button type="submit">SIGN UP</button>
         </form>
     </div>
-
-    <!-- Contact & About - No email visible, no African Duce text -->
     <div class="contact-about">
-        <div class="contact-card">
-            <h3>CONTACT</h3>
-            <a href="mailto:wreal@proton.me" class="contact-btn">Contact Us</a>
-        </div>
-        <div class="about-card">
-            <h3>ABOUT US</h3>
-            <button id="aboutUsBtn" class="about-btn">About Us</button>
-        </div>
+        <div class="contact-card"><h3>CONTACT</h3><a href="mailto:wreal@proton.me" class="contact-btn">Contact Us</a></div>
+        <div class="about-card"><h3>ABOUT US</h3><a href="about.html" class="about-btn">About Us</a></div>
     </div>
-
-    <div class="footer">
-        <p>© 2026 WREAL X WRLD | All Rights Reserved</p>
-    </div>
-
+    <div class="footer"><p>© 2026 WREAL X WRLD | All Rights Reserved</p></div>
     <script>
         const menuBtn = document.getElementById('menuBtn');
         const sideNav = document.getElementById('sideNav');
         const overlay = document.getElementById('overlay');
-
-        function closeMenu() {
-            sideNav.classList.remove('open');
-            overlay.classList.remove('active');
-        }
-
-        function openMenu() {
-            sideNav.classList.add('open');
-            overlay.classList.add('active');
-        }
-
-        if (menuBtn) {
-            menuBtn.addEventListener('click', () => {
-                if (sideNav.classList.contains('open')) {
-                    closeMenu();
-                } else {
-                    openMenu();
-                }
-            });
-        }
-
-        if (overlay) {
-            overlay.addEventListener('click', closeMenu);
-        }
-
-        document.querySelectorAll('.side-nav a').forEach(link => {
-            link.addEventListener('click', (e) => {
-                e.preventDefault();
-                const linkText = link.innerText.trim();
-                if(linkText === 'SHOP NOW') {
-                    document.getElementById('merchLink').scrollIntoView({ behavior: 'smooth' });
-                } else if(linkText === 'EVENTS') {
-                    doc
+        function closeMenu() { sideNav.classList.remove('open'); overlay.classList.remove('active'); }
+        function openMenu() { sideNav.classList.add('open'); overlay.classList.add('active'); }
+        if (menuBtn) { menuBtn.addEventListener('click', () => { if (sideNav.classList.contains('open')) closeMenu(); else openMenu(); }); }
+        if (overlay) { overlay.addEventListener('click', closeMenu); }
+        document.querySelectorAll('.side-nav a').forEach(link => { link.addEventListener('click', closeMenu); });
+    </script>
+</body>
+        </html>
