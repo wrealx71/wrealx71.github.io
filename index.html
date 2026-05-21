@@ -279,6 +279,8 @@
             font-family: 'Courier New', monospace;
             font-weight: bold;
         }
+        
+        /* MAILERLITE FORM STYLES - MATCH YOUR WEBSITE */
         .mailing {
             background: #111;
             text-align: center;
@@ -294,33 +296,29 @@
             font-family: 'Creepster', 'Courier New', cursive;
             color: #ffcc00;
         }
-        .mailing form {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            gap: 0.8rem;
-            max-width: 400px;
+        /* Style MailerLite form to match your theme */
+        .ml-embedded {
+            max-width: 500px;
             margin: 0 auto;
         }
-        .mailing input {
-            padding: 0.7rem;
-            width: 100%;
-            border: 2px solid #ffcc00;
-            border-radius: 8px;
-            background: #000;
-            color: white;
+        .ml-embedded form {
+            background: transparent !important;
         }
-        .mailing button {
-            background: #ffcc00;
-            color: #000;
-            padding: 0.7rem;
-            width: 100%;
-            border: none;
-            border-radius: 8px;
-            cursor: pointer;
-            font-weight: bold;
-            font-family: 'Courier New', monospace;
+        .ml-embedded .ml-form-embedWrapper {
+            background: transparent !important;
         }
+        .ml-embedded input, 
+        .ml-embedded .ml-form-embedSubmit button {
+            border-radius: 8px !important;
+            font-family: 'Courier New', monospace !important;
+        }
+        .ml-embedded .ml-form-embedSubmit button {
+            background: #ffcc00 !important;
+            color: #000 !important;
+            font-weight: bold !important;
+        }
+        /* END MAILERLITE STYLES */
+        
         .contact-about {
             display: grid;
             grid-template-columns: repeat(2, 1fr);
@@ -361,6 +359,18 @@
             font-family: 'Courier New', monospace;
         }
     </style>
+    
+    <!-- MailerLite Universal Script -->
+    <script>
+        (function(w,d,e,u,f,l,n){w[f]=w[f]||function(){(w[f].q=w[f].q||[])
+        .push(arguments);},l=d.createElement(e),l.async=1,l.src=u,
+        n=d.getElementsByTagName(e)[0],n.parentNode.insertBefore(l,n);})
+        (window,document,'script','https://assets.mailerlite.com/js/universal.js','ml');
+        ml('account', '2366714');
+    </script>
+    <!-- End MailerLite Universal -->
+    
+    <!-- Tawk.to Script -->
     <script type="text/javascript">
         var Tawk_API = Tawk_API || {}, Tawk_LoadStart = new Date();
         (function() {
@@ -452,13 +462,10 @@
         <div class="card"><img src="https://iili.io/C9AILAX.png"><h3>Kajo-Keji</h3><button class="buy-btn-red" onclick="location.href='https://wa.me/211920146370?text=I want to book Kajo-Keji'">BOOK</button></div>
     </div>
     
-    <!-- MAILING SECTION WITH MAILERLITE LINK (ONLY CHANGE) -->
+    <!-- MAILERLITE EMBEDDED FORM - WORKS DIRECTLY ON YOUR SITE -->
     <div class="mailing">
         <h2>SIGN UP FOR UPDATES</h2>
-        <form action="https://preview.mailerlite.io/forms/2366714/188032148250297624/share" method="post" target="_blank">
-            <input type="email" name="email" placeholder="EMAIL" required>
-            <button type="submit">SIGN UP</button>
-        </form>
+        <div class="ml-embedded" data-form="jQnelt"></div>
     </div>
     
     <div class="contact-about">
@@ -477,4 +484,4 @@
         document.querySelectorAll('.side-nav a').forEach(link => { link.addEventListener('click', closeMenu); });
     </script>
 </body>
-                </html>
+            </html>
