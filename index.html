@@ -279,8 +279,6 @@
             font-family: 'Courier New', monospace;
             font-weight: bold;
         }
-        
-        /* CUSTOM MAILERLITE FORM - MATCHES YOUR WEBSITE DESIGN */
         .mailing {
             background: #111;
             text-align: center;
@@ -296,72 +294,33 @@
             font-family: 'Creepster', 'Courier New', cursive;
             color: #ffcc00;
         }
-        
-        /* Hide MailerLite's default template styling */
-        .ml-embedded .ml-form-embedWrapper,
-        .ml-embedded .ml-form-embedWrapper .ml-form-embedBody,
-        .ml-embedded .ml-form-embedWrapper .ml-form-embedBody .ml-form-embedContent,
-        .ml-embedded .ml-form-embedWrapper .ml-form-embedBody .ml-form-formContent,
-        .ml-embedded .ml-form-embedWrapper .ml-form-embedBody .ml-form-formContent .ml-form-fieldRow,
-        .ml-embedded .ml-form-embedWrapper .ml-form-embedBody .ml-form-formContent .ml-form-fieldRow .ml-field-group,
-        .ml-embedded .ml-form-embedWrapper .ml-form-embedBody .ml-form-embedPermissions,
-        .ml-embedded .ml-form-embedWrapper .ml-form-embedBody .ml-form-embedPermissions .ml-form-embedPermissionsContent,
-        .ml-embedded .ml-form-embedWrapper .ml-form-embedBody .ml-form-checkboxRow,
-        .ml-embedded .ml-form-embedWrapper .ml-form-embedBody .ml-form-recaptcha {
-            background: transparent !important;
-            border: none !important;
-            box-shadow: none !important;
-            padding: 0 !important;
-            margin: 0 !important;
+        .mailing form {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 0.8rem;
+            max-width: 400px;
+            margin: 0 auto;
         }
-        
-        /* Style input field */
-        .ml-embedded .ml-form-embedWrapper .ml-form-embedBody .ml-form-formContent .ml-form-fieldRow .ml-field-group input {
+        .mailing input {
+            padding: 0.7rem;
             width: 100%;
-            padding: 12px 16px;
-            background: #000 !important;
-            border: 2px solid #ffcc00 !important;
-            border-radius: 8px !important;
-            color: white !important;
-            font-family: 'Courier New', monospace !important;
-            font-size: 1rem !important;
+            border: 2px solid #ffcc00;
+            border-radius: 8px;
+            background: #000;
+            color: white;
         }
-        
-        /* Style submit button */
-        .ml-embedded .ml-form-embedWrapper .ml-form-embedBody .ml-form-embedSubmit button {
-            background: #ffcc00 !important;
-            color: #000 !important;
-            padding: 12px 24px !important;
-            border: none !important;
-            border-radius: 8px !important;
-            cursor: pointer !important;
-            font-weight: bold !important;
-            font-family: 'Courier New', monospace !important;
-            font-size: 1rem !important;
-            width: 100% !important;
-            transition: background 0.2s !important;
+        .mailing button {
+            background: #ffcc00;
+            color: #000;
+            padding: 0.7rem;
+            width: 100%;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            font-weight: bold;
+            font-family: 'Courier New', monospace;
         }
-        
-        .ml-embedded .ml-form-embedWrapper .ml-form-embedBody .ml-form-embedSubmit button:hover {
-            background: #e6b800 !important;
-        }
-        
-        /* Hide MailerLite branding and extra elements */
-        .ml-form-embedWrapper .ml-form-embedBody .ml-form-embedFooter,
-        .ml-form-embedWrapper .ml-form-embedBody .ml-form-embedFooter .ml-form-embedPoweredBy,
-        .ml-form-embedWrapper .ml-form-embedBody .ml-form-embedFooter .powered-by,
-        .ml-form-embedWrapper .ml-form-embedBody .ml-form-successBody,
-        .ml-form-embedWrapper .ml-form-embedBody .ml-form-successBody .ml-form-successContent {
-            background: transparent !important;
-        }
-        
-        /* Success message styling */
-        .ml-form-successBody {
-            background: transparent !important;
-            color: #ffcc00 !important;
-        }
-        /* END MAILERLITE STYLES */
-        
         .contact-about {
             display: grid;
             grid-template-columns: repeat(2, 1fr);
@@ -402,18 +361,6 @@
             font-family: 'Courier New', monospace;
         }
     </style>
-    
-    <!-- MailerLite Universal Script -->
-    <script>
-        (function(w,d,e,u,f,l,n){w[f]=w[f]||function(){(w[f].q=w[f].q||[])
-        .push(arguments);},l=d.createElement(e),l.async=1,l.src=u,
-        n=d.getElementsByTagName(e)[0],n.parentNode.insertBefore(l,n);})
-        (window,document,'script','https://assets.mailerlite.com/js/universal.js','ml');
-        ml('account', '2366714');
-    </script>
-    <!-- End MailerLite Universal -->
-    
-    <!-- Tawk.to Script -->
     <script type="text/javascript">
         var Tawk_API = Tawk_API || {}, Tawk_LoadStart = new Date();
         (function() {
@@ -498,4 +445,36 @@
         <div class="card"><img src="https://iili.io/C9AxUba.png"><h3>Yei Town</h3><button class="buy-btn-red" onclick="location.href='https://wa.me/211920146370?text=I want to book Yei Town'">BOOK</button></div>
         <div class="card"><img src="https://iili.io/C9AFwI2.png"><h3>Aweil</h3><button class="buy-btn-red" onclick="location.href='https://wa.me/211920146370?text=I want to book Aweil'">BOOK</button></div>
         <div class="card"><img src="https://iili.io/C9AIHTg.png"><h3>Rumbek</h3><button class="buy-btn-red" onclick="location.href='https://wa.me/211920146370?text=I want to book Rumbek'">BOOK</button></div>
-        <div class="card"><img src="https://iili.io/C9AIJja.p
+        <div class="card"><img src="https://iili.io/C9AIJja.png"><h3>Malakal</h3><button class="buy-btn-red" onclick="location.href='https://wa.me/211920146370?text=I want to book Malakal'">BOOK</button></div>
+        <div class="card"><img src="https://iili.io/C9AI3Cv.png"><h3>Warap</h3><button class="buy-btn-red" onclick="location.href='https://wa.me/211920146370?text=I want to book Warap'">BOOK</button></div>
+        <div class="card"><img src="https://iili.io/C9AIIZG.png"><h3>Meridi</h3><button class="buy-btn-red" onclick="location.href='https://wa.me/211920146370?text=I want to book Meridi'">BOOK</button></div>
+        <div class="card"><img src="https://iili.io/C9AIPSI.png"><h3>Juba</h3><button class="buy-btn-red" onclick="location.href='https://wa.me/211920146370?text=I want to book Juba'">BOOK</button></div>
+        <div class="card"><img src="https://iili.io/C9AILAX.png"><h3>Kajo-Keji</h3><button class="buy-btn-red" onclick="location.href='https://wa.me/211920146370?text=I want to book Kajo-Keji'">BOOK</button></div>
+    </div>
+    
+    <!-- MAILING SECTION WITH MAILERLITE LINK (ONLY CHANGE) -->
+    <div class="mailing">
+        <h2>SIGN UP FOR UPDATES</h2>
+        <form action="https://preview.mailerlite.io/forms/2366714/188032148250297624/share" method="post" target="_blank">
+            <input type="email" name="email" placeholder="EMAIL" required>
+            <button type="submit">SIGN UP</button>
+        </form>
+    </div>
+    
+    <div class="contact-about">
+        <div class="contact-card"><h3>CONTACT</h3><a href="contact.html" class="contact-btn">Contact Us</a></div>
+        <div class="about-card"><h3>ABOUT US</h3><a href="about.html" class="about-btn">About Us</a></div>
+    </div>
+    <div class="footer"><p>© 2026 WREAL X WRLD | All Rights Reserved</p></div>
+    <script>
+        const menuBtn = document.getElementById('menuBtn');
+        const sideNav = document.getElementById('sideNav');
+        const overlay = document.getElementById('overlay');
+        function closeMenu() { sideNav.classList.remove('open'); overlay.classList.remove('active'); }
+        function openMenu() { sideNav.classList.add('open'); overlay.classList.add('active'); }
+        if (menuBtn) { menuBtn.addEventListener('click', () => { if (sideNav.classList.contains('open')) closeMenu(); else openMenu(); }); }
+        if (overlay) { overlay.addEventListener('click', closeMenu); }
+        document.querySelectorAll('.side-nav a').forEach(link => { link.addEventListener('click', closeMenu); });
+    </script>
+</body>
+    </html>
