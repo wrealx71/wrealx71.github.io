@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=yes">
-    <title>WREAL X WRLD</title>
+    <title>WREAL X</title>
     <link href="https://fonts.googleapis.com/css2?family=Creepster&family=UnifrakturMaguntia&family=Playfair+Display:wght@400;700;900&display=swap" rel="stylesheet">
     <style>
         * {
@@ -13,13 +13,15 @@
         }
         body {
             font-family: 'Courier New', 'Playfair Display', monospace;
-            background-color: #000000;
-            color: #ffffff;
+            background: linear-gradient(135deg, #1a0000 0%, #3d0c0c 50%, #7a1f1f 100%);
+            color: #fff2e6;
             line-height: 1.5;
             overflow-x: hidden;
+            min-height: 100vh;
         }
         .header {
-            background: #000;
+            background: rgba(0,0,0,0.85);
+            backdrop-filter: blur(10px);
             padding: 1rem;
             position: sticky;
             top: 0;
@@ -27,15 +29,18 @@
             display: flex;
             justify-content: space-between;
             align-items: center;
-            border-bottom: 2px solid #ffcc00;
+            border-bottom: 2px solid #ff6600;
         }
         .logo {
             font-size: 1.5rem;
             font-weight: 900;
             letter-spacing: 3px;
             font-family: 'Creepster', 'Courier New', cursive;
-            color: #ffcc00;
-            text-shadow: 2px 2px 5px rgba(0,0,0,0.5);
+            background: linear-gradient(45deg, #ff4500, #ff8c00);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            text-shadow: 0 0 10px rgba(255,68,0,0.5);
         }
         .menu-btn {
             background: none;
@@ -48,7 +53,7 @@
             display: block;
             width: 28px;
             height: 3px;
-            background: #ffcc00;
+            background: #ff6600;
             margin: 6px 0;
             transition: 0.3s;
             border-radius: 3px;
@@ -59,12 +64,13 @@
             left: -300px;
             width: 280px;
             height: 100%;
-            background: #111;
+            background: rgba(30,10,10,0.98);
+            backdrop-filter: blur(10px);
             z-index: 1002;
             transition: left 0.3s ease;
             padding-top: 80px;
-            box-shadow: 2px 0 20px rgba(0,0,0,0.8);
-            border-right: 2px solid #ffcc00;
+            box-shadow: 2px 0 20px rgba(255,68,0,0.3);
+            border-right: 2px solid #ff4500;
         }
         .side-nav.open {
             left: 0;
@@ -74,16 +80,16 @@
             align-items: center;
             gap: 15px;
             padding: 1rem 1.5rem;
-            color: #ffcc00;
+            color: #ff8c66;
             text-decoration: none;
             font-size: 1.2rem;
             font-weight: bold;
-            border-bottom: 1px solid #333;
+            border-bottom: 1px solid #ff4500;
             transition: background 0.3s;
             font-family: 'Creepster', 'Courier New', cursive;
         }
         .side-nav a:hover {
-            background: #ffcc00;
+            background: #ff4500;
             color: #000;
         }
         .side-nav img {
@@ -111,16 +117,18 @@
             width: 100%;
             background: url('https://iili.io/C9aXwuI.jpg') center/cover no-repeat;
             aspect-ratio: 16 / 9;
+            border-bottom: 3px solid #ff4500;
+            box-shadow: 0 0 30px rgba(255,68,0,0.3);
         }
         
-        /* SOCIAL ICONS - BIGGER CIRCULAR, ONE LINE */
+        /* SOCIAL ICONS - RED PLANET THEME */
         .social-section {
             display: flex;
             justify-content: center;
             gap: 25px;
             padding: 25px 15px;
             flex-wrap: wrap;
-            background: #000;
+            background: transparent;
         }
         .social-circle {
             display: flex;
@@ -128,14 +136,18 @@
             justify-content: center;
             width: 60px;
             height: 60px;
-            background: #1a1a1a;
+            background: rgba(0,0,0,0.6);
             border-radius: 50%;
             transition: transform 0.2s, background 0.2s;
             text-decoration: none;
+            border: 1px solid #ff6600;
+            box-shadow: 0 0 10px rgba(255,102,0,0.3);
         }
         .social-circle:hover {
             transform: scale(1.1);
-            background: #ffcc00;
+            background: #ff4500;
+            border-color: #ffcc00;
+            box-shadow: 0 0 20px rgba(255,68,0,0.6);
         }
         .social-circle img {
             width: 32px;
@@ -155,10 +167,10 @@
         .play-now-container {
             text-align: center;
             padding: 0.5rem 1rem 1rem;
-            background: #000;
+            background: transparent;
         }
         .play-now-btn {
-            background: #ff3333;
+            background: linear-gradient(45deg, #ff4500, #cc3300);
             color: white;
             padding: 0.8rem 2rem;
             font-size: 1.1rem;
@@ -168,18 +180,83 @@
             display: inline-block;
             font-family: 'Courier New', monospace;
             transition: transform 0.2s;
+            border: 1px solid #ff8c00;
+            box-shadow: 0 0 15px rgba(255,68,0,0.5);
         }
         .play-now-btn:hover {
             transform: scale(1.05);
+            background: linear-gradient(45deg, #ff5500, #dd3300);
+            box-shadow: 0 0 25px rgba(255,68,0,0.8);
         }
         .section-title {
             text-align: center;
             font-size: 1.8rem;
             margin: 1.5rem 0 1rem;
             font-family: 'Creepster', 'Courier New', cursive;
-            color: #ffcc00;
+            background: linear-gradient(45deg, #ff6600, #ffcc00);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
             letter-spacing: 2px;
         }
+        
+        /* VIDEO GRID SECTION */
+        .video-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 1rem;
+            max-width: 100%;
+            margin: 1rem auto;
+            padding: 0 0.8rem;
+        }
+        .video-card {
+            background: rgba(0,0,0,0.6);
+            border-radius: 8px;
+            overflow: hidden;
+            border: 1px solid #ff6600;
+            transition: transform 0.2s, border-color 0.2s;
+        }
+        .video-card:hover {
+            transform: translateY(-3px);
+            border-color: #ff4500;
+            box-shadow: 0 0 15px rgba(255,68,0,0.4);
+        }
+        .video-wrapper {
+            position: relative;
+            padding-bottom: 56.25%;
+            height: 0;
+            overflow: hidden;
+        }
+        .video-wrapper iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+        .video-title {
+            padding: 0.5rem;
+            font-size: 0.7rem;
+            text-align: center;
+            font-weight: bold;
+            color: #ffaa66;
+            font-family: 'Courier New', monospace;
+        }
+        @media (max-width: 768px) {
+            .video-grid {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 0.8rem;
+            }
+        }
+        @media (max-width: 480px) {
+            .video-grid {
+                grid-template-columns: 1fr;
+                gap: 1rem;
+            }
+        }
+        /* END VIDEO GRID */
+        
         .grid-4 {
             display: grid;
             grid-template-columns: repeat(4, 1fr);
@@ -199,16 +276,17 @@
             .social-circle img { width: 26px; height: 26px; }
         }
         .card {
-            background: #111;
+            background: rgba(0,0,0,0.6);
             border-radius: 8px;
             text-align: center;
             padding-bottom: 0.6rem;
-            border: 1px solid #333;
+            border: 1px solid #ff6600;
             transition: transform 0.2s;
         }
         .card:hover {
             transform: translateY(-3px);
-            border-color: #ffcc00;
+            border-color: #ff4500;
+            box-shadow: 0 0 15px rgba(255,68,0,0.4);
         }
         .card img {
             width: 100%;
@@ -219,15 +297,19 @@
         .card h3 {
             font-size: 0.7rem;
             margin: 0.4rem 0;
+            color: #ffaa66;
         }
         .price {
-            color: #ffcc00;
+            background: linear-gradient(45deg, #ff6600, #ffcc00);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
             font-size: 0.8rem;
             margin: 0.2rem 0;
             font-weight: bold;
         }
         .buy-btn-yellow {
-            background: #ffcc00;
+            background: linear-gradient(45deg, #ff6600, #ff8c00);
             color: #000;
             border: none;
             padding: 0.3rem 0.6rem;
@@ -236,41 +318,41 @@
             border-radius: 4px;
             font-size: 0.65rem;
             font-weight: bold;
+            transition: transform 0.2s;
         }
-        .buy-btn-red {
-            background: #ff3333;
-            color: #fff;
-            border: none;
-            padding: 0.3rem 0.6rem;
-            margin: 0.3rem 0;
-            cursor: pointer;
-            border-radius: 4px;
-            font-size: 0.65rem;
-            font-weight: bold;
+        .buy-btn-yellow:hover {
+            transform: scale(1.05);
+            background: linear-gradient(45deg, #ff7700, #ffaa00);
         }
         .service-buttons {
             text-align: center;
             margin: 1rem 0;
         }
         .service-btn {
-            background: #222;
-            color: white;
+            background: rgba(0,0,0,0.7);
+            color: #ffaa66;
             padding: 0.6rem 1.5rem;
             margin: 0.3rem;
-            border: 1px solid #ffcc00;
+            border: 1px solid #ff6600;
             border-radius: 30px;
             cursor: pointer;
             font-family: 'Courier New', monospace;
             font-weight: bold;
             text-decoration: none;
             display: inline-block;
+            transition: all 0.2s;
+        }
+        .service-btn:hover {
+            background: #ff4500;
+            color: #000;
+            border-color: #ffcc00;
         }
         .choose-service {
             text-align: center;
             margin: 0.5rem 0 1.5rem;
         }
         .choose-service button {
-            background: #ff3333;
+            background: linear-gradient(45deg, #ff4500, #cc3300);
             color: white;
             padding: 0.6rem 2rem;
             border: none;
@@ -278,21 +360,25 @@
             cursor: pointer;
             font-family: 'Courier New', monospace;
             font-weight: bold;
+            transition: transform 0.2s;
+        }
+        .choose-service button:hover {
+            transform: scale(1.05);
         }
         .mailing {
-            background: #111;
+            background: rgba(0,0,0,0.6);
             text-align: center;
             padding: 2rem;
             margin: 2rem 1rem;
-            border-top: 2px solid #ffcc00;
-            border-bottom: 2px solid #ffcc00;
+            border-top: 2px solid #ff6600;
+            border-bottom: 2px solid #ff6600;
             border-radius: 10px;
         }
         .mailing h2 {
             font-size: 1.3rem;
             margin-bottom: 1rem;
             font-family: 'Creepster', 'Courier New', cursive;
-            color: #ffcc00;
+            color: #ffaa66;
         }
         .mailing form {
             display: flex;
@@ -305,13 +391,13 @@
         .mailing input {
             padding: 0.7rem;
             width: 100%;
-            border: 2px solid #ffcc00;
+            border: 2px solid #ff6600;
             border-radius: 8px;
-            background: #000;
+            background: #1a0505;
             color: white;
         }
         .mailing button {
-            background: #ffcc00;
+            background: linear-gradient(45deg, #ff6600, #ff8c00);
             color: #000;
             padding: 0.7rem;
             width: 100%;
@@ -320,6 +406,10 @@
             cursor: pointer;
             font-weight: bold;
             font-family: 'Courier New', monospace;
+            transition: transform 0.2s;
+        }
+        .mailing button:hover {
+            transform: scale(1.02);
         }
         .contact-about {
             display: grid;
@@ -331,18 +421,18 @@
             text-align: center;
         }
         .contact-card, .about-card {
-            background: #111;
+            background: rgba(0,0,0,0.6);
             padding: 1rem;
             border-radius: 10px;
-            border: 1px solid #333;
+            border: 1px solid #ff6600;
         }
         .contact-card h3, .about-card h3 {
-            color: #ffcc00;
+            color: #ffaa66;
             margin-bottom: 0.8rem;
             font-family: 'Creepster', 'Courier New', cursive;
         }
         .contact-btn, .about-btn {
-            background: #ffcc00;
+            background: linear-gradient(45deg, #ff6600, #ff8c00);
             color: #000;
             padding: 0.5rem 1rem;
             text-decoration: none;
@@ -352,13 +442,18 @@
             font-family: 'Courier New', monospace;
             cursor: pointer;
             border: none;
+            transition: transform 0.2s;
+        }
+        .contact-btn:hover, .about-btn:hover {
+            transform: scale(1.05);
         }
         .footer {
             text-align: center;
             padding: 1rem;
-            border-top: 1px solid #333;
+            border-top: 1px solid #ff6600;
             font-size: 0.7rem;
             font-family: 'Courier New', monospace;
+            color: #ffaa66;
         }
     </style>
     <script type="text/javascript">
@@ -375,19 +470,20 @@
 </head>
 <body>
     <div class="header">
-        <div class="logo">WREAL X WRLD</div>
+        <div class="logo">WREAL X</div>
         <button class="menu-btn" id="menuBtn">
             <span></span>
             <span></span>
             <span></span>
         </button>
     </div>
+    
+    <!-- NAVIGATION MENU -->
     <div class="side-nav" id="sideNav">
         <a href="merch.html"><img src="https://cdn-icons-png.flaticon.com/512/2838/2838895.png" alt="cart"> SHOP NOW</a>
-        <a href="events.html"><img src="https://cdn-icons-png.flaticon.com/512/1046/1046784.png" alt="events"> EVENTS</a>
-        <a href="contact.html"><img src="https://cdn-icons-png.flaticon.com/512/724/724664.png" alt="contact"> CONTACT US</a>
-        <a href="about.html"><img src="https://cdn-icons-png.flaticon.com/512/1077/1077063.png" alt="about"> ABOUT US</a>
-        <a href="socials.html"><img src="https://cdn-icons-png.flaticon.com/512/809/809655.png" alt="socials"> SOCIALS</a>
+        <a href="https://whatsapp.com/channel/0029VbBbCBOKbYMKGJMUHt2x" target="_blank"><img src="https://cdn-icons-png.flaticon.com/512/733/733585.png" alt="fanclub"> JOIN THE FAN CLUB</a>
+        <a href="about.html"><img src="https://cdn-icons-png.flaticon.com/512/1077/1077063.png" alt="about"> ABOUT</a>
+        <a href="contact.html"><img src="https://cdn-icons-png.flaticon.com/512/724/724664.png" alt="contact"> CONTACT</a>
     </div>
     <div class="overlay" id="overlay"></div>
 
@@ -424,58 +520,42 @@
     </div>
     <div class="service-buttons">
         <button class="service-btn">OR</button>
-        <a href="watch.html" class="service-btn">WATCH NOW!</a>
+        <a href="https://wa.me/211920146370?text=I want to book Wreal X for an event" class="service-btn">BOOK WREAL X NOW</a>
     </div>
     <div class="choose-service">
         <button>CHOOSE SERVICE</button>
     </div>
+    
+    <!-- VIDEOS SECTION -->
+    <h2 class="section-title">LATEST VIDEOS</h2>
+    <div class="video-grid">
+        <div class="video-card">
+            <div class="video-wrapper">
+                <iframe src="https://www.youtube.com/embed/swCF5DMFquE" title="Wreal X - Hurry Up" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+            </div>
+            <div class="video-title">Wreal X - Hurry Up</div>
+        </div>
+        <div class="video-card">
+            <div class="video-wrapper">
+                <iframe src="https://www.youtube.com/embed/npL5BEmPgtk" title="Wreal X ft Boii Mujung - Number" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+            </div>
+            <div class="video-title">Wreal X ft Boii Mujung - Number</div>
+        </div>
+        <div class="video-card">
+            <div class="video-wrapper">
+                <iframe src="https://www.youtube.com/embed/T59z8NQ3OMA" title="Wreal X ft Bu Man - Monalisa" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+            </div>
+            <div class="video-title">Wreal X ft Bu Man - Monalisa</div>
+        </div>
+        <div class="video-card">
+            <div class="video-wrapper">
+                <iframe src="https://www.youtube.com/embed/2H3Ei5EPkFc" title="Wreal X ft Khida - Photo" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+            </div>
+            <div class="video-title">Wreal X ft Khida - Photo</div>
+        </div>
+    </div>
+    
+    <!-- MERCH SECTION -->
     <h2 class="section-title">MERCH</h2>
     <div class="grid-4">
-        <div class="card"><img src="https://iili.io/C9A01C7.jpg"><h3>X-CELL DRESS</h3><div class="price">220,000 SSP</div><button class="buy-btn-yellow" onclick="location.href='https://wa.me/211920146370?text=I want X-CELL DRESS'">BUY NOW</button></div>
-        <div class="card"><img src="https://iili.io/C9A07p4.jpg"><h3>X-MAN GLOVES</h3><div class="price">35,000 SSP</div><button class="buy-btn-yellow" onclick="location.href='https://wa.me/211920146370?text=I want X-MAN GLOVES'">BUY NOW</button></div>
-        <div class="card"><img src="https://iili.io/C9ah3oF.png"><h3>GANGO SOCKS</h3><div class="price">25,000 SSP</div><button class="buy-btn-yellow" onclick="location.href='https://wa.me/211920146370?text=I want GANGO SOCKS'">BUY NOW</button></div>
-        <div class="card"><img src="https://iili.io/C9A1uoB.png"><h3>X-MAN HOODIES</h3><div class="price">240,000 SSP</div><button class="buy-btn-yellow" onclick="location.href='https://wa.me/211920146370?text=I want X-MAN HOODIES'">BUY NOW</button></div>
-        <div class="card"><img src="https://iili.io/C9A1RP1.png"><h3>GANGO SCARVES</h3><div class="price">45,000 SSP</div><button class="buy-btn-yellow" onclick="location.href='https://wa.me/211920146370?text=I want GANGO SCARVES'">BUY NOW</button></div>
-        <div class="card"><img src="https://iili.io/C9A1ItV.png"><h3>GANG GIRL DRESS</h3><div class="price">230,000 SSP</div><button class="buy-btn-yellow" onclick="location.href='https://wa.me/211920146370?text=I want GANG GIRL DRESS'">BUY NOW</button></div>
-        <div class="card"><img src="https://iili.io/C9A1AMP.png"><h3>GANG GIRL X</h3><div class="price">250,000 SSP</div><button class="buy-btn-yellow" onclick="location.href='https://wa.me/211920146370?text=I want GANG GIRL X'">BUY NOW</button></div>
-        <div class="card"><img src="https://iili.io/C9A1WPt.png"><h3>X BOY SHIRTS</h3><div class="price">200,000 SSP</div><button class="buy-btn-yellow" onclick="location.href='https://wa.me/211920146370?text=I want X BOY SHIRTS'">BUY NOW</button></div>
-    </div>
-    <h2 class="section-title">EVENT LINEUP</h2>
-    <div class="grid-4">
-        <div class="card"><img src="https://iili.io/C9AxUba.png"><h3>Yei Town</h3><button class="buy-btn-red" onclick="location.href='https://wa.me/211920146370?text=I want to book Yei Town'">BOOK</button></div>
-        <div class="card"><img src="https://iili.io/C9AFwI2.png"><h3>Aweil</h3><button class="buy-btn-red" onclick="location.href='https://wa.me/211920146370?text=I want to book Aweil'">BOOK</button></div>
-        <div class="card"><img src="https://iili.io/C9AIHTg.png"><h3>Rumbek</h3><button class="buy-btn-red" onclick="location.href='https://wa.me/211920146370?text=I want to book Rumbek'">BOOK</button></div>
-        <div class="card"><img src="https://iili.io/C9AIJja.png"><h3>Malakal</h3><button class="buy-btn-red" onclick="location.href='https://wa.me/211920146370?text=I want to book Malakal'">BOOK</button></div>
-        <div class="card"><img src="https://iili.io/C9AI3Cv.png"><h3>Warap</h3><button class="buy-btn-red" onclick="location.href='https://wa.me/211920146370?text=I want to book Warap'">BOOK</button></div>
-        <div class="card"><img src="https://iili.io/C9AIIZG.png"><h3>Meridi</h3><button class="buy-btn-red" onclick="location.href='https://wa.me/211920146370?text=I want to book Meridi'">BOOK</button></div>
-        <div class="card"><img src="https://iili.io/C9AIPSI.png"><h3>Juba</h3><button class="buy-btn-red" onclick="location.href='https://wa.me/211920146370?text=I want to book Juba'">BOOK</button></div>
-        <div class="card"><img src="https://iili.io/C9AILAX.png"><h3>Kajo-Keji</h3><button class="buy-btn-red" onclick="location.href='https://wa.me/211920146370?text=I want to book Kajo-Keji'">BOOK</button></div>
-    </div>
-    
-    <!-- MAILING SECTION WITH MAILERLITE LINK (ONLY CHANGE) -->
-    <div class="mailing">
-        <h2>SIGN UP FOR UPDATES</h2>
-        <form action="https://preview.mailerlite.io/forms/2366714/188032148250297624/share" method="post" target="_blank">
-            <input type="email" name="email" placeholder="EMAIL" required>
-            <button type="submit">SIGN UP</button>
-        </form>
-    </div>
-    
-    <div class="contact-about">
-        <div class="contact-card"><h3>CONTACT</h3><a href="contact.html" class="contact-btn">Contact Us</a></div>
-        <div class="about-card"><h3>ABOUT US</h3><a href="about.html" class="about-btn">About Us</a></div>
-    </div>
-    <div class="footer"><p>© 2026 WREAL X WRLD | All Rights Reserved</p></div>
-    <script>
-        const menuBtn = document.getElementById('menuBtn');
-        const sideNav = document.getElementById('sideNav');
-        const overlay = document.getElementById('overlay');
-        function closeMenu() { sideNav.classList.remove('open'); overlay.classList.remove('active'); }
-        function openMenu() { sideNav.classList.add('open'); overlay.classList.add('active'); }
-        if (menuBtn) { menuBtn.addEventListener('click', () => { if (sideNav.classList.contains('open')) closeMenu(); else openMenu(); }); }
-        if (overlay) { overlay.addEventListener('click', closeMenu); }
-        document.querySelectorAll('.side-nav a').forEach(link => { link.addEventListener('click', closeMenu); });
-    </script>
-</body>
-    </html>
-    
+        <div class="card"><img src="https://iili.io/C9A01C7.jpg"><h3>X-CELL DRESS</h3><div class="price">220,000 SSP</div><button class="buy-btn-yellow" onclick="location.href='https://wa.me/211920
