@@ -85,15 +85,23 @@
         .social-circle img { width: 32px; height: 32px; }
         .social-circle:hover img { filter: brightness(0); }
         
-        /* BUTTONS */
+        /* PLAY NOW BUTTON - RECTANGULAR & SMALLER */
         .play-now-container { text-align: center; padding: 0.5rem 1rem 1rem; background: transparent; }
         .play-now-btn {
-            background: linear-gradient(45deg, #ff4500, #cc3300); color: white; padding: 0.8rem 2rem;
-            font-size: 1.1rem; font-weight: bold; border-radius: 50px; text-decoration: none; display: inline-block;
-            font-family: 'Courier New', monospace; transition: transform 0.2s; border: 1px solid #ff8c00;
-            box-shadow: 0 0 15px rgba(255,68,0,0.5);
+            background: linear-gradient(45deg, #ff4500, #cc3300);
+            color: white;
+            padding: 0.5rem 1.2rem;
+            font-size: 0.9rem;
+            font-weight: bold;
+            border-radius: 6px;
+            text-decoration: none;
+            display: inline-block;
+            font-family: 'Courier New', monospace;
+            transition: transform 0.2s;
+            border: 1px solid #ff8c00;
+            box-shadow: 0 0 10px rgba(255,68,0,0.5);
         }
-        .play-now-btn:hover { transform: scale(1.05); background: linear-gradient(45deg, #ff5500, #dd3300); }
+        .play-now-btn:hover { transform: scale(1.02); background: linear-gradient(45deg, #ff5500, #dd3300); }
         
         .section-title {
             text-align: center; font-size: 1.8rem; margin: 1.5rem 0 1rem;
@@ -102,7 +110,7 @@
             -webkit-background-clip: text; background-clip: text; color: transparent;
         }
         
-        /* VIDEO GRID */
+        /* VIDEO GRID - 4 on desktop, 2 on mobile */
         .video-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1rem; max-width: 100%; margin: 1rem auto; padding: 0 0.8rem; }
         .video-card { background: rgba(0,0,0,0.6); border-radius: 8px; overflow: hidden; border: 1px solid #ff6600; transition: all 0.2s; }
         .video-card:hover { transform: translateY(-3px); border-color: #ff4500; box-shadow: 0 0 15px rgba(255,68,0,0.4); }
@@ -110,10 +118,18 @@
         .video-wrapper iframe { position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: none; }
         .video-title { padding: 0.5rem; font-size: 0.7rem; text-align: center; font-weight: bold; color: #ffaa66; }
         
-        /* MERCH GRID */
+        /* MERCH GRID - 4 on desktop, 2 on mobile */
         .grid-4 { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1rem; max-width: 100%; margin: 0 auto; padding: 0 0.8rem; }
-        @media (max-width: 768px) { .grid-4 { grid-template-columns: repeat(2, 1fr); } .video-grid { grid-template-columns: repeat(2, 1fr); } .social-circle { width: 52px; height: 52px; } }
-        @media (max-width: 480px) { .video-grid { grid-template-columns: 1fr; } .social-circle { width: 48px; height: 48px; } }
+        
+        /* RESPONSIVE: 2 COLUMNS ON TABLET & MOBILE */
+        @media (max-width: 768px) {
+            .grid-4 { grid-template-columns: repeat(2, 1fr); }
+            .video-grid { grid-template-columns: repeat(2, 1fr); }
+            .social-circle { width: 52px; height: 52px; }
+        }
+        @media (max-width: 480px) {
+            .social-circle { width: 48px; height: 48px; }
+        }
         
         .card { background: rgba(0,0,0,0.6); border-radius: 8px; text-align: center; padding-bottom: 0.6rem; border: 1px solid #ff6600; transition: 0.2s; }
         .card:hover { transform: translateY(-3px); border-color: #ff4500; box-shadow: 0 0 15px rgba(255,68,0,0.4); }
@@ -183,7 +199,7 @@
         <a href="https://wa.me/211920146370" target="_blank" class="social-circle"><img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WA"></a>
     </div>
 
-    <!-- PLAY NOW & BOOKING -->
+    <!-- PLAY NOW & BOOKING - BUTTON NOW RECTANGULAR -->
     <div class="play-now-container">
         <a href="https://audiomack.com/wrealx/song/hurry-up" target="_blank" class="play-now-btn">▶ PLAY NOW - HURRY UP</a>
     </div>
@@ -193,7 +209,7 @@
     </div>
     <div class="choose-service"><button>CHOOSE SERVICE</button></div>
     
-    <!-- VIDEOS -->
+    <!-- VIDEOS - 2 PER COLUMN ON MOBILE -->
     <h2 class="section-title">LATEST VIDEOS</h2>
     <div class="video-grid">
         <div class="video-card"><div class="video-wrapper"><iframe src="https://www.youtube.com/embed/swCF5DMFquE" frameborder="0" allowfullscreen></iframe></div><div class="video-title">Wreal X - Hurry Up</div></div>
@@ -202,7 +218,7 @@
         <div class="video-card"><div class="video-wrapper"><iframe src="https://www.youtube.com/embed/2H3Ei5EPkFc" frameborder="0" allowfullscreen></iframe></div><div class="video-title">Wreal X - Photo</div></div>
     </div>
     
-    <!-- MERCH SECTION (CORRECTED IMAGES & PRICES) -->
+    <!-- MERCH SECTION - 2 PER COLUMN ON MOBILE -->
     <h2 class="section-title">MERCH</h2>
     <div class="grid-4">
         <div class="card"><img src="https://iili.io/C9A01C7.jpg"><h3>X-CELL DRESS</h3><div class="price">180,000 SSP</div><button class="buy-btn" onclick="location.href='https://wa.me/211920146370?text=I want X-CELL DRESS'">BUY NOW</button></div>
@@ -240,4 +256,4 @@
         document.querySelectorAll('.side-nav a').forEach(link => { link.addEventListener('click', closeMenu); });
     </script>
 </body>
-        </html>
+            </html>
