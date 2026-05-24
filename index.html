@@ -4,7 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=yes">
     <title>WREAL X</title>
-    <link href="https://fonts.googleapis.com/css2?family=Creepster&family=UnifrakturMaguntia&family=Playfair+Display:wght@400;700;900&display=swap" rel="stylesheet">
+    <!-- Scissors School Font + Fallbacks -->
+    <link href="https://fonts.googleapis.com/css2?family=Gaegu&family=Gamja+Flower&family=Jua&family=Nanum+Pen+Script&display=swap" rel="stylesheet">
     <!-- MailerLite Universal -->
     <script>
         (function(w,d,e,u,f,l,n){w[f]=w[f]||function(){(w[f].q=w[f].q||[]).push(arguments);},l=d.createElement(e),l.async=1,l.src=u,n=d.getElementsByTagName(e)[0],n.parentNode.insertBefore(l,n);})(window,document,'script','https://assets.mailerlite.com/js/universal.js','ml');ml('account', '2366714');
@@ -12,7 +13,7 @@
     <style>
         * { margin: 0; padding: 0; box-sizing: border-box; }
         body {
-            font-family: 'Courier New', 'Playfair Display', monospace;
+            font-family: 'Gaegu', 'Gamja Flower', 'Jua', 'Nanum Pen Script', 'Courier New', monospace;
             background: linear-gradient(135deg, #1a0000 0%, #3d0c0c 50%, #7a1f1f 100%);
             color: #fff2e6;
             line-height: 1.5;
@@ -36,7 +37,7 @@
             font-size: 1.5rem;
             font-weight: 900;
             letter-spacing: 3px;
-            font-family: 'Creepster', 'Courier New', cursive;
+            font-family: 'Gaegu', 'Gamja Flower', 'Jua', cursive;
             background: linear-gradient(45deg, #ff4500, #ff8c00);
             -webkit-background-clip: text;
             background-clip: text;
@@ -56,7 +57,7 @@
         .side-nav a {
             display: flex; align-items: center; gap: 15px; padding: 1rem 1.5rem; color: #ff8c66;
             text-decoration: none; font-size: 1.2rem; font-weight: bold; border-bottom: 1px solid #ff4500;
-            transition: background 0.3s; font-family: 'Creepster', 'Courier New', cursive;
+            transition: background 0.3s; font-family: 'Gaegu', 'Gamja Flower', 'Jua', cursive;
         }
         .side-nav a:hover { background: #ff4500; color: #000; }
         .side-nav img { width: 24px; height: 24px; filter: brightness(0) invert(1); }
@@ -85,7 +86,7 @@
         .social-circle img { width: 32px; height: 32px; }
         .social-circle:hover img { filter: brightness(0); }
         
-        /* PLAY NOW BUTTON - RECTANGULAR & SMALLER */
+        /* PLAY NOW BUTTON - RECTANGULAR */
         .play-now-container { text-align: center; padding: 0.5rem 1rem 1rem; background: transparent; }
         .play-now-btn {
             background: linear-gradient(45deg, #ff4500, #cc3300);
@@ -96,7 +97,7 @@
             border-radius: 6px;
             text-decoration: none;
             display: inline-block;
-            font-family: 'Courier New', monospace;
+            font-family: 'Gaegu', 'Gamja Flower', 'Jua', monospace;
             transition: transform 0.2s;
             border: 1px solid #ff8c00;
             box-shadow: 0 0 10px rgba(255,68,0,0.5);
@@ -105,20 +106,20 @@
         
         .section-title {
             text-align: center; font-size: 1.8rem; margin: 1.5rem 0 1rem;
-            font-family: 'Creepster', 'Courier New', cursive;
+            font-family: 'Gaegu', 'Gamja Flower', 'Jua', cursive;
             background: linear-gradient(45deg, #ff6600, #ffcc00);
             -webkit-background-clip: text; background-clip: text; color: transparent;
         }
         
-        /* VIDEO GRID - 4 on desktop, 2 on mobile */
+        /* VIDEO GRID - FULL YouTube Ratio, No Cropping */
         .video-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1rem; max-width: 100%; margin: 1rem auto; padding: 0 0.8rem; }
         .video-card { background: rgba(0,0,0,0.6); border-radius: 8px; overflow: hidden; border: 1px solid #ff6600; transition: all 0.2s; }
         .video-card:hover { transform: translateY(-3px); border-color: #ff4500; box-shadow: 0 0 15px rgba(255,68,0,0.4); }
         .video-wrapper { position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; }
         .video-wrapper iframe { position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: none; }
-        .video-title { padding: 0.5rem; font-size: 0.7rem; text-align: center; font-weight: bold; color: #ffaa66; }
+        .video-title { padding: 0.5rem; font-size: 0.7rem; text-align: center; font-weight: bold; color: #ffaa66; font-family: 'Gaegu', 'Gamja Flower', 'Jua', monospace; }
         
-        /* MERCH GRID - 4 on desktop, 2 on mobile */
+        /* MERCH GRID */
         .grid-4 { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1rem; max-width: 100%; margin: 0 auto; padding: 0 0.8rem; }
         
         /* RESPONSIVE: 2 COLUMNS ON TABLET & MOBILE */
@@ -134,35 +135,57 @@
         .card { background: rgba(0,0,0,0.6); border-radius: 8px; text-align: center; padding-bottom: 0.6rem; border: 1px solid #ff6600; transition: 0.2s; }
         .card:hover { transform: translateY(-3px); border-color: #ff4500; box-shadow: 0 0 15px rgba(255,68,0,0.4); }
         .card img { width: 100%; height: 130px; object-fit: cover; border-radius: 8px 8px 0 0; }
-        .card h3 { font-size: 0.7rem; margin: 0.4rem 0; color: #ffaa66; }
-        .price { background: linear-gradient(45deg, #ff6600, #ffcc00); -webkit-background-clip: text; background-clip: text; color: transparent; font-size: 0.8rem; font-weight: bold; }
-        .buy-btn { background: linear-gradient(45deg, #ff6600, #ff8c00); color: #000; border: none; padding: 0.3rem 0.6rem; margin: 0.3rem 0; cursor: pointer; border-radius: 4px; font-size: 0.65rem; font-weight: bold; transition: 0.2s; }
+        .card h3 { font-size: 0.7rem; margin: 0.4rem 0; color: #ffaa66; font-family: 'Gaegu', 'Gamja Flower', 'Jua', monospace; }
+        .price { background: linear-gradient(45deg, #ff6600, #ffcc00); -webkit-background-clip: text; background-clip: text; color: transparent; font-size: 0.8rem; font-weight: bold; font-family: 'Gaegu', 'Gamja Flower', 'Jua', monospace; }
+        .buy-btn { background: linear-gradient(45deg, #ff6600, #ff8c00); color: #000; border: none; padding: 0.3rem 0.6rem; margin: 0.3rem 0; cursor: pointer; border-radius: 4px; font-size: 0.65rem; font-weight: bold; font-family: 'Gaegu', 'Gamja Flower', 'Jua', monospace; transition: 0.2s; }
         .buy-btn:hover { transform: scale(1.05); background: linear-gradient(45deg, #ff7700, #ffaa00); }
         
         /* SERVICE & CHOOSE */
         .service-buttons { text-align: center; margin: 1rem 0; }
-        .service-btn { background: rgba(0,0,0,0.7); color: #ffaa66; padding: 0.6rem 1.5rem; margin: 0.3rem; border: 1px solid #ff6600; border-radius: 30px; cursor: pointer; font-weight: bold; display: inline-block; transition: 0.2s; }
+        .service-btn { background: rgba(0,0,0,0.7); color: #ffaa66; padding: 0.6rem 1.5rem; margin: 0.3rem; border: 1px solid #ff6600; border-radius: 30px; cursor: pointer; font-weight: bold; display: inline-block; transition: 0.2s; font-family: 'Gaegu', 'Gamja Flower', 'Jua', monospace; }
         .service-btn:hover { background: #ff4500; color: #000; border-color: #ffcc00; }
         .choose-service { text-align: center; margin: 0.5rem 0 1.5rem; }
-        .choose-service button { background: linear-gradient(45deg, #ff4500, #cc3300); color: white; padding: 0.6rem 2rem; border: none; border-radius: 30px; cursor: pointer; font-weight: bold; transition: 0.2s; }
+        .choose-service button { background: linear-gradient(45deg, #ff4500, #cc3300); color: white; padding: 0.6rem 2rem; border: none; border-radius: 30px; cursor: pointer; font-weight: bold; font-family: 'Gaegu', 'Gamja Flower', 'Jua', monospace; transition: 0.2s; }
         .choose-service button:hover { transform: scale(1.05); }
         
-        /* MAILING (MailerLite) */
+        /* MAILING (MailerLite) - FULLY SYNCED */
         .mailing { background: rgba(0,0,0,0.6); text-align: center; padding: 2rem; margin: 2rem 1rem; border-top: 2px solid #ff6600; border-bottom: 2px solid #ff6600; border-radius: 10px; }
-        .mailing h2 { font-size: 1.3rem; margin-bottom: 1rem; font-family: 'Creepster', 'Courier New', cursive; color: #ffaa66; }
-        /* MailerLite Styling to blend */
+        .mailing h2 { font-size: 1.3rem; margin-bottom: 1rem; font-family: 'Gaegu', 'Gamja Flower', 'Jua', cursive; color: #ffaa66; }
+        .ml-embedded { max-width: 500px; margin: 0 auto; }
         .ml-embedded .ml-form-embedWrapper { background: transparent !important; }
-        .ml-embedded .ml-form-fieldRow input { background: #1a0505 !important; border: 2px solid #ff6600 !important; color: white !important; border-radius: 8px !important; }
-        .ml-embedded .ml-form-embedSubmit button { background: linear-gradient(45deg, #ff6600, #ff8c00) !important; color: #000 !important; border-radius: 8px !important; font-weight: bold !important; }
+        .ml-embedded .ml-form-fieldRow input { 
+            background: #1a0505 !important; 
+            border: 2px solid #ff6600 !important; 
+            color: white !important; 
+            border-radius: 8px !important;
+            font-family: 'Gaegu', 'Gamja Flower', 'Jua', monospace !important;
+            font-size: 1rem !important;
+            padding: 12px !important;
+            width: 100% !important;
+        }
+        .ml-embedded .ml-form-embedSubmit button { 
+            background: linear-gradient(45deg, #ff6600, #ff8c00) !important; 
+            color: #000 !important; 
+            border-radius: 8px !important; 
+            font-weight: bold !important;
+            font-family: 'Gaegu', 'Gamja Flower', 'Jua', monospace !important;
+            font-size: 1rem !important;
+            padding: 12px !important;
+            width: 100% !important;
+            cursor: pointer !important;
+        }
+        .ml-embedded .ml-form-embedSubmit button:hover {
+            background: linear-gradient(45deg, #ff7700, #ffaa00) !important;
+        }
         
         /* BOTTOM BUTTONS */
         .contact-about { display: grid; grid-template-columns: repeat(2, 1fr); gap: 1rem; max-width: 100%; margin: 1rem auto; padding: 1rem; text-align: center; }
         .contact-card, .about-card { background: rgba(0,0,0,0.6); padding: 1rem; border-radius: 10px; border: 1px solid #ff6600; }
-        .contact-card h3, .about-card h3 { color: #ffaa66; margin-bottom: 0.8rem; font-family: 'Creepster', 'Courier New', cursive; }
-        .bottom-btn { background: linear-gradient(45deg, #ff6600, #ff8c00); color: #000; padding: 0.5rem 1rem; text-decoration: none; display: inline-block; border-radius: 8px; font-weight: bold; transition: 0.2s; border: none; cursor: pointer; }
+        .contact-card h3, .about-card h3 { color: #ffaa66; margin-bottom: 0.8rem; font-family: 'Gaegu', 'Gamja Flower', 'Jua', cursive; }
+        .bottom-btn { background: linear-gradient(45deg, #ff6600, #ff8c00); color: #000; padding: 0.5rem 1rem; text-decoration: none; display: inline-block; border-radius: 8px; font-weight: bold; font-family: 'Gaegu', 'Gamja Flower', 'Jua', monospace; transition: 0.2s; border: none; cursor: pointer; }
         .bottom-btn:hover { transform: scale(1.05); }
         
-        .footer { text-align: center; padding: 1rem; border-top: 1px solid #ff6600; font-size: 0.7rem; color: #ffaa66; }
+        .footer { text-align: center; padding: 1rem; border-top: 1px solid #ff6600; font-size: 0.7rem; color: #ffaa66; font-family: 'Gaegu', 'Gamja Flower', 'Jua', monospace; }
     </style>
     <!-- Tawk.to Script -->
     <script type="text/javascript">
@@ -199,7 +222,7 @@
         <a href="https://wa.me/211920146370" target="_blank" class="social-circle"><img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WA"></a>
     </div>
 
-    <!-- PLAY NOW & BOOKING - BUTTON NOW RECTANGULAR -->
+    <!-- PLAY NOW & BOOKING -->
     <div class="play-now-container">
         <a href="https://audiomack.com/wrealx/song/hurry-up" target="_blank" class="play-now-btn">▶ PLAY NOW - HURRY UP</a>
     </div>
@@ -209,7 +232,7 @@
     </div>
     <div class="choose-service"><button>CHOOSE SERVICE</button></div>
     
-    <!-- VIDEOS - 2 PER COLUMN ON MOBILE -->
+    <!-- VIDEOS - FULL YouTube Ratio, No Cropping -->
     <h2 class="section-title">LATEST VIDEOS</h2>
     <div class="video-grid">
         <div class="video-card"><div class="video-wrapper"><iframe src="https://www.youtube.com/embed/swCF5DMFquE" frameborder="0" allowfullscreen></iframe></div><div class="video-title">Wreal X - Hurry Up</div></div>
@@ -218,7 +241,7 @@
         <div class="video-card"><div class="video-wrapper"><iframe src="https://www.youtube.com/embed/2H3Ei5EPkFc" frameborder="0" allowfullscreen></iframe></div><div class="video-title">Wreal X - Photo</div></div>
     </div>
     
-    <!-- MERCH SECTION - 2 PER COLUMN ON MOBILE -->
+    <!-- MERCH - ORIGINAL GANGO SOCKS IMAGE RESTORED -->
     <h2 class="section-title">MERCH</h2>
     <div class="grid-4">
         <div class="card"><img src="https://iili.io/C9A01C7.jpg"><h3>X-CELL DRESS</h3><div class="price">180,000 SSP</div><button class="buy-btn" onclick="location.href='https://wa.me/211920146370?text=I want X-CELL DRESS'">BUY NOW</button></div>
@@ -231,13 +254,13 @@
         <div class="card"><img src="https://iili.io/C9A1WPt.png"><h3>X BOY SHIRTS</h3><div class="price">150,000 SSP</div><button class="buy-btn" onclick="location.href='https://wa.me/211920146370?text=I want X BOY SHIRTS'">BUY NOW</button></div>
     </div>
     
-    <!-- MAILERLITE FORM (EMBEDDED) -->
+    <!-- MAILERLITE FORM - FULLY SYNCED -->
     <div class="mailing">
         <h2>SIGN UP FOR UPDATES</h2>
         <div class="ml-embedded" data-form="jQnelt"></div>
     </div>
     
-    <!-- BOTTOM BUTTONS (CONTACT & ABOUT) -->
+    <!-- BOTTOM BUTTONS -->
     <div class="contact-about">
         <div class="contact-card"><h3>CONTACT</h3><a href="contact.html" class="bottom-btn">Contact Us</a></div>
         <div class="about-card"><h3>ABOUT US</h3><a href="about.html" class="bottom-btn">About Us</a></div>
@@ -256,4 +279,4 @@
         document.querySelectorAll('.side-nav a').forEach(link => { link.addEventListener('click', closeMenu); });
     </script>
 </body>
-            </html>
+        </html>
