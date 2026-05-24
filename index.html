@@ -10,145 +10,139 @@
         (function(w,d,e,u,f,l,n){w[f]=w[f]||function(){(w[f].q=w[f].q||[]).push(arguments);},l=d.createElement(e),l.async=1,l.src=u,n=d.getElementsByTagName(e)[0],n.parentNode.insertBefore(l,n);})(window,document,'script','https://assets.mailerlite.com/js/universal.js','ml');ml('account', '2366714');
     </script>
     <style>
-        * { margin: 0; padding: 0; box-sizing: border-box; }
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
         body {
             font-family: 'Courier New', 'Playfair Display', monospace;
             background: linear-gradient(135deg, #1a0000 0%, #3d0c0c 50%, #7a1f1f 100%);
             color: #fff2e6;
-            line-height: 1.5;
+            line-height: 1.3;
             overflow-x: hidden;
-            min-height: 100vh;
+            font-size: 14px;
         }
-        /* HEADER */
+        /* HEADER - SMALLER */
         .header {
             background: rgba(0,0,0,0.85);
             backdrop-filter: blur(10px);
-            padding: 1rem;
+            padding: 0.6rem 1rem;
             position: sticky;
             top: 0;
             z-index: 1000;
             display: flex;
             justify-content: space-between;
             align-items: center;
-            border-bottom: 2px solid #ff6600;
+            border-bottom: 1.5px solid #ff6600;
         }
         .logo {
-            font-size: 1.5rem;
+            font-size: 1rem;
             font-weight: 900;
-            letter-spacing: 3px;
+            letter-spacing: 1px;
             font-family: 'Creepster', 'Courier New', cursive;
             background: linear-gradient(45deg, #ff4500, #ff8c00);
             -webkit-background-clip: text;
             background-clip: text;
             color: transparent;
-            text-shadow: 0 0 10px rgba(255,68,0,0.5);
         }
-        .menu-btn { background: none; border: none; cursor: pointer; padding: 10px; z-index: 1001; }
-        .menu-btn span { display: block; width: 28px; height: 3px; background: #ff6600; margin: 6px 0; transition: 0.3s; border-radius: 3px; }
+        .menu-btn { background: none; border: none; cursor: pointer; padding: 6px; z-index: 1001; }
+        .menu-btn span { display: block; width: 22px; height: 2px; background: #ff6600; margin: 5px 0; border-radius: 2px; }
         
         /* SIDE MENU */
         .side-nav {
-            position: fixed; top: 0; left: -300px; width: 280px; height: 100%; background: rgba(30,10,10,0.98);
-            backdrop-filter: blur(10px); z-index: 1002; transition: left 0.3s ease; padding-top: 80px;
-            box-shadow: 2px 0 20px rgba(255,68,0,0.3); border-right: 2px solid #ff4500;
+            position: fixed; top: 0; left: -260px; width: 260px; height: 100%; background: rgba(30,10,10,0.98);
+            backdrop-filter: blur(10px); z-index: 1002; transition: left 0.3s ease; padding-top: 70px;
+            border-right: 1.5px solid #ff4500;
         }
         .side-nav.open { left: 0; }
         .side-nav a {
-            display: flex; align-items: center; gap: 15px; padding: 1rem 1.5rem; color: #ff8c66;
-            text-decoration: none; font-size: 1.2rem; font-weight: bold; border-bottom: 1px solid #ff4500;
-            transition: background 0.3s; font-family: 'Creepster', 'Courier New', cursive;
+            display: flex; align-items: center; gap: 12px; padding: 0.8rem 1.2rem; color: #ff8c66;
+            text-decoration: none; font-size: 1rem; font-weight: bold; border-bottom: 1px solid #ff4500;
+            font-family: 'Creepster', 'Courier New', cursive;
         }
         .side-nav a:hover { background: #ff4500; color: #000; }
-        .side-nav img { width: 24px; height: 24px; filter: brightness(0) invert(1); }
+        .side-nav img { width: 20px; height: 20px; filter: brightness(0) invert(1); }
         .overlay { position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.8); z-index: 1001; display: none; }
         .overlay.active { display: block; }
         
-        /* HERO WITH FADE TRANSITION */
+        /* HERO - SMALLER WITH FADE */
         .hero {
             width: 100%;
             background: url('https://iili.io/C9aXwuI.jpg') center/cover no-repeat;
             aspect-ratio: 16 / 9;
-            border-bottom: 3px solid #ff4500;
-            box-shadow: 0 0 30px rgba(255,68,0,0.3);
-            mask-image: linear-gradient(to bottom, black 80%, transparent 100%);
-            -webkit-mask-image: linear-gradient(to bottom, black 80%, transparent 100%);
+            border-bottom: 2px solid #ff4500;
+            mask-image: linear-gradient(to bottom, black 85%, transparent 100%);
+            -webkit-mask-image: linear-gradient(to bottom, black 85%, transparent 100%);
         }
         
-        /* SOCIAL ICONS */
-        .social-section { display: flex; justify-content: center; gap: 25px; padding: 25px 15px; flex-wrap: wrap; background: transparent; }
+        /* SOCIAL ICONS - SMALLER */
+        .social-section { display: flex; justify-content: center; gap: 12px; padding: 12px 10px; flex-wrap: wrap; }
         .social-circle {
-            display: flex; align-items: center; justify-content: center; width: 60px; height: 60px;
-            background: rgba(0,0,0,0.6); border-radius: 50%; transition: all 0.2s; text-decoration: none;
-            border: 1px solid #ff6600; box-shadow: 0 0 10px rgba(255,102,0,0.3);
+            display: flex; align-items: center; justify-content: center; width: 40px; height: 40px;
+            background: rgba(0,0,0,0.6); border-radius: 50%; border: 1px solid #ff6600;
+            transition: 0.2s;
         }
-        .social-circle:hover { transform: scale(1.1); background: #ff4500; border-color: #ffcc00; box-shadow: 0 0 20px rgba(255,68,0,0.6); }
-        .social-circle img { width: 32px; height: 32px; }
-        .social-circle:hover img { filter: brightness(0); }
+        .social-circle img { width: 22px; height: 22px; }
+        .social-circle:hover { transform: scale(1.05); background: #ff4500; }
         
-        /* BUTTONS */
-        .play-now-container { text-align: center; padding: 0.5rem 1rem 1rem; background: transparent; }
+        /* BUTTONS - SMALLER */
+        .play-now-container { text-align: center; padding: 0.3rem 1rem 0.8rem; }
         .play-now-btn {
-            background: linear-gradient(45deg, #ff4500, #cc3300); color: white; padding: 0.8rem 2rem;
-            font-size: 1.1rem; font-weight: bold; border-radius: 50px; text-decoration: none; display: inline-block;
-            font-family: 'Courier New', monospace; transition: transform 0.2s; border: 1px solid #ff8c00;
-            box-shadow: 0 0 15px rgba(255,68,0,0.5);
+            background: linear-gradient(45deg, #ff4500, #cc3300); color: white; padding: 0.5rem 1.2rem;
+            font-size: 0.85rem; font-weight: bold; border-radius: 40px; text-decoration: none; display: inline-block;
+            border: 1px solid #ff8c00;
         }
-        .play-now-btn:hover { transform: scale(1.05); background: linear-gradient(45deg, #ff5500, #dd3300); }
-        
         .section-title {
-            text-align: center; font-size: 1.8rem; margin: 1.5rem 0 1rem;
+            text-align: center; font-size: 1.3rem; margin: 1rem 0 0.7rem;
             font-family: 'Creepster', 'Courier New', cursive;
             background: linear-gradient(45deg, #ff6600, #ffcc00);
             -webkit-background-clip: text; background-clip: text; color: transparent;
         }
         
-        /* VIDEO GRID */
-        .video-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1rem; max-width: 100%; margin: 1rem auto; padding: 0 0.8rem; }
-        .video-card { background: rgba(0,0,0,0.6); border-radius: 8px; overflow: hidden; border: 1px solid #ff6600; transition: all 0.2s; }
-        .video-card:hover { transform: translateY(-3px); border-color: #ff4500; box-shadow: 0 0 15px rgba(255,68,0,0.4); }
-        .video-wrapper { position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; }
-        .video-wrapper iframe { position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: none; }
-        .video-title { padding: 0.5rem; font-size: 0.7rem; text-align: center; font-weight: bold; color: #ffaa66; }
+        /* VIDEO GRID - SMALLER */
+        .video-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 6px; margin: 0.5rem auto; padding: 0 6px; }
+        .video-card { background: rgba(0,0,0,0.6); border-radius: 6px; overflow: hidden; border: 1px solid #ff6600; }
+        .video-wrapper { position: relative; padding-bottom: 56.25%; height: 0; }
+        .video-wrapper iframe { position: absolute; top: 0; left: 0; width: 100%; height: 100%; }
+        .video-title { padding: 4px; font-size: 0.55rem; text-align: center; font-weight: bold; color: #ffaa66; }
         
-        /* MERCH GRID */
-        .grid-4 { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1rem; max-width: 100%; margin: 0 auto; padding: 0 0.8rem; }
-        @media (max-width: 768px) { .grid-4 { grid-template-columns: repeat(2, 1fr); } .video-grid { grid-template-columns: repeat(2, 1fr); } .social-circle { width: 52px; height: 52px; } }
-        @media (max-width: 480px) { .video-grid { grid-template-columns: 1fr; } .social-circle { width: 48px; height: 48px; } }
+        /* MERCH GRID - SMALLER */
+        .grid-4 { display: grid; grid-template-columns: repeat(4, 1fr); gap: 6px; padding: 0 6px; margin: 0 auto; }
+        .card { background: rgba(0,0,0,0.6); border-radius: 6px; text-align: center; padding-bottom: 4px; border: 1px solid #ff6600; }
+        .card img { width: 100%; height: 80px; object-fit: cover; border-radius: 6px 6px 0 0; }
+        .card h3 { font-size: 0.55rem; margin: 4px 0; color: #ffaa66; }
+        .price { font-size: 0.6rem; font-weight: bold; background: linear-gradient(45deg, #ff6600, #ffcc00); -webkit-background-clip: text; background-clip: text; color: transparent; }
+        .buy-btn { background: linear-gradient(45deg, #ff6600, #ff8c00); color: #000; border: none; padding: 3px 6px; margin: 3px 0; cursor: pointer; border-radius: 4px; font-size: 0.55rem; font-weight: bold; }
         
-        .card { background: rgba(0,0,0,0.6); border-radius: 8px; text-align: center; padding-bottom: 0.6rem; border: 1px solid #ff6600; transition: 0.2s; }
-        .card:hover { transform: translateY(-3px); border-color: #ff4500; box-shadow: 0 0 15px rgba(255,68,0,0.4); }
-        .card img { width: 100%; height: 130px; object-fit: cover; border-radius: 8px 8px 0 0; }
-        .card h3 { font-size: 0.7rem; margin: 0.4rem 0; color: #ffaa66; }
-        .price { background: linear-gradient(45deg, #ff6600, #ffcc00); -webkit-background-clip: text; background-clip: text; color: transparent; font-size: 0.8rem; font-weight: bold; }
-        .buy-btn { background: linear-gradient(45deg, #ff6600, #ff8c00); color: #000; border: none; padding: 0.3rem 0.6rem; margin: 0.3rem 0; cursor: pointer; border-radius: 4px; font-size: 0.65rem; font-weight: bold; transition: 0.2s; }
-        .buy-btn:hover { transform: scale(1.05); background: linear-gradient(45deg, #ff7700, #ffaa00); }
+        /* SERVICE BUTTONS - SMALLER */
+        .service-buttons { text-align: center; margin: 0.5rem 0; }
+        .service-btn { background: rgba(0,0,0,0.7); color: #ffaa66; padding: 0.4rem 1rem; margin: 0.2rem; border: 1px solid #ff6600; border-radius: 30px; font-size: 0.75rem; font-weight: bold; display: inline-block; cursor: pointer; }
+        .choose-service { text-align: center; margin: 0.3rem 0 0.8rem; }
+        .choose-service button { background: linear-gradient(45deg, #ff4500, #cc3300); color: white; padding: 0.4rem 1.2rem; border: none; border-radius: 30px; font-size: 0.75rem; font-weight: bold; cursor: pointer; }
         
-        /* SERVICE & CHOOSE */
-        .service-buttons { text-align: center; margin: 1rem 0; }
-        .service-btn { background: rgba(0,0,0,0.7); color: #ffaa66; padding: 0.6rem 1.5rem; margin: 0.3rem; border: 1px solid #ff6600; border-radius: 30px; cursor: pointer; font-weight: bold; display: inline-block; transition: 0.2s; }
-        .service-btn:hover { background: #ff4500; color: #000; border-color: #ffcc00; }
-        .choose-service { text-align: center; margin: 0.5rem 0 1.5rem; }
-        .choose-service button { background: linear-gradient(45deg, #ff4500, #cc3300); color: white; padding: 0.6rem 2rem; border: none; border-radius: 30px; cursor: pointer; font-weight: bold; transition: 0.2s; }
-        .choose-service button:hover { transform: scale(1.05); }
+        /* MAILERLITE - SMALLER */
+        .mailing { padding: 1rem; margin: 1rem; border-top: 1.5px solid #ff6600; border-bottom: 1.5px solid #ff6600; border-radius: 8px; background: rgba(0,0,0,0.5); }
+        .mailing h2 { font-size: 1rem; margin-bottom: 0.7rem; color: #ffaa66; }
+        .ml-embedded .ml-form-fieldRow input { padding: 6px !important; font-size: 0.75rem !important; }
+        .ml-embedded .ml-form-embedSubmit button { padding: 6px !important; font-size: 0.75rem !important; }
         
-        /* MAILING (MailerLite) */
-        .mailing { background: rgba(0,0,0,0.6); text-align: center; padding: 2rem; margin: 2rem 1rem; border-top: 2px solid #ff6600; border-bottom: 2px solid #ff6600; border-radius: 10px; }
-        .mailing h2 { font-size: 1.3rem; margin-bottom: 1rem; font-family: 'Creepster', 'Courier New', cursive; color: #ffaa66; }
-        /* MailerLite Styling to blend */
-        .ml-embedded .ml-form-embedWrapper { background: transparent !important; }
-        .ml-embedded .ml-form-fieldRow input { background: #1a0505 !important; border: 2px solid #ff6600 !important; color: white !important; border-radius: 8px !important; }
-        .ml-embedded .ml-form-embedSubmit button { background: linear-gradient(45deg, #ff6600, #ff8c00) !important; color: #000 !important; border-radius: 8px !important; font-weight: bold !important; }
+        /* BOTTOM BUTTONS - SMALLER */
+        .contact-about { display: grid; grid-template-columns: repeat(2, 1fr); gap: 10px; margin: 0.5rem auto; padding: 0 10px; }
+        .contact-card, .about-card { background: rgba(0,0,0,0.5); padding: 0.6rem; border-radius: 8px; border: 1px solid #ff6600; text-align: center; }
+        .contact-card h3, .about-card h3 { font-size: 0.8rem; margin-bottom: 0.4rem; color: #ffaa66; }
+        .bottom-btn { background: linear-gradient(45deg, #ff6600, #ff8c00); color: #000; padding: 4px 10px; font-size: 0.7rem; border-radius: 6px; text-decoration: none; display: inline-block; font-weight: bold; }
         
-        /* BOTTOM BUTTONS */
-        .contact-about { display: grid; grid-template-columns: repeat(2, 1fr); gap: 1rem; max-width: 100%; margin: 1rem auto; padding: 1rem; text-align: center; }
-        .contact-card, .about-card { background: rgba(0,0,0,0.6); padding: 1rem; border-radius: 10px; border: 1px solid #ff6600; }
-        .contact-card h3, .about-card h3 { color: #ffaa66; margin-bottom: 0.8rem; font-family: 'Creepster', 'Courier New', cursive; }
-        .bottom-btn { background: linear-gradient(45deg, #ff6600, #ff8c00); color: #000; padding: 0.5rem 1rem; text-decoration: none; display: inline-block; border-radius: 8px; font-weight: bold; transition: 0.2s; border: none; cursor: pointer; }
-        .bottom-btn:hover { transform: scale(1.05); }
+        .footer { text-align: center; padding: 0.8rem; font-size: 0.55rem; border-top: 1px solid #ff6600; color: #ffaa66; }
         
-        .footer { text-align: center; padding: 1rem; border-top: 1px solid #ff6600; font-size: 0.7rem; color: #ffaa66; }
+        /* RESPONSIVE TWEAKS */
+        @media (max-width: 600px) {
+            .video-grid { gap: 5px; }
+            .grid-4 { gap: 5px; }
+            .card img { height: 70px; }
+            .social-section { gap: 8px; }
+        }
     </style>
-    <!-- Tawk.to Script -->
     <script type="text/javascript">
         var Tawk_API = Tawk_API || {}, Tawk_LoadStart = new Date();
         (function() { var s1 = document.createElement("script"), s0 = document.getElementsByTagName("script")[0];
@@ -162,38 +156,34 @@
         <button class="menu-btn" id="menuBtn"><span></span><span></span><span></span></button>
     </div>
     <div class="side-nav" id="sideNav">
-        <a href="merch.html"><img src="https://cdn-icons-png.flaticon.com/512/2838/2838895.png" alt="cart"> SHOP NOW</a>
-        <a href="https://whatsapp.com/channel/0029VbBbCBOKbYMKGJMUHt2x" target="_blank"><img src="https://cdn-icons-png.flaticon.com/512/733/733585.png" alt="fanclub"> JOIN THE FAN CLUB</a>
-        <a href="about.html"><img src="https://cdn-icons-png.flaticon.com/512/1077/1077063.png" alt="about"> ABOUT</a>
-        <a href="contact.html"><img src="https://cdn-icons-png.flaticon.com/512/724/724664.png" alt="contact"> CONTACT</a>
+        <a href="merch.html"><img src="https://cdn-icons-png.flaticon.com/512/2838/2838895.png"> SHOP NOW</a>
+        <a href="https://whatsapp.com/channel/0029VbBbCBOKbYMKGJMUHt2x" target="_blank"><img src="https://cdn-icons-png.flaticon.com/512/733/733585.png"> JOIN THE FAN CLUB</a>
+        <a href="about.html"><img src="https://cdn-icons-png.flaticon.com/512/1077/1077063.png"> ABOUT</a>
+        <a href="contact.html"><img src="https://cdn-icons-png.flaticon.com/512/724/724664.png"> CONTACT</a>
     </div>
     <div class="overlay" id="overlay"></div>
 
-    <!-- HERO IMAGE WITH FADE -->
     <div class="hero"></div>
 
-    <!-- SOCIAL ICONS -->
     <div class="social-section">
         <a href="https://www.facebook.com/profile.php?id=61566474707822" target="_blank" class="social-circle"><img src="https://upload.wikimedia.org/wikipedia/commons/5/51/Facebook_f_logo_%282019%29.svg" alt="FB"></a>
         <a href="https://www.instagram.com/wreal.x" target="_blank" class="social-circle"><img src="https://upload.wikimedia.org/wikipedia/commons/e/e7/Instagram_logo_2016.svg" alt="IG"></a>
-        <a href="https://x.com/Wreal_X" target="_blank" class="social-circle"><img src="https://cdn-icons-png.flaticon.com/512/5969/5969020.png" alt="X" style="width:28px"></a>
+        <a href="https://x.com/Wreal_X" target="_blank" class="social-circle"><img src="https://cdn-icons-png.flaticon.com/512/5969/5969020.png" alt="X" style="width:18px"></a>
         <a href="https://youtube.com/@wrealx" target="_blank" class="social-circle"><img src="https://upload.wikimedia.org/wikipedia/commons/4/42/YouTube_icon_%282013-2017%29.png" alt="YT"></a>
         <a href="https://bsky.app/profile/wrealx.bsky.social" target="_blank" class="social-circle"><img src="https://upload.wikimedia.org/wikipedia/commons/7/7a/Bluesky_Logo.svg" alt="BS"></a>
         <a href="https://www.tiktok.com/@wreal_x" target="_blank" class="social-circle"><img src="https://cdn-icons-png.flaticon.com/512/3046/3046126.png" alt="TT"></a>
         <a href="https://wa.me/211920146370" target="_blank" class="social-circle"><img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WA"></a>
     </div>
 
-    <!-- PLAY NOW & BOOKING -->
     <div class="play-now-container">
         <a href="https://audiomack.com/wrealx/song/hurry-up" target="_blank" class="play-now-btn">▶ PLAY NOW - HURRY UP</a>
     </div>
     <div class="service-buttons">
-        <button class="service-btn">OR</button>
+        <span class="service-btn">OR</span>
         <a href="https://wa.me/211920146370?text=I want to book Wreal X for an event" class="service-btn">BOOK WREAL X NOW</a>
     </div>
     <div class="choose-service"><button>CHOOSE SERVICE</button></div>
     
-    <!-- VIDEOS -->
     <h2 class="section-title">LATEST VIDEOS</h2>
     <div class="video-grid">
         <div class="video-card"><div class="video-wrapper"><iframe src="https://www.youtube.com/embed/swCF5DMFquE" frameborder="0" allowfullscreen></iframe></div><div class="video-title">Wreal X - Hurry Up</div></div>
@@ -202,32 +192,29 @@
         <div class="video-card"><div class="video-wrapper"><iframe src="https://www.youtube.com/embed/2H3Ei5EPkFc" frameborder="0" allowfullscreen></iframe></div><div class="video-title">Wreal X - Photo</div></div>
     </div>
     
-    <!-- MERCH SECTION (CORRECTED IMAGES & PRICES) -->
     <h2 class="section-title">MERCH</h2>
     <div class="grid-4">
-        <div class="card"><img src="https://iili.io/C9A01C7.jpg"><h3>X-CELL DRESS</h3><div class="price">180,000 SSP</div><button class="buy-btn" onclick="location.href='https://wa.me/211920146370?text=I want X-CELL DRESS'">BUY NOW</button></div>
-        <div class="card"><img src="https://iili.io/C9A07p4.jpg"><h3>X-MAN GLOVES</h3><div class="price">25,000 SSP</div><button class="buy-btn" onclick="location.href='https://wa.me/211920146370?text=I want X-MAN GLOVES'">BUY NOW</button></div>
-        <div class="card"><img src="https://iili.io/C9A7R6b.png"><h3>GANGO SOCKS</h3><div class="price">25,000 SSP</div><button class="buy-btn" onclick="location.href='https://wa.me/211920146370?text=I want GANGO SOCKS'">BUY NOW</button></div>
-        <div class="card"><img src="https://iili.io/C9A1uoB.png"><h3>X-MAN HOODIES</h3><div class="price">220,000 SSP</div><button class="buy-btn" onclick="location.href='https://wa.me/211920146370?text=I want X-MAN HOODIES'">BUY NOW</button></div>
-        <div class="card"><img src="https://iili.io/C9A1RP1.png"><h3>GANGO SCARVES</h3><div class="price">35,000 SSP</div><button class="buy-btn" onclick="location.href='https://wa.me/211920146370?text=I want GANGO SCARVES'">BUY NOW</button></div>
-        <div class="card"><img src="https://iili.io/C9A1ItV.png"><h3>GANG GIRL DRESS</h3><div class="price">200,000 SSP</div><button class="buy-btn" onclick="location.href='https://wa.me/211920146370?text=I want GANG GIRL DRESS'">BUY NOW</button></div>
-        <div class="card"><img src="https://iili.io/C9A1AMP.png"><h3>GANG GIRL X</h3><div class="price">250,000 SSP</div><button class="buy-btn" onclick="location.href='https://wa.me/211920146370?text=I want GANG GIRL X'">BUY NOW</button></div>
-        <div class="card"><img src="https://iili.io/C9A1WPt.png"><h3>X BOY SHIRTS</h3><div class="price">150,000 SSP</div><button class="buy-btn" onclick="location.href='https://wa.me/211920146370?text=I want X BOY SHIRTS'">BUY NOW</button></div>
+        <div class="card"><img src="https://iili.io/C9A01C7.jpg"><h3>X-CELL DRESS</h3><div class="price">180k SSP</div><button class="buy-btn" onclick="location.href='https://wa.me/211920146370?text=I want X-CELL DRESS'">BUY</button></div>
+        <div class="card"><img src="https://iili.io/C9A07p4.jpg"><h3>X-MAN GLOVES</h3><div class="price">25k SSP</div><button class="buy-btn" onclick="location.href='https://wa.me/211920146370?text=I want X-MAN GLOVES'">BUY</button></div>
+        <div class="card"><img src="https://iili.io/C9A7R6b.png"><h3>GANGO SOCKS</h3><div class="price">25k SSP</div><button class="buy-btn" onclick="location.href='https://wa.me/211920146370?text=I want GANGO SOCKS'">BUY</button></div>
+        <div class="card"><img src="https://iili.io/C9A1uoB.png"><h3>X-MAN HOODIES</h3><div class="price">220k SSP</div><button class="buy-btn" onclick="location.href='https://wa.me/211920146370?text=I want X-MAN HOODIES'">BUY</button></div>
+        <div class="card"><img src="https://iili.io/C9A1RP1.png"><h3>GANGO SCARVES</h3><div class="price">35k SSP</div><button class="buy-btn" onclick="location.href='https://wa.me/211920146370?text=I want GANGO SCARVES'">BUY</button></div>
+        <div class="card"><img src="https://iili.io/C9A1ItV.png"><h3>GANG GIRL DRESS</h3><div class="price">200k SSP</div><button class="buy-btn" onclick="location.href='https://wa.me/211920146370?text=I want GANG GIRL DRESS'">BUY</button></div>
+        <div class="card"><img src="https://iili.io/C9A1AMP.png"><h3>GANG GIRL X</h3><div class="price">250k SSP</div><button class="buy-btn" onclick="location.href='https://wa.me/211920146370?text=I want GANG GIRL X'">BUY</button></div>
+        <div class="card"><img src="https://iili.io/C9A1WPt.png"><h3>X BOY SHIRTS</h3><div class="price">150k SSP</div><button class="buy-btn" onclick="location.href='https://wa.me/211920146370?text=I want X BOY SHIRTS'">BUY</button></div>
     </div>
     
-    <!-- MAILERLITE FORM (EMBEDDED) -->
     <div class="mailing">
         <h2>SIGN UP FOR UPDATES</h2>
         <div class="ml-embedded" data-form="jQnelt"></div>
     </div>
     
-    <!-- BOTTOM BUTTONS (CONTACT & ABOUT) -->
     <div class="contact-about">
         <div class="contact-card"><h3>CONTACT</h3><a href="contact.html" class="bottom-btn">Contact Us</a></div>
         <div class="about-card"><h3>ABOUT US</h3><a href="about.html" class="bottom-btn">About Us</a></div>
     </div>
     
-    <div class="footer"><p>© 2026 WREAL X | All Rights Reserved</p></div>
+    <div class="footer"><p>© 2026 WREAL X</p></div>
     
     <script>
         const menuBtn = document.getElementById('menuBtn');
@@ -240,4 +227,4 @@
         document.querySelectorAll('.side-nav a').forEach(link => { link.addEventListener('click', closeMenu); });
     </script>
 </body>
-    </html>
+            </html>
