@@ -5,12 +5,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=yes">
     <title>WREAL X</title>
     <link href="https://fonts.googleapis.com/css2?family=Creepster&family=UnifrakturMaguntia&family=Playfair+Display:wght@400;700;900&display=swap" rel="stylesheet">
+    <!-- MailerLite Universal -->
+    <script>
+        (function(w,d,e,u,f,l,n){w[f]=w[f]||function(){(w[f].q=w[f].q||[]).push(arguments);},l=d.createElement(e),l.async=1,l.src=u,n=d.getElementsByTagName(e)[0],n.parentNode.insertBefore(l,n);})(window,document,'script','https://assets.mailerlite.com/js/universal.js','ml');ml('account', '2366714');
+    </script>
     <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
         body {
             font-family: 'Courier New', 'Playfair Display', monospace;
             background: linear-gradient(135deg, #1a0000 0%, #3d0c0c 50%, #7a1f1f 100%);
@@ -19,6 +19,7 @@
             overflow-x: hidden;
             min-height: 100vh;
         }
+        /* HEADER */
         .header {
             background: rgba(0,0,0,0.85);
             backdrop-filter: blur(10px);
@@ -42,436 +43,124 @@
             color: transparent;
             text-shadow: 0 0 10px rgba(255,68,0,0.5);
         }
-        .menu-btn {
-            background: none;
-            border: none;
-            cursor: pointer;
-            padding: 10px;
-            z-index: 1001;
-        }
-        .menu-btn span {
-            display: block;
-            width: 28px;
-            height: 3px;
-            background: #ff6600;
-            margin: 6px 0;
-            transition: 0.3s;
-            border-radius: 3px;
-        }
+        .menu-btn { background: none; border: none; cursor: pointer; padding: 10px; z-index: 1001; }
+        .menu-btn span { display: block; width: 28px; height: 3px; background: #ff6600; margin: 6px 0; transition: 0.3s; border-radius: 3px; }
+        
+        /* SIDE MENU */
         .side-nav {
-            position: fixed;
-            top: 0;
-            left: -300px;
-            width: 280px;
-            height: 100%;
-            background: rgba(30,10,10,0.98);
-            backdrop-filter: blur(10px);
-            z-index: 1002;
-            transition: left 0.3s ease;
-            padding-top: 80px;
-            box-shadow: 2px 0 20px rgba(255,68,0,0.3);
-            border-right: 2px solid #ff4500;
+            position: fixed; top: 0; left: -300px; width: 280px; height: 100%; background: rgba(30,10,10,0.98);
+            backdrop-filter: blur(10px); z-index: 1002; transition: left 0.3s ease; padding-top: 80px;
+            box-shadow: 2px 0 20px rgba(255,68,0,0.3); border-right: 2px solid #ff4500;
         }
-        .side-nav.open {
-            left: 0;
-        }
+        .side-nav.open { left: 0; }
         .side-nav a {
-            display: flex;
-            align-items: center;
-            gap: 15px;
-            padding: 1rem 1.5rem;
-            color: #ff8c66;
-            text-decoration: none;
-            font-size: 1.2rem;
-            font-weight: bold;
-            border-bottom: 1px solid #ff4500;
-            transition: background 0.3s;
-            font-family: 'Creepster', 'Courier New', cursive;
+            display: flex; align-items: center; gap: 15px; padding: 1rem 1.5rem; color: #ff8c66;
+            text-decoration: none; font-size: 1.2rem; font-weight: bold; border-bottom: 1px solid #ff4500;
+            transition: background 0.3s; font-family: 'Creepster', 'Courier New', cursive;
         }
-        .side-nav a:hover {
-            background: #ff4500;
-            color: #000;
-        }
-        .side-nav img {
-            width: 24px;
-            height: 24px;
-            filter: brightness(0) invert(1);
-        }
-        .side-nav a:hover img {
-            filter: brightness(0);
-        }
-        .overlay {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: rgba(0,0,0,0.8);
-            z-index: 1001;
-            display: none;
-        }
-        .overlay.active {
-            display: block;
-        }
+        .side-nav a:hover { background: #ff4500; color: #000; }
+        .side-nav img { width: 24px; height: 24px; filter: brightness(0) invert(1); }
+        .overlay { position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.8); z-index: 1001; display: none; }
+        .overlay.active { display: block; }
+        
+        /* HERO WITH FADE TRANSITION */
         .hero {
             width: 100%;
             background: url('https://iili.io/C9aXwuI.jpg') center/cover no-repeat;
             aspect-ratio: 16 / 9;
             border-bottom: 3px solid #ff4500;
             box-shadow: 0 0 30px rgba(255,68,0,0.3);
+            mask-image: linear-gradient(to bottom, black 80%, transparent 100%);
+            -webkit-mask-image: linear-gradient(to bottom, black 80%, transparent 100%);
         }
         
-        .social-section {
-            display: flex;
-            justify-content: center;
-            gap: 25px;
-            padding: 25px 15px;
-            flex-wrap: wrap;
-            background: transparent;
-        }
+        /* SOCIAL ICONS */
+        .social-section { display: flex; justify-content: center; gap: 25px; padding: 25px 15px; flex-wrap: wrap; background: transparent; }
         .social-circle {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            width: 60px;
-            height: 60px;
-            background: rgba(0,0,0,0.6);
-            border-radius: 50%;
-            transition: transform 0.2s, background 0.2s;
-            text-decoration: none;
-            border: 1px solid #ff6600;
-            box-shadow: 0 0 10px rgba(255,102,0,0.3);
+            display: flex; align-items: center; justify-content: center; width: 60px; height: 60px;
+            background: rgba(0,0,0,0.6); border-radius: 50%; transition: all 0.2s; text-decoration: none;
+            border: 1px solid #ff6600; box-shadow: 0 0 10px rgba(255,102,0,0.3);
         }
-        .social-circle:hover {
-            transform: scale(1.1);
-            background: #ff4500;
-            border-color: #ffcc00;
-            box-shadow: 0 0 20px rgba(255,68,0,0.6);
-        }
-        .social-circle img {
-            width: 32px;
-            height: 32px;
-        }
-        .social-circle:hover img {
-            filter: brightness(0);
-        }
-        .social-circle .x-icon {
-            width: 28px;
-            height: 28px;
-        }
+        .social-circle:hover { transform: scale(1.1); background: #ff4500; border-color: #ffcc00; box-shadow: 0 0 20px rgba(255,68,0,0.6); }
+        .social-circle img { width: 32px; height: 32px; }
+        .social-circle:hover img { filter: brightness(0); }
         
-        .play-now-container {
-            text-align: center;
-            padding: 0.5rem 1rem 1rem;
-            background: transparent;
-        }
+        /* BUTTONS */
+        .play-now-container { text-align: center; padding: 0.5rem 1rem 1rem; background: transparent; }
         .play-now-btn {
-            background: linear-gradient(45deg, #ff4500, #cc3300);
-            color: white;
-            padding: 0.8rem 2rem;
-            font-size: 1.1rem;
-            font-weight: bold;
-            border-radius: 50px;
-            text-decoration: none;
-            display: inline-block;
-            font-family: 'Courier New', monospace;
-            transition: transform 0.2s;
-            border: 1px solid #ff8c00;
+            background: linear-gradient(45deg, #ff4500, #cc3300); color: white; padding: 0.8rem 2rem;
+            font-size: 1.1rem; font-weight: bold; border-radius: 50px; text-decoration: none; display: inline-block;
+            font-family: 'Courier New', monospace; transition: transform 0.2s; border: 1px solid #ff8c00;
             box-shadow: 0 0 15px rgba(255,68,0,0.5);
         }
-        .play-now-btn:hover {
-            transform: scale(1.05);
-            background: linear-gradient(45deg, #ff5500, #dd3300);
-            box-shadow: 0 0 25px rgba(255,68,0,0.8);
-        }
+        .play-now-btn:hover { transform: scale(1.05); background: linear-gradient(45deg, #ff5500, #dd3300); }
+        
         .section-title {
-            text-align: center;
-            font-size: 1.8rem;
-            margin: 1.5rem 0 1rem;
+            text-align: center; font-size: 1.8rem; margin: 1.5rem 0 1rem;
             font-family: 'Creepster', 'Courier New', cursive;
             background: linear-gradient(45deg, #ff6600, #ffcc00);
-            -webkit-background-clip: text;
-            background-clip: text;
-            color: transparent;
-            letter-spacing: 2px;
+            -webkit-background-clip: text; background-clip: text; color: transparent;
         }
         
-        .video-grid {
-            display: grid;
-            grid-template-columns: repeat(4, 1fr);
-            gap: 1rem;
-            max-width: 100%;
-            margin: 1rem auto;
-            padding: 0 0.8rem;
-        }
-        .video-card {
-            background: rgba(0,0,0,0.6);
-            border-radius: 8px;
-            overflow: hidden;
-            border: 1px solid #ff6600;
-            transition: transform 0.2s, border-color 0.2s;
-        }
-        .video-card:hover {
-            transform: translateY(-3px);
-            border-color: #ff4500;
-            box-shadow: 0 0 15px rgba(255,68,0,0.4);
-        }
-        .video-wrapper {
-            position: relative;
-            padding-bottom: 56.25%;
-            height: 0;
-            overflow: hidden;
-        }
-        .video-wrapper iframe {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            border: none;
-        }
-        .video-title {
-            padding: 0.5rem;
-            font-size: 0.7rem;
-            text-align: center;
-            font-weight: bold;
-            color: #ffaa66;
-            font-family: 'Courier New', monospace;
-        }
-        @media (max-width: 768px) {
-            .video-grid {
-                grid-template-columns: repeat(2, 1fr);
-                gap: 0.8rem;
-            }
-            .social-circle { width: 52px; height: 52px; }
-            .social-circle img { width: 28px; height: 28px; }
-        }
-        @media (max-width: 480px) {
-            .video-grid {
-                grid-template-columns: 1fr;
-                gap: 1rem;
-            }
-            .social-circle { width: 48px; height: 48px; }
-            .social-circle img { width: 26px; height: 26px; }
-        }
+        /* VIDEO GRID */
+        .video-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1rem; max-width: 100%; margin: 1rem auto; padding: 0 0.8rem; }
+        .video-card { background: rgba(0,0,0,0.6); border-radius: 8px; overflow: hidden; border: 1px solid #ff6600; transition: all 0.2s; }
+        .video-card:hover { transform: translateY(-3px); border-color: #ff4500; box-shadow: 0 0 15px rgba(255,68,0,0.4); }
+        .video-wrapper { position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; }
+        .video-wrapper iframe { position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: none; }
+        .video-title { padding: 0.5rem; font-size: 0.7rem; text-align: center; font-weight: bold; color: #ffaa66; }
         
-        .grid-4 {
-            display: grid;
-            grid-template-columns: repeat(4, 1fr);
-            gap: 1rem;
-            max-width: 100%;
-            margin: 0 auto;
-            padding: 0 0.8rem;
-        }
-        @media (max-width: 768px) {
-            .grid-4 { grid-template-columns: repeat(2, 1fr); gap: 0.8rem; }
-        }
-        @media (max-width: 480px) {
-            .grid-4 { grid-template-columns: repeat(2, 1fr); gap: 0.6rem; padding: 0 0.5rem; }
-        }
-        .card {
-            background: rgba(0,0,0,0.6);
-            border-radius: 8px;
-            text-align: center;
-            padding-bottom: 0.6rem;
-            border: 1px solid #ff6600;
-            transition: transform 0.2s;
-        }
-        .card:hover {
-            transform: translateY(-3px);
-            border-color: #ff4500;
-            box-shadow: 0 0 15px rgba(255,68,0,0.4);
-        }
-        .card img {
-            width: 100%;
-            height: 130px;
-            object-fit: cover;
-            border-radius: 8px 8px 0 0;
-        }
-        .card h3 {
-            font-size: 0.7rem;
-            margin: 0.4rem 0;
-            color: #ffaa66;
-        }
-        .price {
-            background: linear-gradient(45deg, #ff6600, #ffcc00);
-            -webkit-background-clip: text;
-            background-clip: text;
-            color: transparent;
-            font-size: 0.8rem;
-            margin: 0.2rem 0;
-            font-weight: bold;
-        }
-        .buy-btn-yellow {
-            background: linear-gradient(45deg, #ff6600, #ff8c00);
-            color: #000;
-            border: none;
-            padding: 0.3rem 0.6rem;
-            margin: 0.3rem 0;
-            cursor: pointer;
-            border-radius: 4px;
-            font-size: 0.65rem;
-            font-weight: bold;
-            transition: transform 0.2s;
-        }
-        .buy-btn-yellow:hover {
-            transform: scale(1.05);
-            background: linear-gradient(45deg, #ff7700, #ffaa00);
-        }
-        .service-buttons {
-            text-align: center;
-            margin: 1rem 0;
-        }
-        .service-btn {
-            background: rgba(0,0,0,0.7);
-            color: #ffaa66;
-            padding: 0.6rem 1.5rem;
-            margin: 0.3rem;
-            border: 1px solid #ff6600;
-            border-radius: 30px;
-            cursor: pointer;
-            font-family: 'Courier New', monospace;
-            font-weight: bold;
-            text-decoration: none;
-            display: inline-block;
-            transition: all 0.2s;
-        }
-        .service-btn:hover {
-            background: #ff4500;
-            color: #000;
-            border-color: #ffcc00;
-        }
-        .choose-service {
-            text-align: center;
-            margin: 0.5rem 0 1.5rem;
-        }
-        .choose-service button {
-            background: linear-gradient(45deg, #ff4500, #cc3300);
-            color: white;
-            padding: 0.6rem 2rem;
-            border: none;
-            border-radius: 30px;
-            cursor: pointer;
-            font-family: 'Courier New', monospace;
-            font-weight: bold;
-            transition: transform 0.2s;
-        }
-        .choose-service button:hover {
-            transform: scale(1.05);
-        }
-        .mailing {
-            background: rgba(0,0,0,0.6);
-            text-align: center;
-            padding: 2rem;
-            margin: 2rem 1rem;
-            border-top: 2px solid #ff6600;
-            border-bottom: 2px solid #ff6600;
-            border-radius: 10px;
-        }
-        .mailing h2 {
-            font-size: 1.3rem;
-            margin-bottom: 1rem;
-            font-family: 'Creepster', 'Courier New', cursive;
-            color: #ffaa66;
-        }
-        .mailing form {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            gap: 0.8rem;
-            max-width: 400px;
-            margin: 0 auto;
-        }
-        .mailing input {
-            padding: 0.7rem;
-            width: 100%;
-            border: 2px solid #ff6600;
-            border-radius: 8px;
-            background: #1a0505;
-            color: white;
-        }
-        .mailing button {
-            background: linear-gradient(45deg, #ff6600, #ff8c00);
-            color: #000;
-            padding: 0.7rem;
-            width: 100%;
-            border: none;
-            border-radius: 8px;
-            cursor: pointer;
-            font-weight: bold;
-            font-family: 'Courier New', monospace;
-            transition: transform 0.2s;
-        }
-        .mailing button:hover {
-            transform: scale(1.02);
-        }
-        .contact-about {
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 1rem;
-            max-width: 100%;
-            margin: 1rem auto;
-            padding: 1rem;
-            text-align: center;
-        }
-        .contact-card, .about-card {
-            background: rgba(0,0,0,0.6);
-            padding: 1rem;
-            border-radius: 10px;
-            border: 1px solid #ff6600;
-        }
-        .contact-card h3, .about-card h3 {
-            color: #ffaa66;
-            margin-bottom: 0.8rem;
-            font-family: 'Creepster', 'Courier New', cursive;
-        }
-        .contact-btn, .about-btn {
-            background: linear-gradient(45deg, #ff6600, #ff8c00);
-            color: #000;
-            padding: 0.5rem 1rem;
-            text-decoration: none;
-            display: inline-block;
-            border-radius: 8px;
-            font-weight: bold;
-            font-family: 'Courier New', monospace;
-            cursor: pointer;
-            border: none;
-            transition: transform 0.2s;
-        }
-        .contact-btn:hover, .about-btn:hover {
-            transform: scale(1.05);
-        }
-        .footer {
-            text-align: center;
-            padding: 1rem;
-            border-top: 1px solid #ff6600;
-            font-size: 0.7rem;
-            font-family: 'Courier New', monospace;
-            color: #ffaa66;
-        }
+        /* MERCH GRID */
+        .grid-4 { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1rem; max-width: 100%; margin: 0 auto; padding: 0 0.8rem; }
+        @media (max-width: 768px) { .grid-4 { grid-template-columns: repeat(2, 1fr); } .video-grid { grid-template-columns: repeat(2, 1fr); } .social-circle { width: 52px; height: 52px; } }
+        @media (max-width: 480px) { .video-grid { grid-template-columns: 1fr; } .social-circle { width: 48px; height: 48px; } }
+        
+        .card { background: rgba(0,0,0,0.6); border-radius: 8px; text-align: center; padding-bottom: 0.6rem; border: 1px solid #ff6600; transition: 0.2s; }
+        .card:hover { transform: translateY(-3px); border-color: #ff4500; box-shadow: 0 0 15px rgba(255,68,0,0.4); }
+        .card img { width: 100%; height: 130px; object-fit: cover; border-radius: 8px 8px 0 0; }
+        .card h3 { font-size: 0.7rem; margin: 0.4rem 0; color: #ffaa66; }
+        .price { background: linear-gradient(45deg, #ff6600, #ffcc00); -webkit-background-clip: text; background-clip: text; color: transparent; font-size: 0.8rem; font-weight: bold; }
+        .buy-btn { background: linear-gradient(45deg, #ff6600, #ff8c00); color: #000; border: none; padding: 0.3rem 0.6rem; margin: 0.3rem 0; cursor: pointer; border-radius: 4px; font-size: 0.65rem; font-weight: bold; transition: 0.2s; }
+        .buy-btn:hover { transform: scale(1.05); background: linear-gradient(45deg, #ff7700, #ffaa00); }
+        
+        /* SERVICE & CHOOSE */
+        .service-buttons { text-align: center; margin: 1rem 0; }
+        .service-btn { background: rgba(0,0,0,0.7); color: #ffaa66; padding: 0.6rem 1.5rem; margin: 0.3rem; border: 1px solid #ff6600; border-radius: 30px; cursor: pointer; font-weight: bold; display: inline-block; transition: 0.2s; }
+        .service-btn:hover { background: #ff4500; color: #000; border-color: #ffcc00; }
+        .choose-service { text-align: center; margin: 0.5rem 0 1.5rem; }
+        .choose-service button { background: linear-gradient(45deg, #ff4500, #cc3300); color: white; padding: 0.6rem 2rem; border: none; border-radius: 30px; cursor: pointer; font-weight: bold; transition: 0.2s; }
+        .choose-service button:hover { transform: scale(1.05); }
+        
+        /* MAILING (MailerLite) */
+        .mailing { background: rgba(0,0,0,0.6); text-align: center; padding: 2rem; margin: 2rem 1rem; border-top: 2px solid #ff6600; border-bottom: 2px solid #ff6600; border-radius: 10px; }
+        .mailing h2 { font-size: 1.3rem; margin-bottom: 1rem; font-family: 'Creepster', 'Courier New', cursive; color: #ffaa66; }
+        /* MailerLite Styling to blend */
+        .ml-embedded .ml-form-embedWrapper { background: transparent !important; }
+        .ml-embedded .ml-form-fieldRow input { background: #1a0505 !important; border: 2px solid #ff6600 !important; color: white !important; border-radius: 8px !important; }
+        .ml-embedded .ml-form-embedSubmit button { background: linear-gradient(45deg, #ff6600, #ff8c00) !important; color: #000 !important; border-radius: 8px !important; font-weight: bold !important; }
+        
+        /* BOTTOM BUTTONS */
+        .contact-about { display: grid; grid-template-columns: repeat(2, 1fr); gap: 1rem; max-width: 100%; margin: 1rem auto; padding: 1rem; text-align: center; }
+        .contact-card, .about-card { background: rgba(0,0,0,0.6); padding: 1rem; border-radius: 10px; border: 1px solid #ff6600; }
+        .contact-card h3, .about-card h3 { color: #ffaa66; margin-bottom: 0.8rem; font-family: 'Creepster', 'Courier New', cursive; }
+        .bottom-btn { background: linear-gradient(45deg, #ff6600, #ff8c00); color: #000; padding: 0.5rem 1rem; text-decoration: none; display: inline-block; border-radius: 8px; font-weight: bold; transition: 0.2s; border: none; cursor: pointer; }
+        .bottom-btn:hover { transform: scale(1.05); }
+        
+        .footer { text-align: center; padding: 1rem; border-top: 1px solid #ff6600; font-size: 0.7rem; color: #ffaa66; }
     </style>
+    <!-- Tawk.to Script -->
     <script type="text/javascript">
         var Tawk_API = Tawk_API || {}, Tawk_LoadStart = new Date();
-        (function() {
-            var s1 = document.createElement("script"), s0 = document.getElementsByTagName("script")[0];
-            s1.async = true;
-            s1.src = 'https://embed.tawk.to/6a0df26e2789931c36ceec10/default';
-            s1.charset = 'UTF-8';
-            s1.setAttribute('crossorigin', '*');
-            s0.parentNode.insertBefore(s1, s0);
-        })();
+        (function() { var s1 = document.createElement("script"), s0 = document.getElementsByTagName("script")[0];
+        s1.async = true; s1.src = 'https://embed.tawk.to/6a0df26e2789931c36ceec10/default';
+        s1.charset = 'UTF-8'; s1.setAttribute('crossorigin','*'); s0.parentNode.insertBefore(s1, s0); })();
     </script>
 </head>
 <body>
     <div class="header">
         <div class="logo">WREAL X</div>
-        <button class="menu-btn" id="menuBtn">
-            <span></span>
-            <span></span>
-            <span></span>
-        </button>
+        <button class="menu-btn" id="menuBtn"><span></span><span></span><span></span></button>
     </div>
-    
     <div class="side-nav" id="sideNav">
         <a href="merch.html"><img src="https://cdn-icons-png.flaticon.com/512/2838/2838895.png" alt="cart"> SHOP NOW</a>
         <a href="https://whatsapp.com/channel/0029VbBbCBOKbYMKGJMUHt2x" target="_blank"><img src="https://cdn-icons-png.flaticon.com/512/733/733585.png" alt="fanclub"> JOIN THE FAN CLUB</a>
@@ -480,32 +169,21 @@
     </div>
     <div class="overlay" id="overlay"></div>
 
+    <!-- HERO IMAGE WITH FADE -->
     <div class="hero"></div>
 
+    <!-- SOCIAL ICONS -->
     <div class="social-section">
-        <a href="https://www.facebook.com/profile.php?id=61566474707822" target="_blank" class="social-circle">
-            <img src="https://upload.wikimedia.org/wikipedia/commons/5/51/Facebook_f_logo_%282019%29.svg" alt="FB">
-        </a>
-        <a href="https://www.instagram.com/wreal.x" target="_blank" class="social-circle">
-            <img src="https://upload.wikimedia.org/wikipedia/commons/e/e7/Instagram_logo_2016.svg" alt="IG">
-        </a>
-        <a href="https://x.com/Wreal_X" target="_blank" class="social-circle">
-            <img src="https://cdn-icons-png.flaticon.com/512/5969/5969020.png" alt="X" class="x-icon">
-        </a>
-        <a href="https://youtube.com/@wrealx" target="_blank" class="social-circle">
-            <img src="https://upload.wikimedia.org/wikipedia/commons/4/42/YouTube_icon_%282013-2017%29.png" alt="YT">
-        </a>
-        <a href="https://bsky.app/profile/wrealx.bsky.social" target="_blank" class="social-circle">
-            <img src="https://upload.wikimedia.org/wikipedia/commons/7/7a/Bluesky_Logo.svg" alt="BS">
-        </a>
-        <a href="https://www.tiktok.com/@wreal_x" target="_blank" class="social-circle">
-            <img src="https://cdn-icons-png.flaticon.com/512/3046/3046126.png" alt="TT">
-        </a>
-        <a href="https://wa.me/211920146370" target="_blank" class="social-circle">
-            <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WA">
-        </a>
+        <a href="https://www.facebook.com/profile.php?id=61566474707822" target="_blank" class="social-circle"><img src="https://upload.wikimedia.org/wikipedia/commons/5/51/Facebook_f_logo_%282019%29.svg" alt="FB"></a>
+        <a href="https://www.instagram.com/wreal.x" target="_blank" class="social-circle"><img src="https://upload.wikimedia.org/wikipedia/commons/e/e7/Instagram_logo_2016.svg" alt="IG"></a>
+        <a href="https://x.com/Wreal_X" target="_blank" class="social-circle"><img src="https://cdn-icons-png.flaticon.com/512/5969/5969020.png" alt="X" style="width:28px"></a>
+        <a href="https://youtube.com/@wrealx" target="_blank" class="social-circle"><img src="https://upload.wikimedia.org/wikipedia/commons/4/42/YouTube_icon_%282013-2017%29.png" alt="YT"></a>
+        <a href="https://bsky.app/profile/wrealx.bsky.social" target="_blank" class="social-circle"><img src="https://upload.wikimedia.org/wikipedia/commons/7/7a/Bluesky_Logo.svg" alt="BS"></a>
+        <a href="https://www.tiktok.com/@wreal_x" target="_blank" class="social-circle"><img src="https://cdn-icons-png.flaticon.com/512/3046/3046126.png" alt="TT"></a>
+        <a href="https://wa.me/211920146370" target="_blank" class="social-circle"><img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WA"></a>
     </div>
 
+    <!-- PLAY NOW & BOOKING -->
     <div class="play-now-container">
         <a href="https://audiomack.com/wrealx/song/hurry-up" target="_blank" class="play-now-btn">▶ PLAY NOW - HURRY UP</a>
     </div>
@@ -513,40 +191,53 @@
         <button class="service-btn">OR</button>
         <a href="https://wa.me/211920146370?text=I want to book Wreal X for an event" class="service-btn">BOOK WREAL X NOW</a>
     </div>
-    <div class="choose-service">
-        <button>CHOOSE SERVICE</button>
-    </div>
+    <div class="choose-service"><button>CHOOSE SERVICE</button></div>
     
+    <!-- VIDEOS -->
     <h2 class="section-title">LATEST VIDEOS</h2>
     <div class="video-grid">
-        <div class="video-card">
-            <div class="video-wrapper">
-                <iframe src="https://www.youtube.com/embed/swCF5DMFquE" title="Wreal X - Hurry Up" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-            </div>
-            <div class="video-title">Wreal X - Hurry Up</div>
-        </div>
-        <div class="video-card">
-            <div class="video-wrapper">
-                <iframe src="https://www.youtube.com/embed/npL5BEmPgtk" title="Wreal X ft Boii Mujung - Number" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-            </div>
-            <div class="video-title">Wreal X ft Boii Mujung - Number</div>
-        </div>
-        <div class="video-card">
-            <div class="video-wrapper">
-                <iframe src="https://www.youtube.com/embed/T59z8NQ3OMA" title="Wreal X ft Bu Man - Monalisa" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-            </div>
-            <div class="video-title">Wreal X ft Bu Man - Monalisa</div>
-        </div>
-        <div class="video-card">
-            <div class="video-wrapper">
-                <iframe src="https://www.youtube.com/embed/2H3Ei5EPkFc" title="Wreal X ft Khida - Photo" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-            </div>
-            <div class="video-title">Wreal X ft Khida - Photo</div>
-        </div>
+        <div class="video-card"><div class="video-wrapper"><iframe src="https://www.youtube.com/embed/swCF5DMFquE" frameborder="0" allowfullscreen></iframe></div><div class="video-title">Wreal X - Hurry Up</div></div>
+        <div class="video-card"><div class="video-wrapper"><iframe src="https://www.youtube.com/embed/npL5BEmPgtk" frameborder="0" allowfullscreen></iframe></div><div class="video-title">Wreal X - Number</div></div>
+        <div class="video-card"><div class="video-wrapper"><iframe src="https://www.youtube.com/embed/T59z8NQ3OMA" frameborder="0" allowfullscreen></iframe></div><div class="video-title">Wreal X - Monalisa</div></div>
+        <div class="video-card"><div class="video-wrapper"><iframe src="https://www.youtube.com/embed/2H3Ei5EPkFc" frameborder="0" allowfullscreen></iframe></div><div class="video-title">Wreal X - Photo</div></div>
     </div>
     
+    <!-- MERCH SECTION (CORRECTED IMAGES & PRICES) -->
     <h2 class="section-title">MERCH</h2>
     <div class="grid-4">
-        <div class="card"><img src="https://iili.io/C9A01C7.jpg"><h3>X-CELL DRESS</h3><div class="price">220,000 SSP</div><button class="buy-btn-yellow" onclick="location.href='https://wa.me/211920146370?text=I want X-CELL DRESS'">BUY NOW</button></div>
-        <div class="card"><img src="https://iili.io/C9A07p4.jpg"><h3>X-MAN GLOVES</h3><div class="price">35,000 SSP</div><button class="buy-btn-yellow" onclick="location.href='https://wa.me/211920146370?text=I want X-MAN GLOVES'">BUY NOW</button></div>
-        <div class="c
+        <div class="card"><img src="https://iili.io/C9A01C7.jpg"><h3>X-CELL DRESS</h3><div class="price">180,000 SSP</div><button class="buy-btn" onclick="location.href='https://wa.me/211920146370?text=I want X-CELL DRESS'">BUY NOW</button></div>
+        <div class="card"><img src="https://iili.io/C9A07p4.jpg"><h3>X-MAN GLOVES</h3><div class="price">25,000 SSP</div><button class="buy-btn" onclick="location.href='https://wa.me/211920146370?text=I want X-MAN GLOVES'">BUY NOW</button></div>
+        <div class="card"><img src="https://iili.io/C9A7R6b.png"><h3>GANGO SOCKS</h3><div class="price">25,000 SSP</div><button class="buy-btn" onclick="location.href='https://wa.me/211920146370?text=I want GANGO SOCKS'">BUY NOW</button></div>
+        <div class="card"><img src="https://iili.io/C9A1uoB.png"><h3>X-MAN HOODIES</h3><div class="price">220,000 SSP</div><button class="buy-btn" onclick="location.href='https://wa.me/211920146370?text=I want X-MAN HOODIES'">BUY NOW</button></div>
+        <div class="card"><img src="https://iili.io/C9A1RP1.png"><h3>GANGO SCARVES</h3><div class="price">35,000 SSP</div><button class="buy-btn" onclick="location.href='https://wa.me/211920146370?text=I want GANGO SCARVES'">BUY NOW</button></div>
+        <div class="card"><img src="https://iili.io/C9A1ItV.png"><h3>GANG GIRL DRESS</h3><div class="price">200,000 SSP</div><button class="buy-btn" onclick="location.href='https://wa.me/211920146370?text=I want GANG GIRL DRESS'">BUY NOW</button></div>
+        <div class="card"><img src="https://iili.io/C9A1AMP.png"><h3>GANG GIRL X</h3><div class="price">250,000 SSP</div><button class="buy-btn" onclick="location.href='https://wa.me/211920146370?text=I want GANG GIRL X'">BUY NOW</button></div>
+        <div class="card"><img src="https://iili.io/C9A1WPt.png"><h3>X BOY SHIRTS</h3><div class="price">150,000 SSP</div><button class="buy-btn" onclick="location.href='https://wa.me/211920146370?text=I want X BOY SHIRTS'">BUY NOW</button></div>
+    </div>
+    
+    <!-- MAILERLITE FORM (EMBEDDED) -->
+    <div class="mailing">
+        <h2>SIGN UP FOR UPDATES</h2>
+        <div class="ml-embedded" data-form="jQnelt"></div>
+    </div>
+    
+    <!-- BOTTOM BUTTONS (CONTACT & ABOUT) -->
+    <div class="contact-about">
+        <div class="contact-card"><h3>CONTACT</h3><a href="contact.html" class="bottom-btn">Contact Us</a></div>
+        <div class="about-card"><h3>ABOUT US</h3><a href="about.html" class="bottom-btn">About Us</a></div>
+    </div>
+    
+    <div class="footer"><p>© 2026 WREAL X | All Rights Reserved</p></div>
+    
+    <script>
+        const menuBtn = document.getElementById('menuBtn');
+        const sideNav = document.getElementById('sideNav');
+        const overlay = document.getElementById('overlay');
+        function closeMenu() { sideNav.classList.remove('open'); overlay.classList.remove('active'); }
+        function openMenu() { sideNav.classList.add('open'); overlay.classList.add('active'); }
+        if (menuBtn) { menuBtn.addEventListener('click', () => { if (sideNav.classList.contains('open')) closeMenu(); else openMenu(); }); }
+        if (overlay) { overlay.addEventListener('click', closeMenu); }
+        document.querySelectorAll('.side-nav a').forEach(link => { link.addEventListener('click', closeMenu); });
+    </script>
+</body>
+    </html>
