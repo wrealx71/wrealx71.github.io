@@ -8,7 +8,7 @@
     <style>
         * { margin: 0; padding: 0; box-sizing: border-box; }
         body {
-            font-family: 'Gaegu', 'Gamja Flower', 'Jua', 'Nanum Pen Script', 'Courier New', monospace;
+            font-family: 'Gaegu', 'Gamja Flower', 'Jua', 'Nanum Pen Script', monospace;
             background: linear-gradient(135deg, #1a0000 0%, #3d0c0c 50%, #7a1f1f 100%);
             color: #fff2e6;
             line-height: 1.5;
@@ -36,7 +36,7 @@
             -webkit-background-clip: text;
             background-clip: text;
             color: transparent;
-            text-shadow: 0 0 10px rgba(255,68,0,0.5);
+            text-decoration: none;
         }
         .menu-btn { background: none; border: none; cursor: pointer; padding: 10px; z-index: 1001; }
         .menu-btn span { display: block; width: 28px; height: 3px; background: #ff6600; margin: 6px 0; border-radius: 3px; }
@@ -62,7 +62,6 @@
             background: url('https://iili.io/C9aXwuI.jpg') center/cover no-repeat;
             aspect-ratio: 16 / 9;
             border-bottom: 3px solid #ff4500;
-            box-shadow: 0 0 30px rgba(255,68,0,0.3);
             mask-image: linear-gradient(to bottom, black 80%, transparent 100%);
             -webkit-mask-image: linear-gradient(to bottom, black 80%, transparent 100%);
         }
@@ -71,11 +70,10 @@
         .social-circle {
             display: flex; align-items: center; justify-content: center; width: 60px; height: 60px;
             background: rgba(0,0,0,0.6); border-radius: 50%; transition: all 0.2s; text-decoration: none;
-            border: 1px solid #ff6600; box-shadow: 0 0 10px rgba(255,102,0,0.3);
+            border: 1px solid #ff6600;
         }
-        .social-circle:hover { transform: scale(1.1); background: #ff4500; border-color: #ffcc00; box-shadow: 0 0 20px rgba(255,68,0,0.6); }
+        .social-circle:hover { transform: scale(1.1); background: #ff4500; }
         .social-circle img { width: 32px; height: 32px; }
-        .social-circle:hover img { filter: brightness(0); }
         
         .action-group {
             display: flex;
@@ -96,83 +94,45 @@
             font-family: 'Gaegu', 'Gamja Flower', 'Jua', monospace;
             transition: transform 0.2s;
             border: 1px solid #ff8c00;
-            box-shadow: 0 0 10px rgba(255,68,0,0.5);
         }
         .play-now-btn:hover { transform: scale(1.02); background: linear-gradient(45deg, #ff5500, #dd3300); }
         
-        .service-row {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            gap: 0.5rem;
-            flex-wrap: wrap;
-        }
+        .service-row { display: flex; justify-content: center; align-items: center; gap: 0.5rem; flex-wrap: wrap; }
         .service-btn {
-            background: rgba(0,0,0,0.7);
-            color: #ffaa66;
-            padding: 0.4rem 1rem;
-            border: 1px solid #ff6600;
-            border-radius: 30px;
-            cursor: pointer;
-            font-weight: bold;
-            font-family: 'Gaegu', 'Gamja Flower', 'Jua', monospace;
-            font-size: 0.85rem;
-            transition: 0.2s;
+            background: rgba(0,0,0,0.7); color: #ffaa66; padding: 0.4rem 1rem;
+            border: 1px solid #ff6600; border-radius: 30px; cursor: pointer;
+            font-family: 'Gaegu', 'Gamja Flower', 'Jua', monospace; font-size: 0.85rem;
         }
-        .service-btn:hover { background: #ff4500; color: #000; border-color: #ffcc00; }
+        .service-btn:hover { background: #ff4500; color: #000; }
         
         .choose-service-btn {
-            background: rgba(0,0,0,0.7);
-            color: #ffaa66;
-            padding: 0.4rem 1rem;
-            border: 1px solid #ff6600;
-            border-radius: 30px;
-            cursor: pointer;
-            font-weight: bold;
-            font-family: 'Gaegu', 'Gamja Flower', 'Jua', monospace;
-            font-size: 0.85rem;
-            transition: 0.2s;
+            background: rgba(0,0,0,0.7); color: #ffaa66; padding: 0.4rem 1rem;
+            border: 1px solid #ff6600; border-radius: 30px; cursor: pointer;
+            font-family: 'Gaegu', 'Gamja Flower', 'Jua', monospace; font-size: 0.85rem;
         }
-        .choose-service-btn:hover { background: #ff4500; color: #000; border-color: #ffcc00; }
+        .choose-service-btn:hover { background: #ff4500; color: #000; }
         
-        .book-now-container {
-            text-align: center;
-            margin: 0rem 0 1.2rem;
-        }
+        .book-now-container { text-align: center; margin: 0rem 0 1.2rem; }
         .book-now-btn {
-            background: linear-gradient(45deg, #8b0000, #660000);
-            color: #ffcc88;
-            padding: 0.5rem 1.8rem;
-            font-size: 0.9rem;
-            font-weight: bold;
-            border-radius: 40px;
-            text-decoration: none;
-            display: inline-block;
-            font-family: 'Gaegu', 'Gamja Flower', 'Jua', monospace;
-            transition: transform 0.2s;
+            background: linear-gradient(45deg, #8b0000, #660000); color: #ffcc88;
+            padding: 0.5rem 1.8rem; font-size: 0.9rem; font-weight: bold; border-radius: 40px;
+            text-decoration: none; display: inline-block; font-family: 'Gaegu', 'Gamja Flower', 'Jua', monospace;
             border: 1px solid #ff8844;
-            box-shadow: 0 0 8px rgba(139,0,0,0.5);
         }
-        .book-now-btn:hover { transform: scale(1.02); background: linear-gradient(45deg, #a00000, #770000); color: #ffddaa; }
+        .book-now-btn:hover { background: linear-gradient(45deg, #a00000, #770000); color: #ffddaa; }
         
         .section-title {
-            text-align: center;
-            font-size: 1.8rem;
-            margin: 1.5rem 0 1rem;
+            text-align: center; font-size: 1.8rem; margin: 1.5rem 0 1rem;
             font-family: 'Gaegu', 'Gamja Flower', 'Jua', cursive;
             background: linear-gradient(45deg, #ff6600, #ffcc00);
-            -webkit-background-clip: text;
-            background-clip: text;
-            color: transparent;
-            letter-spacing: 2px;
+            -webkit-background-clip: text; background-clip: text; color: transparent;
         }
         
         .video-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1rem; max-width: 100%; margin: 1rem auto; padding: 0 0.8rem; }
-        .video-card { background: rgba(0,0,0,0.6); border-radius: 8px; overflow: hidden; border: 1px solid #ff6600; transition: all 0.2s; }
-        .video-card:hover { transform: translateY(-3px); border-color: #ff4500; box-shadow: 0 0 15px rgba(255,68,0,0.4); }
+        .video-card { background: rgba(0,0,0,0.6); border-radius: 8px; overflow: hidden; border: 1px solid #ff6600; }
         .video-wrapper { position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; }
         .video-wrapper iframe { position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: none; }
-        .video-title { padding: 0.5rem; font-size: 0.7rem; text-align: center; font-weight: bold; color: #ffaa66; font-family: 'Gaegu', 'Gamja Flower', 'Jua', monospace; }
+        .video-title { padding: 0.5rem; font-size: 0.7rem; text-align: center; color: #ffaa66; font-family: 'Gaegu', 'Gamja Flower', 'Jua', monospace; }
         
         .grid-4 { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1rem; max-width: 100%; margin: 0 auto; padding: 0 0.8rem; }
         
@@ -181,81 +141,36 @@
             .video-grid { grid-template-columns: repeat(2, 1fr); }
             .social-circle { width: 52px; height: 52px; }
         }
-        @media (max-width: 480px) {
-            .social-circle { width: 48px; height: 48px; }
-        }
         
-        .card { background: rgba(0,0,0,0.6); border-radius: 8px; text-align: center; padding-bottom: 0.6rem; border: 1px solid #ff6600; transition: 0.2s; }
-        .card:hover { transform: translateY(-3px); border-color: #ff4500; box-shadow: 0 0 15px rgba(255,68,0,0.4); }
+        .card { background: rgba(0,0,0,0.6); border-radius: 8px; text-align: center; padding-bottom: 0.6rem; border: 1px solid #ff6600; }
         .card img { width: 100%; height: 130px; object-fit: cover; border-radius: 8px 8px 0 0; }
-        .card h3 { font-size: 0.7rem; margin: 0.4rem 0; color: #ffaa66; font-family: 'Gaegu', 'Gamja Flower', 'Jua', monospace; }
+        .card h3 { font-size: 0.7rem; margin: 0.4rem 0; color: #ffaa66; }
         .price { background: linear-gradient(45deg, #ff6600, #ffcc00); -webkit-background-clip: text; background-clip: text; color: transparent; font-size: 0.8rem; font-weight: bold; }
-        .buy-btn { background: linear-gradient(45deg, #ff6600, #ff8c00); color: #000; border: none; padding: 0.3rem 0.6rem; margin: 0.3rem 0; cursor: pointer; border-radius: 4px; font-size: 0.65rem; font-weight: bold; transition: 0.2s; }
-        .buy-btn:hover { transform: scale(1.05); background: linear-gradient(45deg, #ff7700, #ffaa00); }
+        .buy-btn { background: linear-gradient(45deg, #ff6600, #ff8c00); color: #000; border: none; padding: 0.3rem 0.6rem; margin: 0.3rem 0; cursor: pointer; border-radius: 4px; font-size: 0.65rem; font-weight: bold; }
         
         .signup-section {
-            background: rgba(0,0,0,0.6);
-            text-align: center;
-            padding: 2rem;
-            margin: 2rem 1rem;
-            border-top: 2px solid #ff6600;
-            border-bottom: 2px solid #ff6600;
-            border-radius: 10px;
+            background: rgba(0,0,0,0.6); text-align: center; padding: 2rem; margin: 2rem 1rem;
+            border-top: 2px solid #ff6600; border-bottom: 2px solid #ff6600; border-radius: 10px;
         }
-        .signup-section h2 {
-            font-size: 1.3rem;
-            margin-bottom: 1rem;
-            font-family: 'Gaegu', 'Gamja Flower', 'Jua', cursive;
-            color: #ffaa66;
-        }
-        .signup-form {
-            display: flex;
-            flex-direction: row;
-            justify-content: center;
-            align-items: center;
-            gap: 0.5rem;
-            max-width: 500px;
-            margin: 0 auto;
-            flex-wrap: wrap;
-        }
+        .signup-section h2 { font-size: 1.3rem; margin-bottom: 1rem; font-family: 'Gaegu', 'Gamja Flower', 'Jua', cursive; color: #ffaa66; }
+        .signup-form { display: flex; flex-direction: row; justify-content: center; align-items: center; gap: 0.5rem; max-width: 500px; margin: 0 auto; flex-wrap: wrap; }
         .signup-form input {
-            flex: 2;
-            min-width: 180px;
-            padding: 10px 12px;
-            background: #1a0505;
-            border: 2px solid #ff6600;
-            border-radius: 8px;
-            color: white;
-            font-family: 'Gaegu', 'Gamja Flower', 'Jua', monospace;
-            font-size: 1rem;
+            flex: 2; min-width: 180px; padding: 10px 12px; background: #1a0505;
+            border: 2px solid #ff6600; border-radius: 8px; color: white;
+            font-family: 'Gaegu', 'Gamja Flower', 'Jua', monospace; font-size: 1rem;
         }
         .signup-form button {
-            flex: 1;
-            min-width: 100px;
-            padding: 10px 12px;
-            background: linear-gradient(45deg, #ff6600, #ff8c00);
-            color: #000;
-            border: none;
-            border-radius: 8px;
-            font-weight: bold;
-            font-family: 'Gaegu', 'Gamja Flower', 'Jua', monospace;
-            font-size: 1rem;
-            cursor: pointer;
-            transition: transform 0.2s;
+            flex: 1; min-width: 100px; padding: 10px 12px; background: linear-gradient(45deg, #ff6600, #ff8c00);
+            color: #000; border: none; border-radius: 8px; font-weight: bold;
+            font-family: 'Gaegu', 'Gamja Flower', 'Jua', monospace; font-size: 1rem; cursor: pointer;
         }
-        .signup-form button:hover { transform: scale(1.02); background: linear-gradient(45deg, #ff7700, #ffaa00); }
         
         .contact-about { display: grid; grid-template-columns: repeat(2, 1fr); gap: 1rem; max-width: 100%; margin: 1rem auto; padding: 1rem; text-align: center; }
         .contact-card, .about-card { background: rgba(0,0,0,0.6); padding: 1rem; border-radius: 10px; border: 1px solid #ff6600; }
         .contact-card h3, .about-card h3 { color: #ffaa66; margin-bottom: 0.8rem; font-family: 'Gaegu', 'Gamja Flower', 'Jua', cursive; }
-        .bottom-btn { background: linear-gradient(45deg, #ff6600, #ff8c00); color: #000; padding: 0.5rem 1rem; text-decoration: none; display: inline-block; border-radius: 8px; font-weight: bold; font-family: 'Gaegu', 'Gamja Flower', 'Jua', monospace; transition: 0.2s; border: none; cursor: pointer; }
-        .bottom-btn:hover { transform: scale(1.05); }
+        .bottom-btn { background: linear-gradient(45deg, #ff6600, #ff8c00); color: #000; padding: 0.5rem 1rem; text-decoration: none; display: inline-block; border-radius: 8px; font-weight: bold; font-family: 'Gaegu', 'Gamja Flower', 'Jua', monospace; }
         
         .footer { text-align: center; padding: 1rem; border-top: 1px solid #ff6600; font-size: 0.7rem; color: #ffaa66; font-family: 'Gaegu', 'Gamja Flower', 'Jua', monospace; }
-        
-        html {
-            scroll-behavior: smooth;
-        }
     </style>
     <script type="text/javascript">
         var Tawk_API = Tawk_API || {}, Tawk_LoadStart = new Date();
@@ -266,22 +181,19 @@
 </head>
 <body>
     <div class="header">
-        <div class="logo">WREAL X</div>
+        <a href="index.html" class="logo">WREAL X</a>
         <button class="menu-btn" id="menuBtn"><span></span><span></span><span></span></button>
     </div>
     
-    <!-- FIXED NAVIGATION MENU - POINTS TO SEPARATE HTML FILES -->
     <div class="side-nav" id="sideNav">
-        <a href="fanclub.html"><img src="https://cdn-icons-png.flaticon.com/512/733/733585.png" alt="fanclub"> 💬 JOIN THE FAN CLUB</a>
-        <a href="contact.html"><img src="https://cdn-icons-png.flaticon.com/512/724/724664.png" alt="contact"> 📧 CONTACT</a>
-        <a href="about.html"><img src="https://cdn-icons-png.flaticon.com/512/1077/1077063.png" alt="about"> 📖 ABOUT</a>
+        <a href="fanclub.html">💬 JOIN THE FAN CLUB</a>
+        <a href="contact.html">📧 CONTACT</a>
+        <a href="about.html">📖 ABOUT</a>
     </div>
     <div class="overlay" id="overlay"></div>
 
-    <!-- HERO -->
     <div class="hero"></div>
 
-    <!-- SOCIAL ICONS -->
     <div class="social-section">
         <a href="https://www.facebook.com/profile.php?id=61566474707822" target="_blank" class="social-circle"><img src="https://upload.wikimedia.org/wikipedia/commons/5/51/Facebook_f_logo_%282019%29.svg" alt="FB"></a>
         <a href="https://www.instagram.com/wreal.x" target="_blank" class="social-circle"><img src="https://upload.wikimedia.org/wikipedia/commons/e/e7/Instagram_logo_2016.svg" alt="IG"></a>
@@ -292,7 +204,6 @@
         <a href="https://wa.me/211920146370" target="_blank" class="social-circle"><img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WA"></a>
     </div>
 
-    <!-- ATTACHED GROUP -->
     <div class="action-group">
         <a href="https://audiomack.com/wrealx/song/hurry-up" target="_blank" class="play-now-btn">▶ PLAY NOW - HURRY UP</a>
         <div class="service-row">
@@ -305,7 +216,6 @@
         <a href="https://wa.me/211920146370?text=I want to book Wreal X for an event" class="book-now-btn">📅 BOOK WREAL X NOW</a>
     </div>
     
-    <!-- VIDEOS -->
     <h2 class="section-title">LATEST VIDEOS</h2>
     <div class="video-grid">
         <div class="video-card"><div class="video-wrapper"><iframe src="https://www.youtube.com/embed/swCF5DMFquE" frameborder="0" allowfullscreen></iframe></div><div class="video-title">Wreal X - Hurry Up</div></div>
@@ -314,7 +224,6 @@
         <div class="video-card"><div class="video-wrapper"><iframe src="https://www.youtube.com/embed/2H3Ei5EPkFc" frameborder="0" allowfullscreen></iframe></div><div class="video-title">Wreal X - Photo</div></div>
     </div>
     
-    <!-- MERCH -->
     <h2 class="section-title">MERCH</h2>
     <div class="grid-4">
         <div class="card"><img src="https://iili.io/C9A01C7.jpg"><h3>X-CELL DRESS</h3><div class="price">180,000 SSP</div><button class="buy-btn" onclick="location.href='https://wa.me/211920146370?text=I want X-CELL DRESS'">BUY NOW</button></div>
@@ -327,7 +236,6 @@
         <div class="card"><img src="https://iili.io/C9A1WPt.png"><h3>X BOY SHIRTS</h3><div class="price">150,000 SSP</div><button class="buy-btn" onclick="location.href='https://wa.me/211920146370?text=I want X BOY SHIRTS'">BUY NOW</button></div>
     </div>
     
-    <!-- EMAIL SIGNUP -->
     <div class="signup-section">
         <h2>SIGN UP FOR UPDATES</h2>
         <form class="signup-form" action="https://preview.mailerlite.io/forms/2366714/188032148250297624/share" method="post" target="_blank">
@@ -352,4 +260,6 @@
         if (menuBtn) { menuBtn.addEventListener('click', () => { if (sideNav.classList.contains('open')) closeMenu(); else openMenu(); }); }
         if (overlay) { overlay.addEventListener('click', closeMenu); }
         document.querySelectorAll('.side-nav a').forEach(link => { link.addEventListener('click', closeMenu); });
-    </script
+    </script>
+</body>
+            </html>
