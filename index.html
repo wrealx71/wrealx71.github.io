@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=yes">
     <title>WREAL X</title>
-    <!-- Scissors School Font + Fallbacks -->
+    <!-- Scissors School Font -->
     <link href="https://fonts.googleapis.com/css2?family=Gaegu&family=Gamja+Flower&family=Jua&family=Nanum+Pen+Script&display=swap" rel="stylesheet">
     <!-- MailerLite Universal -->
     <script>
@@ -45,7 +45,7 @@
             text-shadow: 0 0 10px rgba(255,68,0,0.5);
         }
         .menu-btn { background: none; border: none; cursor: pointer; padding: 10px; z-index: 1001; }
-        .menu-btn span { display: block; width: 28px; height: 3px; background: #ff6600; margin: 6px 0; transition: 0.3s; border-radius: 3px; }
+        .menu-btn span { display: block; width: 28px; height: 3px; background: #ff6600; margin: 6px 0; border-radius: 3px; }
         
         /* SIDE MENU */
         .side-nav {
@@ -64,7 +64,7 @@
         .overlay { position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.8); z-index: 1001; display: none; }
         .overlay.active { display: block; }
         
-        /* HERO WITH FADE TRANSITION */
+        /* HERO WITH FADE */
         .hero {
             width: 100%;
             background: url('https://iili.io/C9aXwuI.jpg') center/cover no-repeat;
@@ -86,13 +86,19 @@
         .social-circle img { width: 32px; height: 32px; }
         .social-circle:hover img { filter: brightness(0); }
         
-        /* PLAY NOW BUTTON - RECTANGULAR */
-        .play-now-container { text-align: center; padding: 0.5rem 1rem 1rem; background: transparent; }
+        /* PLAY NOW & SERVICE SECTION - ATTACHED TOGETHER */
+        .action-group {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 0.5rem;
+            margin: 0.5rem 0 0rem;
+        }
         .play-now-btn {
             background: linear-gradient(45deg, #ff4500, #cc3300);
             color: white;
-            padding: 0.5rem 1.2rem;
-            font-size: 0.9rem;
+            padding: 0.6rem 2rem;
+            font-size: 1rem;
             font-weight: bold;
             border-radius: 6px;
             text-decoration: none;
@@ -104,6 +110,62 @@
         }
         .play-now-btn:hover { transform: scale(1.02); background: linear-gradient(45deg, #ff5500, #dd3300); }
         
+        .service-row {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 0.5rem;
+            flex-wrap: wrap;
+        }
+        .service-btn {
+            background: rgba(0,0,0,0.7);
+            color: #ffaa66;
+            padding: 0.4rem 1rem;
+            border: 1px solid #ff6600;
+            border-radius: 30px;
+            cursor: pointer;
+            font-weight: bold;
+            font-family: 'Gaegu', 'Gamja Flower', 'Jua', monospace;
+            font-size: 0.85rem;
+            transition: 0.2s;
+        }
+        .service-btn:hover { background: #ff4500; color: #000; border-color: #ffcc00; }
+        
+        .choose-service-btn {
+            background: rgba(0,0,0,0.7);
+            color: #ffaa66;
+            padding: 0.4rem 1rem;
+            border: 1px solid #ff6600;
+            border-radius: 30px;
+            cursor: pointer;
+            font-weight: bold;
+            font-family: 'Gaegu', 'Gamja Flower', 'Jua', monospace;
+            font-size: 0.85rem;
+            transition: 0.2s;
+        }
+        .choose-service-btn:hover { background: #ff4500; color: #000; border-color: #ffcc00; }
+        
+        /* BOOK BUTTON - SEPARATE, DIFFERENT COLOR, NO UNDERLINE */
+        .book-now-container {
+            text-align: center;
+            margin: 0rem 0 1.2rem;
+        }
+        .book-now-btn {
+            background: linear-gradient(45deg, #8b0000, #660000);
+            color: #ffcc88;
+            padding: 0.5rem 1.8rem;
+            font-size: 0.9rem;
+            font-weight: bold;
+            border-radius: 40px;
+            text-decoration: none;
+            display: inline-block;
+            font-family: 'Gaegu', 'Gamja Flower', 'Jua', monospace;
+            transition: transform 0.2s;
+            border: 1px solid #ff8844;
+            box-shadow: 0 0 8px rgba(139,0,0,0.5);
+        }
+        .book-now-btn:hover { transform: scale(1.02); background: linear-gradient(45deg, #a00000, #770000); color: #ffddaa; }
+        
         .section-title {
             text-align: center; font-size: 1.8rem; margin: 1.5rem 0 1rem;
             font-family: 'Gaegu', 'Gamja Flower', 'Jua', cursive;
@@ -111,7 +173,7 @@
             -webkit-background-clip: text; background-clip: text; color: transparent;
         }
         
-        /* VIDEO GRID - FULL YouTube Ratio, No Cropping */
+        /* VIDEO GRID */
         .video-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1rem; max-width: 100%; margin: 1rem auto; padding: 0 0.8rem; }
         .video-card { background: rgba(0,0,0,0.6); border-radius: 8px; overflow: hidden; border: 1px solid #ff6600; transition: all 0.2s; }
         .video-card:hover { transform: translateY(-3px); border-color: #ff4500; box-shadow: 0 0 15px rgba(255,68,0,0.4); }
@@ -122,7 +184,7 @@
         /* MERCH GRID */
         .grid-4 { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1rem; max-width: 100%; margin: 0 auto; padding: 0 0.8rem; }
         
-        /* RESPONSIVE: 2 COLUMNS ON TABLET & MOBILE */
+        /* RESPONSIVE */
         @media (max-width: 768px) {
             .grid-4 { grid-template-columns: repeat(2, 1fr); }
             .video-grid { grid-template-columns: repeat(2, 1fr); }
@@ -136,23 +198,16 @@
         .card:hover { transform: translateY(-3px); border-color: #ff4500; box-shadow: 0 0 15px rgba(255,68,0,0.4); }
         .card img { width: 100%; height: 130px; object-fit: cover; border-radius: 8px 8px 0 0; }
         .card h3 { font-size: 0.7rem; margin: 0.4rem 0; color: #ffaa66; font-family: 'Gaegu', 'Gamja Flower', 'Jua', monospace; }
-        .price { background: linear-gradient(45deg, #ff6600, #ffcc00); -webkit-background-clip: text; background-clip: text; color: transparent; font-size: 0.8rem; font-weight: bold; font-family: 'Gaegu', 'Gamja Flower', 'Jua', monospace; }
-        .buy-btn { background: linear-gradient(45deg, #ff6600, #ff8c00); color: #000; border: none; padding: 0.3rem 0.6rem; margin: 0.3rem 0; cursor: pointer; border-radius: 4px; font-size: 0.65rem; font-weight: bold; font-family: 'Gaegu', 'Gamja Flower', 'Jua', monospace; transition: 0.2s; }
+        .price { background: linear-gradient(45deg, #ff6600, #ffcc00); -webkit-background-clip: text; background-clip: text; color: transparent; font-size: 0.8rem; font-weight: bold; }
+        .buy-btn { background: linear-gradient(45deg, #ff6600, #ff8c00); color: #000; border: none; padding: 0.3rem 0.6rem; margin: 0.3rem 0; cursor: pointer; border-radius: 4px; font-size: 0.65rem; font-weight: bold; transition: 0.2s; }
         .buy-btn:hover { transform: scale(1.05); background: linear-gradient(45deg, #ff7700, #ffaa00); }
         
-        /* SERVICE & CHOOSE */
-        .service-buttons { text-align: center; margin: 1rem 0; }
-        .service-btn { background: rgba(0,0,0,0.7); color: #ffaa66; padding: 0.6rem 1.5rem; margin: 0.3rem; border: 1px solid #ff6600; border-radius: 30px; cursor: pointer; font-weight: bold; display: inline-block; transition: 0.2s; font-family: 'Gaegu', 'Gamja Flower', 'Jua', monospace; }
-        .service-btn:hover { background: #ff4500; color: #000; border-color: #ffcc00; }
-        .choose-service { text-align: center; margin: 0.5rem 0 1.5rem; }
-        .choose-service button { background: linear-gradient(45deg, #ff4500, #cc3300); color: white; padding: 0.6rem 2rem; border: none; border-radius: 30px; cursor: pointer; font-weight: bold; font-family: 'Gaegu', 'Gamja Flower', 'Jua', monospace; transition: 0.2s; }
-        .choose-service button:hover { transform: scale(1.05); }
-        
-        /* MAILING (MailerLite) - FULLY SYNCED */
-        .mailing { background: rgba(0,0,0,0.6); text-align: center; padding: 2rem; margin: 2rem 1rem; border-top: 2px solid #ff6600; border-bottom: 2px solid #ff6600; border-radius: 10px; }
+        /* MAILERLITE - HORIZONTAL RECTANGULAR FORM */
+        .mailing { background: rgba(0,0,0,0.6); text-align: center; padding: 1.5rem; margin: 2rem 1rem; border-top: 2px solid #ff6600; border-bottom: 2px solid #ff6600; border-radius: 10px; }
         .mailing h2 { font-size: 1.3rem; margin-bottom: 1rem; font-family: 'Gaegu', 'Gamja Flower', 'Jua', cursive; color: #ffaa66; }
         .ml-embedded { max-width: 500px; margin: 0 auto; }
         .ml-embedded .ml-form-embedWrapper { background: transparent !important; }
+        .ml-embedded .ml-form-fieldRow { margin-bottom: 0.8rem !important; }
         .ml-embedded .ml-form-fieldRow input { 
             background: #1a0505 !important; 
             border: 2px solid #ff6600 !important; 
@@ -160,7 +215,7 @@
             border-radius: 8px !important;
             font-family: 'Gaegu', 'Gamja Flower', 'Jua', monospace !important;
             font-size: 1rem !important;
-            padding: 12px !important;
+            padding: 10px 12px !important;
             width: 100% !important;
         }
         .ml-embedded .ml-form-embedSubmit button { 
@@ -170,12 +225,9 @@
             font-weight: bold !important;
             font-family: 'Gaegu', 'Gamja Flower', 'Jua', monospace !important;
             font-size: 1rem !important;
-            padding: 12px !important;
+            padding: 10px 12px !important;
             width: 100% !important;
             cursor: pointer !important;
-        }
-        .ml-embedded .ml-form-embedSubmit button:hover {
-            background: linear-gradient(45deg, #ff7700, #ffaa00) !important;
         }
         
         /* BOTTOM BUTTONS */
@@ -208,7 +260,7 @@
     </div>
     <div class="overlay" id="overlay"></div>
 
-    <!-- HERO IMAGE WITH FADE -->
+    <!-- HERO -->
     <div class="hero"></div>
 
     <!-- SOCIAL ICONS -->
@@ -222,17 +274,21 @@
         <a href="https://wa.me/211920146370" target="_blank" class="social-circle"><img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WA"></a>
     </div>
 
-    <!-- PLAY NOW & BOOKING -->
-    <div class="play-now-container">
+    <!-- ATTACHED GROUP: PLAY NOW + OR + CHOOSE SERVICE -->
+    <div class="action-group">
         <a href="https://audiomack.com/wrealx/song/hurry-up" target="_blank" class="play-now-btn">▶ PLAY NOW - HURRY UP</a>
+        <div class="service-row">
+            <button class="service-btn">OR</button>
+            <button class="choose-service-btn">CHOOSE SERVICE</button>
+        </div>
     </div>
-    <div class="service-buttons">
-        <button class="service-btn">OR</button>
-        <a href="https://wa.me/211920146370?text=I want to book Wreal X for an event" class="service-btn">BOOK WREAL X NOW</a>
-    </div>
-    <div class="choose-service"><button>CHOOSE SERVICE</button></div>
     
-    <!-- VIDEOS - FULL YouTube Ratio, No Cropping -->
+    <!-- BOOK BUTTON - SEPARATE, DIFFERENT COLOR, NO UNDERLINE -->
+    <div class="book-now-container">
+        <a href="https://wa.me/211920146370?text=I want to book Wreal X for an event" class="book-now-btn">📅 BOOK WREAL X NOW</a>
+    </div>
+    
+    <!-- VIDEOS -->
     <h2 class="section-title">LATEST VIDEOS</h2>
     <div class="video-grid">
         <div class="video-card"><div class="video-wrapper"><iframe src="https://www.youtube.com/embed/swCF5DMFquE" frameborder="0" allowfullscreen></iframe></div><div class="video-title">Wreal X - Hurry Up</div></div>
@@ -241,7 +297,7 @@
         <div class="video-card"><div class="video-wrapper"><iframe src="https://www.youtube.com/embed/2H3Ei5EPkFc" frameborder="0" allowfullscreen></iframe></div><div class="video-title">Wreal X - Photo</div></div>
     </div>
     
-    <!-- MERCH - ORIGINAL GANGO SOCKS IMAGE RESTORED -->
+    <!-- MERCH - ORIGINAL GANGO SOCKS -->
     <h2 class="section-title">MERCH</h2>
     <div class="grid-4">
         <div class="card"><img src="https://iili.io/C9A01C7.jpg"><h3>X-CELL DRESS</h3><div class="price">180,000 SSP</div><button class="buy-btn" onclick="location.href='https://wa.me/211920146370?text=I want X-CELL DRESS'">BUY NOW</button></div>
@@ -254,7 +310,7 @@
         <div class="card"><img src="https://iili.io/C9A1WPt.png"><h3>X BOY SHIRTS</h3><div class="price">150,000 SSP</div><button class="buy-btn" onclick="location.href='https://wa.me/211920146370?text=I want X BOY SHIRTS'">BUY NOW</button></div>
     </div>
     
-    <!-- MAILERLITE FORM - FULLY SYNCED -->
+    <!-- MAILERLITE - HORIZONTAL RECTANGULAR -->
     <div class="mailing">
         <h2>SIGN UP FOR UPDATES</h2>
         <div class="ml-embedded" data-form="jQnelt"></div>
@@ -272,11 +328,4 @@
         const menuBtn = document.getElementById('menuBtn');
         const sideNav = document.getElementById('sideNav');
         const overlay = document.getElementById('overlay');
-        function closeMenu() { sideNav.classList.remove('open'); overlay.classList.remove('active'); }
-        function openMenu() { sideNav.classList.add('open'); overlay.classList.add('active'); }
-        if (menuBtn) { menuBtn.addEventListener('click', () => { if (sideNav.classList.contains('open')) closeMenu(); else openMenu(); }); }
-        if (overlay) { overlay.addEventListener('click', closeMenu); }
-        document.querySelectorAll('.side-nav a').forEach(link => { link.addEventListener('click', closeMenu); });
-    </script>
-</body>
-        </html>
+        function closeMenu() { sideNav.classList.remov
