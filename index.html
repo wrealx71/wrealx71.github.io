@@ -53,7 +53,6 @@
             transition: background 0.3s; font-family: 'Gaegu', 'Gamja Flower', 'Jua', cursive;
         }
         .side-nav a:hover { background: #ff4500; color: #000; }
-        .side-nav img { width: 24px; height: 24px; filter: brightness(0) invert(1); }
         .overlay { position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.8); z-index: 1001; display: none; }
         .overlay.active { display: block; }
         
@@ -75,29 +74,47 @@
         .social-circle:hover { transform: scale(1.1); background: #ff4500; }
         .social-circle img { width: 32px; height: 32px; }
         
-        .action-group {
+        /* NEW SPLIT BUTTON SECTION - PLAY NOW & DOWNLOAD SIDE BY SIDE */
+        .double-btn-container {
             display: flex;
-            flex-direction: column;
-            align-items: center;
-            gap: 0.5rem;
+            justify-content: center;
+            gap: 1.2rem;
             margin: 0.5rem 0 0rem;
+            flex-wrap: wrap;
+            padding: 0 1rem;
         }
-        .play-now-btn {
+        .action-btn {
+            flex: 1;
+            max-width: 220px;
             background: linear-gradient(45deg, #ff4500, #cc3300);
             color: white;
-            padding: 0.6rem 2rem;
+            padding: 0.7rem 1rem;
             font-size: 1rem;
             font-weight: bold;
-            border-radius: 6px;
+            border-radius: 8px;
             text-decoration: none;
-            display: inline-block;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
             font-family: 'Gaegu', 'Gamja Flower', 'Jua', monospace;
-            transition: transform 0.2s;
+            transition: all 0.2s;
             border: 1px solid #ff8c00;
+            white-space: nowrap;
         }
-        .play-now-btn:hover { transform: scale(1.02); background: linear-gradient(45deg, #ff5500, #dd3300); }
+        .action-btn:hover {
+            transform: scale(1.02);
+            background: linear-gradient(45deg, #ff5500, #dd3300);
+        }
+        .download-btn {
+            background: linear-gradient(45deg, #2c5f2d, #1e3a1e);
+            border: 1px solid #55aa55;
+        }
+        .download-btn:hover {
+            background: linear-gradient(45deg, #3a7a3a, #2a4a2a);
+        }
         
-        .service-row { display: flex; justify-content: center; align-items: center; gap: 0.5rem; flex-wrap: wrap; }
+        .service-row { display: flex; justify-content: center; align-items: center; gap: 0.5rem; flex-wrap: wrap; margin-top: 0.5rem; }
         .service-btn {
             background: rgba(0,0,0,0.7); color: #ffaa66; padding: 0.4rem 1rem;
             border: 1px solid #ff6600; border-radius: 30px; cursor: pointer;
@@ -112,7 +129,7 @@
         }
         .choose-service-btn:hover { background: #ff4500; color: #000; }
         
-        .book-now-container { text-align: center; margin: 0rem 0 1.2rem; }
+        .book-now-container { text-align: center; margin: 0.8rem 0 1.2rem; }
         .book-now-btn {
             background: linear-gradient(45deg, #8b0000, #660000); color: #ffcc88;
             padding: 0.5rem 1.8rem; font-size: 0.9rem; font-weight: bold; border-radius: 40px;
@@ -140,6 +157,8 @@
             .grid-4 { grid-template-columns: repeat(2, 1fr); }
             .video-grid { grid-template-columns: repeat(2, 1fr); }
             .social-circle { width: 52px; height: 52px; }
+            .double-btn-container { gap: 0.8rem; }
+            .action-btn { padding: 0.6rem 0.8rem; font-size: 0.9rem; white-space: nowrap; }
         }
         
         .card { background: rgba(0,0,0,0.6); border-radius: 8px; text-align: center; padding-bottom: 0.6rem; border: 1px solid #ff6600; }
@@ -186,6 +205,7 @@
     </div>
     
     <div class="side-nav" id="sideNav">
+        <a href="merch.html">🛍️ SHOP NOW</a>
         <a href="fanclub.html">💬 JOIN THE FAN CLUB</a>
         <a href="contact.html">📧 CONTACT</a>
         <a href="about.html">📖 ABOUT</a>
@@ -204,12 +224,15 @@
         <a href="https://wa.me/211920146370" target="_blank" class="social-circle"><img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WA"></a>
     </div>
 
-    <div class="action-group">
-        <a href="https://audiomack.com/wrealx/song/hurry-up" target="_blank" class="play-now-btn">▶ PLAY NOW - HURRY UP</a>
-        <div class="service-row">
-            <button class="service-btn">OR</button>
-            <button class="choose-service-btn">CHOOSE SERVICE</button>
-        </div>
+    <!-- NEW SPLIT BUTTONS: PLAY NOW + DOWNLOAD -->
+    <div class="double-btn-container">
+        <a href="https://audiomack.com/wrealx/song/hurry-up" target="_blank" class="action-btn">▶ PLAY NOW</a>
+        <a href="download.html" class="action-btn download-btn">⬇ DOWNLOAD</a>
+    </div>
+    
+    <div class="service-row">
+        <button class="service-btn">OR</button>
+        <button class="choose-service-btn">CHOOSE SERVICE</button>
     </div>
     
     <div class="book-now-container">
