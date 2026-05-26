@@ -11,20 +11,20 @@
             font-family: 'Gaegu', 'Gamja Flower', 'Jua', 'Nanum Pen Script', monospace;
             background: linear-gradient(135deg, #1a0000 0%, #3d0c0c 50%, #7a1f1f 100%);
             color: #fff2e6;
-            line-height: 1.5;
+            line-height: 1.4;
             min-height: 100vh;
         }
         .header {
             background: rgba(0,0,0,0.85);
             backdrop-filter: blur(10px);
-            padding: 1rem;
+            padding: 0.8rem 1rem;
             display: flex;
             justify-content: space-between;
             align-items: center;
             border-bottom: 2px solid #ff6600;
         }
         .logo {
-            font-size: 1.5rem;
+            font-size: 1.2rem;
             font-weight: 900;
             font-family: 'Gaegu', 'Gamja Flower', 'Jua', cursive;
             background: linear-gradient(45deg, #ff4500, #ff8c00);
@@ -36,85 +36,73 @@
         .back-btn {
             background: linear-gradient(45deg, #ff6600, #ff8c00);
             color: #000;
-            padding: 0.5rem 1rem;
+            padding: 0.3rem 0.8rem;
             border-radius: 8px;
             text-decoration: none;
             font-weight: bold;
+            font-size: 0.8rem;
             font-family: 'Gaegu', 'Gamja Flower', 'Jua', monospace;
         }
         .hero-small {
             background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('https://iili.io/C9aXwuI.jpg');
             background-size: cover;
             background-position: center;
-            height: 30vh;
-            display: flex;
-            align-items: center;
-            justify-content: center;
+            padding: 2rem 1rem;
             text-align: center;
         }
         .hero-small h1 {
-            font-size: 2rem;
+            font-size: 1.6rem;
             font-family: 'Gaegu', 'Gamja Flower', 'Jua', cursive;
             color: #ffcc00;
         }
-        .downloads-container {
-            max-width: 900px;
-            margin: 2rem auto;
-            padding: 0 1rem;
+        .downloads-list {
+            max-width: 100%;
+            margin: 0.5rem 0;
             display: flex;
             flex-direction: column;
-            gap: 2rem;
         }
-        .track-card {
-            background: rgba(0,0,0,0.7);
-            border-radius: 20px;
-            border: 2px solid #ff6600;
-            overflow: hidden;
-            transition: transform 0.2s;
+        .track-item {
+            background: rgba(0,0,0,0.6);
+            border-bottom: 1px solid #ff6600;
+            padding: 0.8rem 1rem;
             display: flex;
-            flex-direction: row;
+            justify-content: space-between;
+            align-items: center;
             flex-wrap: wrap;
-        }
-        .track-card:hover {
-            transform: translateY(-3px);
-            border-color: #ffcc00;
-        }
-        .track-thumb {
-            width: 120px;
-            height: 120px;
-            object-fit: cover;
-            border-right: 2px solid #ff6600;
+            gap: 0.8rem;
         }
         .track-info {
-            flex: 1;
-            padding: 1rem;
-            display: flex;
-            flex-direction: column;
-            gap: 0.5rem;
+            flex: 3;
+            min-width: 160px;
         }
         .track-title {
-            font-size: 1.3rem;
+            font-size: 0.9rem;
             font-weight: bold;
             color: #ffcc88;
-            font-family: 'Gaegu', 'Gamja Flower', 'Jua', cursive;
+            font-family: 'Gaegu', 'Gamja Flower', 'Jua', monospace;
+            word-break: break-word;
+        }
+        .track-meta {
+            font-size: 0.7rem;
+            color: #ffaa66;
+            margin-top: 4px;
         }
         .button-group {
             display: flex;
+            gap: 0.6rem;
             flex-wrap: wrap;
-            gap: 0.8rem;
-            margin-top: 0.3rem;
         }
         .download-vid, .download-audio {
             display: inline-flex;
             align-items: center;
-            gap: 8px;
-            padding: 0.5rem 1.2rem;
-            font-size: 0.9rem;
+            gap: 5px;
+            padding: 0.3rem 0.8rem;
+            font-size: 0.7rem;
             font-weight: bold;
-            border-radius: 40px;
+            border-radius: 30px;
             text-decoration: none;
             font-family: 'Gaegu', 'Gamja Flower', 'Jua', monospace;
-            transition: transform 0.2s;
+            transition: transform 0.1s;
             border: 1px solid;
         }
         .download-vid {
@@ -124,7 +112,6 @@
         }
         .download-vid:hover {
             transform: scale(1.02);
-            background: linear-gradient(45deg, #dd4400, #aa2200);
         }
         .download-audio {
             background: linear-gradient(45deg, #2c5f2d, #1e3a1e);
@@ -133,32 +120,27 @@
         }
         .download-audio:hover {
             transform: scale(1.02);
-            background: linear-gradient(45deg, #3a7a3a, #2a4a2a);
         }
         @media (max-width: 550px) {
-            .track-card {
+            .track-item {
                 flex-direction: column;
-            }
-            .track-thumb {
-                width: 100%;
-                height: 180px;
-                border-right: none;
-                border-bottom: 2px solid #ff6600;
+                align-items: flex-start;
             }
             .button-group {
-                justify-content: center;
+                width: 100%;
+                justify-content: flex-start;
             }
             .download-vid, .download-audio {
-                justify-content: center;
                 flex: 1;
+                justify-content: center;
             }
         }
         .footer {
             text-align: center;
-            padding: 1.5rem;
+            padding: 1rem;
             border-top: 1px solid #ff6600;
-            margin-top: 2rem;
-            font-size: 0.7rem;
+            margin-top: 1rem;
+            font-size: 0.6rem;
             color: #ffaa66;
         }
     </style>
@@ -166,59 +148,59 @@
 <body>
     <div class="header">
         <a href="index.html" class="logo">WREAL X</a>
-        <a href="index.html" class="back-btn">← BACK TO HOME</a>
+        <a href="index.html" class="back-btn">← BACK</a>
     </div>
     <div class="hero-small">
         <h1>⬇️ DOWNLOADS</h1>
     </div>
 
-    <div class="downloads-container">
+    <div class="downloads-list">
         
-        <!-- Track 1: Hurry Up -->
-        <div class="track-card">
-            <img class="track-thumb" src="https://iili.io/CdfxWzu.jpg" alt="Wreal X - Hurry Up">
+        <!-- Hurry Up -->
+        <div class="track-item">
             <div class="track-info">
-                <div class="track-title">🎵 Wreal X - Hurry Up</div>
-                <div class="button-group">
-                    <a class="download-vid" href="https://files.catbox.moe/m83zk2.mp4" download="Wreal_X_Hurry_Up.mp4">🎬 HD VIDEO</a>
-                    <a class="download-audio" href="https://files.catbox.moe/qo8m1c" download="Wreal_X_Hurry_Up.mp3">🎧 AUDIO</a>
-                </div>
+                <div class="track-title">🎵 Wreal X - Hurry Up (Lyrics Video)</div>
+                <div class="track-meta">720p • 12.57 MB</div>
+            </div>
+            <div class="button-group">
+                <a class="download-vid" href="https://files.catbox.moe/m83zk2.mp4" download="Wreal_X_Hurry_Up.mp4">🎬 VIDEO</a>
+                <a class="download-audio" href="https://files.catbox.moe/qo8m1c" download="Wreal_X_Hurry_Up.mp3">🎧 AUDIO</a>
             </div>
         </div>
 
-        <!-- Track 2: Number ft Boii Mujung -->
-        <div class="track-card">
-            <img class="track-thumb" src="https://iili.io/CdfT9Ul.jpg" alt="Wreal X - Number ft Boii Mujung">
+        <!-- Number ft Boii Mujung -->
+        <div class="track-item">
             <div class="track-info">
-                <div class="track-title">🎵 Wreal X - Number ft Boii Mujung</div>
-                <div class="button-group">
-                    <a class="download-vid" href="https://files.catbox.moe/ulhq9l.mp4" download="Wreal_X_Number_ft_Boii_Mujung.mp4">🎬 HD VIDEO</a>
-                    <a class="download-audio" href="https://files.catbox.moe/l2cvbn" download="Wreal_X_Number_ft_Boii_Mujung.mp3">🎧 AUDIO</a>
-                </div>
+                <div class="track-title">🎵 Wreal X - Number ft Boii Mujung (Official Music Video)</div>
+                <div class="track-meta">720p • 52.93 MB</div>
+            </div>
+            <div class="button-group">
+                <a class="download-vid" href="https://files.catbox.moe/ulhq9l.mp4" download="Wreal_X_Number_ft_Boii_Mujung.mp4">🎬 VIDEO</a>
+                <a class="download-audio" href="https://files.catbox.moe/l2cvbn" download="Wreal_X_Number_ft_Boii_Mujung.mp3">🎧 AUDIO</a>
             </div>
         </div>
 
-        <!-- Track 3: Mona Lisa ft Bu Man -->
-        <div class="track-card">
-            <img class="track-thumb" src="https://iili.io/CdfunQn.jpg" alt="Wreal X - Mona Lisa ft Bu Man">
+        <!-- Mona Lisa ft Bu Man -->
+        <div class="track-item">
             <div class="track-info">
-                <div class="track-title">🎵 Wreal X - Mona Lisa ft Bu Man</div>
-                <div class="button-group">
-                    <a class="download-vid" href="https://files.catbox.moe/5ru0hf.mp4" download="Wreal_X_Mona_Lisa_ft_Bu_Man.mp4">🎬 HD VIDEO</a>
-                    <a class="download-audio" href="https://files.catbox.moe/kduuhy" download="Wreal_X_Mona_Lisa_ft_Bu_Man.mp3">🎧 AUDIO</a>
-                </div>
+                <div class="track-title">🎵 Wreal X - Monalisa ft Bu Man (Lyrics Video)</div>
+                <div class="track-meta">720p • 22.47 MB</div>
+            </div>
+            <div class="button-group">
+                <a class="download-vid" href="https://files.catbox.moe/5ru0hf.mp4" download="Wreal_X_Mona_Lisa_ft_Bu_Man.mp4">🎬 VIDEO</a>
+                <a class="download-audio" href="https://files.catbox.moe/kduuhy" download="Wreal_X_Mona_Lisa_ft_Bu_Man.mp3">🎧 AUDIO</a>
             </div>
         </div>
 
-        <!-- Track 4: Photo ft KHIDÂ -->
-        <div class="track-card">
-            <img class="track-thumb" src="https://iili.io/Cdfu6uI.jpg" alt="Wreal X - Photo ft KHIDÂ">
+        <!-- Photo ft KHIDÂ -->
+        <div class="track-item">
             <div class="track-info">
-                <div class="track-title">🎵 Wreal X - Photo ft KHIDÂ</div>
-                <div class="button-group">
-                    <a class="download-vid" href="https://files.catbox.moe/dxt02q.mp4" download="Wreal_X_Photo_ft_KHIDA.mp4">🎬 HD VIDEO</a>
-                    <a class="download-audio" href="https://files.catbox.moe/v66prk" download="Wreal_X_Photo_ft_KHIDA.mp3">🎧 AUDIO</a>
-                </div>
+                <div class="track-title">🎵 Wreal X - Photo ft KHIDÂ (Lyrics Video)</div>
+                <div class="track-meta">720p • 26.17 MB</div>
+            </div>
+            <div class="button-group">
+                <a class="download-vid" href="https://files.catbox.moe/dxt02q.mp4" download="Wreal_X_Photo_ft_KHIDA.mp4">🎬 VIDEO</a>
+                <a class="download-audio" href="https://files.catbox.moe/v66prk" download="Wreal_X_Photo_ft_KHIDA.mp3">🎧 AUDIO</a>
             </div>
         </div>
 
@@ -228,4 +210,4 @@
         <p>© 2026 WREAL X | All Rights Reserved</p>
     </div>
 </body>
-</html>
+    </html>
