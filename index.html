@@ -74,7 +74,6 @@
         .social-circle:hover { transform: scale(1.1); background: #ff4500; }
         .social-circle img { width: 32px; height: 32px; }
         
-        /* NEW SPLIT BUTTON SECTION - PLAY NOW & DOWNLOAD SIDE BY SIDE */
         .double-btn-container {
             display: flex;
             justify-content: center;
@@ -102,17 +101,12 @@
             border: 1px solid #ff8c00;
             white-space: nowrap;
         }
-        .action-btn:hover {
-            transform: scale(1.02);
-            background: linear-gradient(45deg, #ff5500, #dd3300);
-        }
+        .action-btn:hover { transform: scale(1.02); background: linear-gradient(45deg, #ff5500, #dd3300); }
         .download-btn {
             background: linear-gradient(45deg, #2c5f2d, #1e3a1e);
             border: 1px solid #55aa55;
         }
-        .download-btn:hover {
-            background: linear-gradient(45deg, #3a7a3a, #2a4a2a);
-        }
+        .download-btn:hover { background: linear-gradient(45deg, #3a7a3a, #2a4a2a); }
         
         .service-row { display: flex; justify-content: center; align-items: center; gap: 0.5rem; flex-wrap: wrap; margin-top: 0.5rem; }
         .service-btn {
@@ -224,7 +218,6 @@
         <a href="https://wa.me/211920146370" target="_blank" class="social-circle"><img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WA"></a>
     </div>
 
-    <!-- NEW SPLIT BUTTONS: PLAY NOW + DOWNLOAD -->
     <div class="double-btn-container">
         <a href="https://audiomack.com/wrealx/song/hurry-up" target="_blank" class="action-btn">▶ PLAY NOW</a>
         <a href="download.html" class="action-btn download-btn">⬇ DOWNLOAD</a>
@@ -232,7 +225,11 @@
     
     <div class="service-row">
         <button class="service-btn">OR</button>
-        <button class="choose-service-btn">CHOOSE SERVICE</button>
+        <a href="signup.html?return=watch.html" class="service-btn">WATCH NOW!</a>
+    </div>
+    
+    <div class="choose-service">
+        <button class="choose-service-btn" onclick="location.href='signup.html?return=#'">CHOOSE SERVICE</button>
     </div>
     
     <div class="book-now-container">
@@ -249,19 +246,19 @@
     
     <h2 class="section-title">MERCH</h2>
     <div class="grid-4">
-        <div class="card"><img src="https://iili.io/C9A01C7.jpg"><h3>X-CELL DRESS</h3><div class="price">180,000 SSP</div><button class="buy-btn" onclick="location.href='https://wa.me/211920146370?text=I want X-CELL DRESS'">BUY NOW</button></div>
-        <div class="card"><img src="https://iili.io/C9A07p4.jpg"><h3>X-MAN GLOVES</h3><div class="price">25,000 SSP</div><button class="buy-btn" onclick="location.href='https://wa.me/211920146370?text=I want X-MAN GLOVES'">BUY NOW</button></div>
-        <div class="card"><img src="https://iili.io/C9A7R6b.png"><h3>GANGO SOCKS</h3><div class="price">25,000 SSP</div><button class="buy-btn" onclick="location.href='https://wa.me/211920146370?text=I want GANGO SOCKS'">BUY NOW</button></div>
-        <div class="card"><img src="https://iili.io/C9A1uoB.png"><h3>X-MAN HOODIES</h3><div class="price">220,000 SSP</div><button class="buy-btn" onclick="location.href='https://wa.me/211920146370?text=I want X-MAN HOODIES'">BUY NOW</button></div>
-        <div class="card"><img src="https://iili.io/C9A1RP1.png"><h3>GANGO SCARVES</h3><div class="price">35,000 SSP</div><button class="buy-btn" onclick="location.href='https://wa.me/211920146370?text=I want GANGO SCARVES'">BUY NOW</button></div>
-        <div class="card"><img src="https://iili.io/C9A1ItV.png"><h3>GANG GIRL DRESS</h3><div class="price">200,000 SSP</div><button class="buy-btn" onclick="location.href='https://wa.me/211920146370?text=I want GANG GIRL DRESS'">BUY NOW</button></div>
-        <div class="card"><img src="https://iili.io/C9A1AMP.png"><h3>GANG GIRL X</h3><div class="price">250,000 SSP</div><button class="buy-btn" onclick="location.href='https://wa.me/211920146370?text=I want GANG GIRL X'">BUY NOW</button></div>
-        <div class="card"><img src="https://iili.io/C9A1WPt.png"><h3>X BOY SHIRTS</h3><div class="price">150,000 SSP</div><button class="buy-btn" onclick="location.href='https://wa.me/211920146370?text=I want X BOY SHIRTS'">BUY NOW</button></div>
+        <div class="card"><img src="https://iili.io/C9A01C7.jpg"><h3>X-CELL DRESS</h3><div class="price">180,000 SSP</div><button class="buy-btn" onclick="location.href='signup.html?return=https://wa.me/211920146370?text=I want X-CELL DRESS'">BUY NOW</button></div>
+        <div class="card"><img src="https://iili.io/C9A07p4.jpg"><h3>X-MAN GLOVES</h3><div class="price">25,000 SSP</div><button class="buy-btn" onclick="location.href='signup.html?return=https://wa.me/211920146370?text=I want X-MAN GLOVES'">BUY NOW</button></div>
+        <div class="card"><img src="https://iili.io/C9A7R6b.png"><h3>GANGO SOCKS</h3><div class="price">25,000 SSP</div><button class="buy-btn" onclick="location.href='signup.html?return=https://wa.me/211920146370?text=I want GANGO SOCKS'">BUY NOW</button></div>
+        <div class="card"><img src="https://iili.io/C9A1uoB.png"><h3>X-MAN HOODIES</h3><div class="price">220,000 SSP</div><button class="buy-btn" onclick="location.href='signup.html?return=https://wa.me/211920146370?text=I want X-MAN HOODIES'">BUY NOW</button></div>
+        <div class="card"><img src="https://iili.io/C9A1RP1.png"><h3>GANGO SCARVES</h3><div class="price">35,000 SSP</div><button class="buy-btn" onclick="location.href='signup.html?return=https://wa.me/211920146370?text=I want GANGO SCARVES'">BUY NOW</button></div>
+        <div class="card"><img src="https://iili.io/C9A1ItV.png"><h3>GANG GIRL DRESS</h3><div class="price">200,000 SSP</div><button class="buy-btn" onclick="location.href='signup.html?return=https://wa.me/211920146370?text=I want GANG GIRL DRESS'">BUY NOW</button></div>
+        <div class="card"><img src="https://iili.io/C9A1AMP.png"><h3>GANG GIRL X</h3><div class="price">250,000 SSP</div><button class="buy-btn" onclick="location.href='signup.html?return=https://wa.me/211920146370?text=I want GANG GIRL X'">BUY NOW</button></div>
+        <div class="card"><img src="https://iili.io/C9A1WPt.png"><h3>X BOY SHIRTS</h3><div class="price">150,000 SSP</div><button class="buy-btn" onclick="location.href='signup.html?return=https://wa.me/211920146370?text=I want X BOY SHIRTS'">BUY NOW</button></div>
     </div>
     
     <div class="signup-section">
         <h2>SIGN UP FOR UPDATES</h2>
-        <form class="signup-form" action="https://preview.mailerlite.io/forms/2366714/188032148250297624/share" method="post" target="_blank">
+        <form class="signup-form" action="https://formspree.io/f/xzdwopey" method="post" target="_blank">
             <input type="email" name="email" placeholder="EMAIL" required>
             <button type="submit">SIGN UP</button>
         </form>
@@ -285,4 +282,4 @@
         document.querySelectorAll('.side-nav a').forEach(link => { link.addEventListener('click', closeMenu); });
     </script>
 </body>
-            </html>
+        </html>
