@@ -105,15 +105,11 @@
         <p>© 2026 WREAL X | All Rights Reserved</p>
     </div>
     <script>
-        // Get the return URL from query parameter
         const urlParams = new URLSearchParams(window.location.search);
         const returnUrl = urlParams.get('return');
-        
-        // Check if user already signed up before
         const hasSignedUp = localStorage.getItem('wrealx_signedup');
         
         if (hasSignedUp && returnUrl) {
-            // Already signed up - redirect immediately
             window.location.href = returnUrl;
         }
         
@@ -121,7 +117,6 @@
             document.getElementById('redirectUrl').value = returnUrl;
         }
         
-        // After successful form submission, set localStorage
         const form = document.querySelector('.signup-form');
         form.addEventListener('submit', function() {
             localStorage.setItem('wrealx_signedup', 'true');
