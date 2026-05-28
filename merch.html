@@ -6,11 +6,7 @@
     <title>WREAL X - SHOP NOW</title>
     <link href="https://fonts.googleapis.com/css2?family=Gaegu&family=Gamja+Flower&family=Jua&family=Nanum+Pen+Script&display=swap" rel="stylesheet">
     <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
         body {
             font-family: 'Gaegu', 'Gamja Flower', 'Jua', 'Nanum Pen Script', monospace;
             background: linear-gradient(135deg, #1a0000 0%, #3d0c0c 50%, #7a1f1f 100%);
@@ -79,16 +75,8 @@
             margin: 1rem auto;
             padding: 0 1rem;
         }
-        @media (max-width: 900px) {
-            .merch-grid {
-                grid-template-columns: repeat(2, 1fr);
-            }
-        }
-        @media (max-width: 500px) {
-            .merch-grid {
-                grid-template-columns: 1fr;
-            }
-        }
+        @media (max-width: 900px) { .merch-grid { grid-template-columns: repeat(2, 1fr); } }
+        @media (max-width: 500px) { .merch-grid { grid-template-columns: 1fr; } }
         .card {
             background: rgba(0,0,0,0.7);
             border-radius: 15px;
@@ -97,22 +85,9 @@
             border: 1px solid #ff6600;
             transition: transform 0.2s;
         }
-        .card:hover {
-            transform: translateY(-5px);
-            border-color: #ffcc00;
-        }
-        .card img {
-            width: 100%;
-            height: 220px;
-            object-fit: cover;
-            border-radius: 15px 15px 0 0;
-        }
-        .card h3 {
-            font-size: 1.1rem;
-            margin: 0.8rem 0;
-            color: #ffaa66;
-            font-family: 'Gaegu', 'Gamja Flower', 'Jua', monospace;
-        }
+        .card:hover { transform: translateY(-5px); border-color: #ffcc00; }
+        .card img { width: 100%; height: 220px; object-fit: cover; border-radius: 15px 15px 0 0; }
+        .card h3 { font-size: 1.1rem; margin: 0.8rem 0; color: #ffaa66; }
         .price {
             background: linear-gradient(45deg, #ff6600, #ffcc00);
             -webkit-background-clip: text;
@@ -132,13 +107,9 @@
             border-radius: 30px;
             font-size: 0.9rem;
             font-weight: bold;
-            font-family: 'Gaegu', 'Gamja Flower', 'Jua', monospace;
             transition: transform 0.2s;
         }
-        .buy-btn:hover {
-            transform: scale(1.05);
-            background: linear-gradient(45deg, #ff7700, #ffaa00);
-        }
+        .buy-btn:hover { transform: scale(1.05); background: linear-gradient(45deg, #ff7700, #ffaa00); }
         .footer {
             text-align: center;
             padding: 1.5rem;
@@ -146,7 +117,6 @@
             margin-top: 2rem;
             font-size: 0.7rem;
             color: #ffaa66;
-            font-family: 'Gaegu', 'Gamja Flower', 'Jua', monospace;
         }
     </style>
 </head>
@@ -155,64 +125,18 @@
         <a href="index.html" class="logo">WREAL X</a>
         <a href="index.html" class="back-btn">← BACK TO HOME</a>
     </div>
-    <div class="hero-small">
-        <h1>🛍️ SHOP NOW</h1>
-    </div>
-    
+    <div class="hero-small"><h1>🛍️ SHOP NOW</h1></div>
     <h2 class="shop-title">MERCHANDISE</h2>
     <div class="merch-grid">
-        <div class="card">
-            <img src="https://iili.io/C9A01C7.jpg" alt="X-CELL DRESS">
-            <h3>X-CELL DRESS</h3>
-            <div class="price">💰 180,000 SSP</div>
-            <button class="buy-btn" onclick="location.href='https://wa.me/211920146370?text=I want to buy X-CELL DRESS for 180,000 SSP'">BUY NOW</button>
-        </div>
-        <div class="card">
-            <img src="https://iili.io/C9A07p4.jpg" alt="X-MAN GLOVES">
-            <h3>X-MAN GLOVES</h3>
-            <div class="price">💰 25,000 SSP</div>
-            <button class="buy-btn" onclick="location.href='https://wa.me/211920146370?text=I want to buy X-MAN GLOVES for 25,000 SSP'">BUY NOW</button>
-        </div>
-        <div class="card">
-            <img src="https://iili.io/C9A7R6b.png" alt="GANGO SOCKS">
-            <h3>GANGO SOCKS</h3>
-            <div class="price">💰 25,000 SSP</div>
-            <button class="buy-btn" onclick="location.href='https://wa.me/211920146370?text=I want to buy GANGO SOCKS for 25,000 SSP'">BUY NOW</button>
-        </div>
-        <div class="card">
-            <img src="https://iili.io/C9A1uoB.png" alt="X-MAN HOODIES">
-            <h3>X-MAN HOODIES</h3>
-            <div class="price">💰 220,000 SSP</div>
-            <button class="buy-btn" onclick="location.href='https://wa.me/211920146370?text=I want to buy X-MAN HOODIES for 220,000 SSP'">BUY NOW</button>
-        </div>
-        <div class="card">
-            <img src="https://iili.io/C9A1RP1.png" alt="GANGO SCARVES">
-            <h3>GANGO SCARVES</h3>
-            <div class="price">💰 35,000 SSP</div>
-            <button class="buy-btn" onclick="location.href='https://wa.me/211920146370?text=I want to buy GANGO SCARVES for 35,000 SSP'">BUY NOW</button>
-        </div>
-        <div class="card">
-            <img src="https://iili.io/C9A1ItV.png" alt="GANG GIRL DRESS">
-            <h3>GANG GIRL DRESS</h3>
-            <div class="price">💰 200,000 SSP</div>
-            <button class="buy-btn" onclick="location.href='https://wa.me/211920146370?text=I want to buy GANG GIRL DRESS for 200,000 SSP'">BUY NOW</button>
-        </div>
-        <div class="card">
-            <img src="https://iili.io/C9A1AMP.png" alt="GANG GIRL X">
-            <h3>GANG GIRL X</h3>
-            <div class="price">💰 250,000 SSP</div>
-            <button class="buy-btn" onclick="location.href='https://wa.me/211920146370?text=I want to buy GANG GIRL X for 250,000 SSP'">BUY NOW</button>
-        </div>
-        <div class="card">
-            <img src="https://iili.io/C9A1WPt.png" alt="X BOY SHIRTS">
-            <h3>X BOY SHIRTS</h3>
-            <div class="price">💰 150,000 SSP</div>
-            <button class="buy-btn" onclick="location.href='https://wa.me/211920146370?text=I want to buy X BOY SHIRTS for 150,000 SSP'">BUY NOW</button>
-        </div>
+        <div class="card"><img src="https://iili.io/C9A01C7.jpg"><h3>X-CELL DRESS</h3><div class="price">💰 180,000 SSP</div><button class="buy-btn" onclick="location.href='signup.html?return=https://wa.me/211920146370?text=I want to buy X-CELL DRESS for 180,000 SSP'">BUY NOW</button></div>
+        <div class="card"><img src="https://iili.io/C9A07p4.jpg"><h3>X-MAN GLOVES</h3><div class="price">💰 25,000 SSP</div><button class="buy-btn" onclick="location.href='signup.html?return=https://wa.me/211920146370?text=I want to buy X-MAN GLOVES for 25,000 SSP'">BUY NOW</button></div>
+        <div class="card"><img src="https://iili.io/C9A7R6b.png"><h3>GANGO SOCKS</h3><div class="price">💰 25,000 SSP</div><button class="buy-btn" onclick="location.href='signup.html?return=https://wa.me/211920146370?text=I want to buy GANGO SOCKS for 25,000 SSP'">BUY NOW</button></div>
+        <div class="card"><img src="https://iili.io/C9A1uoB.png"><h3>X-MAN HOODIES</h3><div class="price">💰 220,000 SSP</div><button class="buy-btn" onclick="location.href='signup.html?return=https://wa.me/211920146370?text=I want to buy X-MAN HOODIES for 220,000 SSP'">BUY NOW</button></div>
+        <div class="card"><img src="https://iili.io/C9A1RP1.png"><h3>GANGO SCARVES</h3><div class="price">💰 35,000 SSP</div><button class="buy-btn" onclick="location.href='signup.html?return=https://wa.me/211920146370?text=I want to buy GANGO SCARVES for 35,000 SSP'">BUY NOW</button></div>
+        <div class="card"><img src="https://iili.io/C9A1ItV.png"><h3>GANG GIRL DRESS</h3><div class="price">💰 200,000 SSP</div><button class="buy-btn" onclick="location.href='signup.html?return=https://wa.me/211920146370?text=I want to buy GANG GIRL DRESS for 200,000 SSP'">BUY NOW</button></div>
+        <div class="card"><img src="https://iili.io/C9A1AMP.png"><h3>GANG GIRL X</h3><div class="price">💰 250,000 SSP</div><button class="buy-btn" onclick="location.href='signup.html?return=https://wa.me/211920146370?text=I want to buy GANG GIRL X for 250,000 SSP'">BUY NOW</button></div>
+        <div class="card"><img src="https://iili.io/C9A1WPt.png"><h3>X BOY SHIRTS</h3><div class="price">💰 150,000 SSP</div><button class="buy-btn" onclick="location.href='signup.html?return=https://wa.me/211920146370?text=I want to buy X BOY SHIRTS for 150,000 SSP'">BUY NOW</button></div>
     </div>
-    
-    <div class="footer">
-        <p>© 2026 WREAL X | All Rights Reserved</p>
-    </div>
+    <div class="footer"><p>© 2026 WREAL X | All Rights Reserved</p></div>
 </body>
-</html>
+                                                                                          </html>
